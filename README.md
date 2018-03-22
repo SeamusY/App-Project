@@ -23,9 +23,9 @@
 - [ ] Merge With Front End Rendering
 - [ ] 
 
-create .env file in the directory:
+#create .env file in the directory:
 
-# DB initialization
+## DB initialization
 DB_NAME=
 DB_USERNAME=
 DB_PASSWORD=
