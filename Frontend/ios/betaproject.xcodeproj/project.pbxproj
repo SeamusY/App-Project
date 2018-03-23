@@ -49,6 +49,9 @@
 		21510D30304A4F9B90D85601 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88CFF6D2E170431B91C20C21 /* rubicon-icon-font.ttf */; };
 		7774D64575494724A73CB2DF /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A5B29905BC446518CF2DB6F /* SimpleLineIcons.ttf */; };
 		424DDC1BD4FF419F8F75E33A /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595D9E6CEAD946DE90764DB7 /* Zocial.ttf */; };
+		C1159531B6514A6DAF24FF8F /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC80FD701F64F879D61184A /* IndieFlower.ttf */; };
+		8E43C0F1025B49569E98BFD9 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38F72BCBD55E44D395DC7FD3 /* Pacifico.ttf */; };
+		36B9B9FFA4A047388CE31047 /* ShadowsIntoLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6FAABCA64B7456399E1A14B /* ShadowsIntoLight.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,6 +315,9 @@
 		88CFF6D2E170431B91C20C21 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		4A5B29905BC446518CF2DB6F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		595D9E6CEAD946DE90764DB7 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2CC80FD701F64F879D61184A /* IndieFlower.ttf */ = {isa = PBXFileReference; name = "IndieFlower.ttf"; path = "../assets/fonts/IndieFlower.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		38F72BCBD55E44D395DC7FD3 /* Pacifico.ttf */ = {isa = PBXFileReference; name = "Pacifico.ttf"; path = "../assets/fonts/Pacifico.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A6FAABCA64B7456399E1A14B /* ShadowsIntoLight.ttf */ = {isa = PBXFileReference; name = "ShadowsIntoLight.ttf"; path = "../assets/fonts/ShadowsIntoLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,6 +588,9 @@
 				88CFF6D2E170431B91C20C21 /* rubicon-icon-font.ttf */,
 				4A5B29905BC446518CF2DB6F /* SimpleLineIcons.ttf */,
 				595D9E6CEAD946DE90764DB7 /* Zocial.ttf */,
+				2CC80FD701F64F879D61184A /* IndieFlower.ttf */,
+				38F72BCBD55E44D395DC7FD3 /* Pacifico.ttf */,
+				A6FAABCA64B7456399E1A14B /* ShadowsIntoLight.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -989,6 +998,9 @@
 				21510D30304A4F9B90D85601 /* rubicon-icon-font.ttf in Resources */,
 				7774D64575494724A73CB2DF /* SimpleLineIcons.ttf in Resources */,
 				424DDC1BD4FF419F8F75E33A /* Zocial.ttf in Resources */,
+				C1159531B6514A6DAF24FF8F /* IndieFlower.ttf in Resources */,
+				8E43C0F1025B49569E98BFD9 /* Pacifico.ttf in Resources */,
+				36B9B9FFA4A047388CE31047 /* ShadowsIntoLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
