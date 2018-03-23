@@ -3,13 +3,10 @@ import {
   StyleSheet,
   Text,
   ImageBackground,
-  View
+  View,
+  Alert
 } from 'react-native';
 import { Button } from 'native-base'
-
-onFuckingPress = () => {
-
-}
 
 export default class loginPage extends Component{
 
@@ -23,7 +20,7 @@ export default class loginPage extends Component{
         <View style = {styles.middle}>
           <Text style={styles.context}>New way to learn photography</Text>
         </View>
-        <Button rounded style = {styles.loginButton} onPress = {onFuckingPress()}>
+        <Button rounded style = {styles.loginButton} onPress = {()=>Alert.alert('Not yet login ar HAHAHAHAHAHAHAA!')}>
           <Text style={styles.buttonText}>Google +</Text>
         </Button>
 
