@@ -8,25 +8,25 @@ import {
  
 } from 'react-native';
 import {StackNavigator} from 'react-navigation';
-import MainScreen from './Components/MainScreen';
-import LoginScreen from './Components/LoginScreen'
+import MainScreen from './src/components/MainScreen';
+import LoginScreen from './src/components/LoginScreen'
  
 
 
 export default class App extends Component {
   render() {
     return (
-      // <AppStackNavigator/>
-      <LoginScreen/>
+      <AppStackNavigator/>
+      // <LoginScreen/>
     );
   }
 }
 
-// const AppStackNavigator = StackNavigator ({
-//   Main: {
-//     screen: MainScreen
-//   }
-// })
+const AppStackNavigator = StackNavigator ({
+  Main: {
+    screen: MainScreen
+  }
+})
 
 const styles = StyleSheet.create({
   container: {
