@@ -12,7 +12,7 @@ export default class LoginScreen extends Component{
  
   render() {
     return (
-      <ImageBackground source={require('../DSC06107.jpg')} style={styles.backgroundImage}>
+      <ImageBackground source={require('../../DSC06107.jpg')} style={styles.backgroundImage}>
         <View style = {styles.top}>
           <Text style={styles.header}>GO Photer</Text>
         </View>

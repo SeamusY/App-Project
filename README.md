@@ -26,12 +26,12 @@
 #create .env file in the directory:
 
 ## DB initialization
+TEST_DB_NAME=
 DB_NAME=
 DB_USERNAME=
 DB_PASSWORD=
 
-NODE_ENV=
----default=development---
+NODE_ENV=development
 PORT=
 ---default=3000---
 
