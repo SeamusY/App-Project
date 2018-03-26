@@ -25,4 +25,33 @@ describe('UserService', () => {
                 done();
             });
     });
+
+    it('should delete a user', (done) => {
+        userService.create(sample)
+            .then((id) => userService.delete(id[0]))
+            .then(() => userService.list())
+            .then((data) => {
+                expect(data.length).toEqual(0);
+                done();
+            });
+    });
+
+    it('should update a user info', (done) => {
+        userService.create(sample)
+            .then((id) => userService.update(id[0], { first_name: "newtest" }))
+            .then(() => userService.list())
+            .then((data) => {
+                expect(data[0].first_name).toEqual('newtest')
+                done();
+            });
+    });
+
+    it('should search a user info', (done) => {
+        userService.create(sample)
+            .then(() => userService.search({ gmail: 'test@gmail.com', first_name: 'test', last_name: 'last' }))
+            .then((data) => {
+                expect(data[0]).toContain({ gmail: 'test@gmail.com', first_name: 'test', last_name: 'last' })
+                done();
+            });
+    });
 })
