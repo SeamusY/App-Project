@@ -8,8 +8,7 @@ import {
 } from 'react-native';
 import { Button } from 'native-base'
 
-export default class loginPage extends Component{
-
+export default class LoginScreen extends Component{
  
   render() {
     return (

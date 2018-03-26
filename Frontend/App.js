@@ -16,17 +16,18 @@ import LoginScreen from './Components/LoginScreen'
 export default class App extends Component {
   render() {
     return (
-      // <AppStackNavigator/>
-      <LoginScreen/>
+      <AppStackNavigator/>
+      // <LoginScreen/>
+      
     );
   }
 }
 
-// const AppStackNavigator = StackNavigator ({
-//   Main: {
-//     screen: MainScreen
-//   }
-// })
+const AppStackNavigator = StackNavigator ({
+  Main: {
+    screen: LoginScreen
+  }
+})
 
 const styles = StyleSheet.create({
   container: {

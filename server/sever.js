@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/user', guard, router);
 
-app.use("/user",)
+
+
 app.listen(PORT, () => console.log('Listening on :', PORT));
 
 
