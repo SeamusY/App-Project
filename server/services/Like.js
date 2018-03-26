@@ -5,40 +5,35 @@ module.exports = class Like {
         this.knex = knex;
     }
 
-    create(user) {
-        let query = this.knex.table(USERS).first('gmail').where('gmail', user.gmail)
-        return query.then((u) => {
-            if (!u) {
-                return this.knex.insert(user).into(USERS).returning("id");
-            } else {
-                return null;
-            }
-        })
+    like(userId, photoId) {
+        return this.knex
+            .insert({
+                'user_id': userId,
+                'photo_id': photoId
+            })
+            .into(LIKES)
+            .returning("id");
     }
 
-    delete(userId) {
-        return this.knex(USERS)
-            .where("id", userId)
-            .del();
+    dislike(userId, photoId) {
+        return this.knex(LIKES)
+            .where({
+                'user_id': userId,
+                'photo_id': photoId
+            }).del();
     }
 
     list(limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(USERS)
+            .from(LIKES)
             .limit(limit).offset(offset);
-    }
-
-    update(id, user) {
-        return this.knex(USERS)
-            .update(user)
-            .where("id", id);
     }
 
     search(searchCriteria, limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(USERS)
+            .from(LIKES)
             .where(searchCriteria)
             .limit(limit).offset(offset);
     }

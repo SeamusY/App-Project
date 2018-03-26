@@ -6,10 +6,16 @@ module.exports = class UserService {
     }
 
     create(user) {
-        let query = this.knex.table(USERS).first('gmail').where('gmail', user.gmail)
+        let query = this.knex
+            .table(USERS)
+            .first('gmail')
+            .where('gmail', user.gmail)
         return query.then((u) => {
             if (!u) {
-                return this.knex.insert(user).into(USERS).returning("id");
+                return this.knex
+                .insert(user)
+                .into(USERS)
+                .returning("id");
             } else {
                 return null;
             }
