@@ -1,6 +1,6 @@
 
 exports.up = function (knex, Promise) {
-    knex.schema.hasTable('events').then(function (exists) {
+    return knex.schema.hasTable('events').then(function (exists) {
         if (!exists) {
             return knex.schema.createTable('events', function (t) {
                 t.integer('user_id')
