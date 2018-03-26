@@ -9,7 +9,7 @@ exports.up = function (knex, Promise) {
                 t.string('route');
                 t.string('guests');
                 t.boolean('status');
-                t.timestamps(true, true);
+                t.timestamps(false, true);
             });
         }
     });

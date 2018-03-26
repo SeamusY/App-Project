@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
             t.string('gmail').unique();
             t.string('first_name');
             t.string('last_name');
-            t.timestamps(true, false);
+            t.timestamps(false, true);
           });
         }
       });

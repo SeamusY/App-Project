@@ -12,7 +12,7 @@ exports.up = function (knex, Promise) {
                 t.string('location_name');
                 t.string('location_address');
                 t.foreign('user_id').references('users.id');
-                t.timestamps(true, false);
+                t.timestamps(false, true);;
             });
         }
     });

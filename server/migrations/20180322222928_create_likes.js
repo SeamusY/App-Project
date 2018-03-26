@@ -8,7 +8,7 @@ exports.up = function (knex, Promise) {
                 t.primary(['user_id', 'photo_id']);
                 t.foreign('user_id').references('users.id');
                 t.foreign('photo_id').references('photos.id');
-                t.timestamps(true, false);
+                t.timestamps(false, true);
             });
         }
     });
