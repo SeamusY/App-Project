@@ -6,7 +6,10 @@ module.exports = class Photo {
     }
 
     create(photo) {
-        return this.knex.insert(photo).into(PHOTOS).returning("id");
+        return this.knex
+            .insert(photo)
+            .into(PHOTOS)
+            .returning("id");
     }
 
     delete(photoId) {
