@@ -36,7 +36,7 @@ describe('UserService', () => {
             });
     });
 
-    it('should update a user info', (done) => {
+    it('should update a user \'s info', (done) => {
         userService.create(sample)
             .then((id) => userService.update(id[0], { first_name: "newtest" }))
             .then(() => userService.list())
@@ -46,12 +46,12 @@ describe('UserService', () => {
             });
     });
 
-    // it('should search a user info', (done) => {
-    //     userService.create(sample)
-    //         .then(() => userService.search({ gmail: 'test@gmail.com', first_name: 'test', last_name: 'last' }))
-    //         .then((data) => {
-    //             expect(Object.assign({}, data[0])).toContain({ gmail: 'test@gmail.com', first_name: 'test', last_name: 'last' })
-    //             done();
-    //         });
-    // });
+    it('should search a user \'s info', (done) => {
+        userService.create(sample)
+            .then(() => userService.search({ gmail: 'test@gmail.com', first_name: 'test', last_name: 'last' }))
+            .then((data) => {
+                expect(data[0]).toEqual(jasmine.objectContaining({ gmail: 'test@gmail.com', first_name: 'test', last_name: 'last' }));
+                done();
+            });
+    });
 })
