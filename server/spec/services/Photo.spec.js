@@ -1,5 +1,4 @@
 const { Photo } = require('../../services');
-const { User } = require('../../services');
 const PHOTOS = require('../../services/tables').PHOTOS;
 const knexFile = require('../../knexfile')['testing'];
 const knex = require('knex')(knexFile);
