@@ -7,11 +7,11 @@ import {
   View,
   Button
 } from 'react-native';
-import {StackNavigator} from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
 // import MainScreen from './src/components/MainScreen';
 // import LoginScreen from './src/components/LoginScreen';
-import { addNum, minNum } from './src/store/actions/numberExport'
+import { addNum, minNum } from './src/store/actions/number'
 
 
 class App extends Component {
