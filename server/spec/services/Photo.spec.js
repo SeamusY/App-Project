@@ -45,7 +45,6 @@ describe('class Photo in services', () => {
             .then(() => photo.list())
             .then((data) => {
                 expect(data.length).toEqual(1);
-                console.log(data);
                 expect(data[0]).toEqual(jasmine.objectContaining({
                     lat: '120.123456',
                     lng: '120.123456',
