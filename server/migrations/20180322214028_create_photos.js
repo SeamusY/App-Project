@@ -4,9 +4,9 @@ exports.up = function (knex, Promise) {
         if (!exists) {
             return knex.schema.createTable('photos', function (t) {
                 t.increments('id').primary();
-                t.integer('user_id').unsigned().notNullable();
-                t.decimal('lat', 15, 13);
-                t.decimal('lng', 15, 13);
+                t.integer('user_id');
+                t.decimal('lat', 9, 6);
+                t.decimal('lng', 9, 6);
                 t.string('img_url');
                 t.string('caption');
                 t.string('location_name');
