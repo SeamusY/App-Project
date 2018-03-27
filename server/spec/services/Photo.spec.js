@@ -69,7 +69,7 @@ describe('class Photo in services', () => {
             });
     });
 
-    it('should update a user \'s info', (done) => {
+    it('should update a photo \'s info', (done) => {
         photo.create(sample)
             .then((id) => photo.update(id[0], { caption: "newtest caption" }))
             .then(() => photo.list())
@@ -79,7 +79,7 @@ describe('class Photo in services', () => {
             });
     });
 
-   it('should search a user \'s info', (done) => {
+   it('should search a photo \'s info', (done) => {
         photo.create(sample)
             .then(() => photo.search({
                 lat: 120.123456,
