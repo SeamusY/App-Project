@@ -6,8 +6,10 @@ module.exports = class Event {
     }
 
     create(event) {
-        return this.knex.insert(event).into(EVENTS).returning("id");
-
+        return this.knex
+            .insert(event)
+            .into(EVENTS)
+            .returning("id");
     }
 
     delete(eventId) {
@@ -23,7 +25,7 @@ module.exports = class Event {
             .limit(limit).offset(offset);
     }
 
-    update(id, user) {
+    update(id, event) {
         return this.knex(USERS)
             .update(user)
             .where("id", id);

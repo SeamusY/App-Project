@@ -5,40 +5,44 @@ module.exports = class PhotoTag {
         this.knex = knex;
     }
 
-    create(user) {
-        let query = this.knex.table(USERS).first('gmail').where('gmail', user.gmail)
-        return query.then((u) => {
-            if (!u) {
-                return this.knex.insert(user).into(USERS).returning("id");
-            } else {
-                return null;
-            }
-        })
+    tag(photoId, tagId) {
+        return this.knex
+            .insert({
+                'photo_id': userId,
+                'tag_id': photoId
+            })
+            .into(PHOTOTAGS)
+            .returning("id");
     }
 
-    delete(userId) {
-        return this.knex(USERS)
-            .where("id", userId)
-            .del();
+    untag(photoId, tagId) {
+        return this.knex(PHOTOTAGS)
+            .where({
+                'photo_id': photoId,
+                'tag_id': tagId
+            }).del();
     }
 
     list(limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(USERS)
+            .from(PHOTOTAGS)
             .limit(limit).offset(offset);
     }
 
-    update(id, user) {
-        return this.knex(USERS)
-            .update(user)
-            .where("id", id);
+    update(id, phototag) {
+        return this.knex(PHOTOTAGS)
+            .update(phototag)
+            .where({
+                'photo_id': photoId,
+                'tag_id': tagId
+            });
     }
 
     search(searchCriteria, limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(USERS)
+            .from(PHOTOTAGS)
             .where(searchCriteria)
             .limit(limit).offset(offset);
     }

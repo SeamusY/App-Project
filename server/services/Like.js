@@ -15,7 +15,7 @@ module.exports = class Like {
             .returning("id");
     }
 
-    dislike(userId, photoId) {
+    unlike(userId, photoId) {
         return this.knex(LIKES)
             .where({
                 'user_id': userId,
