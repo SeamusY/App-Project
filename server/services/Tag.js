@@ -28,7 +28,7 @@ module.exports = class Tag {
     search(searchCriteria, limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(USERS)
+            .from(TAGS)
             .where(searchCriteria)
             .limit(limit).offset(offset);
     }
