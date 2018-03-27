@@ -1,41 +1,55 @@
-const { Like, User } = require('../../services');
-const LIKES = require('../../services/tables').LIKES;
-const USERS = require('../../services/tables').USERS;
+const { Like, User, Photo } = require('../../services');
+const { LIKES, USERS, PHOTOS } = require('../../services/tables');
 const knexFile = require('../../knexfile')['testing'];
 const knex = require('knex')(knexFile);
 
 describe('class Like in services', () => {
+
+    let userId, photoId, like;
+
     beforeEach((done) => {
         user = new User(knex);
         knex(USERS).del()
-        .then(user.create({
-            gmail: 'test1@gmail.com',
-            first_name: 'test',
-            last_name: 'last'
-        }))
-            .then((data) => {
-                console.log(data);
+            .then(() => {
+                user.create({
+                    gmail: 'test1@gmail.com',
+                    first_name: 'test',
+                    last_name: 'last'
+                })
+                    .then(() => user.list())
+                    .then((data) => { userId = data[0].id; })
+                    .then(() => {
+                        photo = new Photo(knex);
+                        knex(PHOTOS).del()
+                            .then(() => {
+                                photo.create({
+                                    user_id: userId,
+                                    lat: 120.123456,
+                                    lng: 120.123456,
+                                    img_url: '/storage/1/test',
+                                    caption: 'testcaption',
+                                    location_name: 'testname',
+                                    location_address: 'testaddress'
+                                })
+                                    .then(() => photo.list())
+                                    .then((data) => {
+                                        photoId = data[0].id;
+                                    })
+                                    .then( () => {
+                                        like = new Like(knex);
+                                        knex(LIKES).del().then(() => done());
+                                    })
+                            })
+                    })
             })
-            .then(() => done());
-    })
-    let like;
-    let sample = {
-        gmail: 'test@gmail.com',
-        first_name: 'test',
-        last_name: 'last'
-    };
-
-    beforeEach((done) => {
-        like = new User(knex);
-        knex(USERS).del().then(() => done());
     })
 
-    it('should create a like', (done) => {
-        like.create(sample)
+    it('should attach a like to a photo', (done) => {
+        like.like(userId, photoId)
             .then(() => like.list())
             .then((data) => {
                 expect(data.length).toEqual(1);
-                expect(data[0].gmail).toEqual('test@gmail.com');
+                expect(data[0]).toEqual(userId, photoId);
                 done();
             });
     });
