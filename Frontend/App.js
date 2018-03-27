@@ -35,11 +35,11 @@ class App extends Component {
       // <LoginScreen/>
 
       //* * * * Uncomment 5 lines below to activate the Redux Trial * * * *
-    //   <View>
-    //   <Text>{this.props.displaynumber}</Text>
-    //   <Button title="Add" onPress={this.props.OnAdd} />
-    //   <Button title="Min" onPress={this.props.OnMin} />
-    //   </View>
+      // <View>
+      // <Text>{this.props.displaynumber}</Text>
+      // <Button title="Add" onPress={this.props.OnAdd} />
+      // <Button title="Min" onPress={this.props.OnMin} />
+      // </View>
     );
   }
 }
