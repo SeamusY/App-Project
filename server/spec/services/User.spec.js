@@ -1,10 +1,10 @@
-const { UserService } = require('../../services');
+const { User } = require('../../services');
 const USERS = require('../../services/tables').USERS;
 const knexFile = require('../../knexfile')['testing'];
 const knex = require('knex')(knexFile);
 
-describe('UserService', () => {
-    let userService;
+describe('class User in services', () => {
+    let user;
     let sample = {
         gmail: 'test@gmail.com',
         first_name: 'test',
@@ -12,13 +12,13 @@ describe('UserService', () => {
     };
 
     beforeEach((done) => {
-        userService = new UserService(knex);
+        user = new User(knex);
         knex(USERS).del().then(() => done());
     })
 
     it('should create a user', (done) => {
-        userService.create(sample)
-            .then(() => userService.list())
+        user.create(sample)
+            .then(() => user.list())
             .then((data) => {
                 expect(data.length).toEqual(1);
                 expect(data[0].gmail).toEqual('test@gmail.com');
@@ -27,9 +27,9 @@ describe('UserService', () => {
     });
 
     it('should delete a user', (done) => {
-        userService.create(sample)
-            .then((id) => userService.delete(id[0]))
-            .then(() => userService.list())
+        user.create(sample)
+            .then((id) => user.delete(id[0]))
+            .then(() => user.list())
             .then((data) => {
                 expect(data.length).toEqual(0);
                 done();
@@ -37,9 +37,9 @@ describe('UserService', () => {
     });
 
     it('should update a user \'s info', (done) => {
-        userService.create(sample)
-            .then((id) => userService.update(id[0], { first_name: "newtest" }))
-            .then(() => userService.list())
+        user.create(sample)
+            .then((id) => user.update(id[0], { first_name: "newtest" }))
+            .then(() => user.list())
             .then((data) => {
                 expect(data[0].first_name).toEqual('newtest')
                 done();
@@ -47,10 +47,14 @@ describe('UserService', () => {
     });
 
     it('should search a user \'s info', (done) => {
-        userService.create(sample)
-            .then(() => userService.search({ gmail: 'test@gmail.com', first_name: 'test', last_name: 'last' }))
+        user.create(sample)
+            .then(() => user.search({ gmail: 'test@gmail.com', first_name: 'test', last_name: 'last' }))
             .then((data) => {
-                expect(data[0]).toEqual(jasmine.objectContaining({ gmail: 'test@gmail.com', first_name: 'test', last_name: 'last' }));
+                expect(data[0]).toEqual(jasmine.objectContaining({
+                    gmail: 'test@gmail.com',
+                    first_name: 'test',
+                    last_name: 'last'
+                }));
                 done();
             });
     });
