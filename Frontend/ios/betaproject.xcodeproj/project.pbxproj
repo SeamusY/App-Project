@@ -52,6 +52,11 @@
 		C1159531B6514A6DAF24FF8F /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC80FD701F64F879D61184A /* IndieFlower.ttf */; };
 		8E43C0F1025B49569E98BFD9 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38F72BCBD55E44D395DC7FD3 /* Pacifico.ttf */; };
 		36B9B9FFA4A047388CE31047 /* ShadowsIntoLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6FAABCA64B7456399E1A14B /* ShadowsIntoLight.ttf */; };
+		9D02086D6E9743178BA0B3B8 /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B1DDE4F5C24109B61E748A /* libRNGoogleSignin.a */; };
+		B8880FD6E6EE4D3FBFC4AF3B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A03C5856D3B94185900A7C57 /* libz.tbd */; };
+		E5C4C8BC7997477C9CC66D69 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A737396D0A9845F487162003 /* SafariServices.framework */; };
+		435D89179979489494EFC374 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC25E3BFEF014C5AAF61120A /* SystemConfiguration.framework */; };
+		E4FA47E9F1A2482E968A9AC6 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C9FF320BF1405C8128BBAE /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,6 +323,12 @@
 		2CC80FD701F64F879D61184A /* IndieFlower.ttf */ = {isa = PBXFileReference; name = "IndieFlower.ttf"; path = "../assets/fonts/IndieFlower.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		38F72BCBD55E44D395DC7FD3 /* Pacifico.ttf */ = {isa = PBXFileReference; name = "Pacifico.ttf"; path = "../assets/fonts/Pacifico.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A6FAABCA64B7456399E1A14B /* ShadowsIntoLight.ttf */ = {isa = PBXFileReference; name = "ShadowsIntoLight.ttf"; path = "../assets/fonts/ShadowsIntoLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3EDFEB8873C940E4A10B399C /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; name = "RNGoogleSignin.xcodeproj"; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		31B1DDE4F5C24109B61E748A /* libRNGoogleSignin.a */ = {isa = PBXFileReference; name = "libRNGoogleSignin.a"; path = "libRNGoogleSignin.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		A03C5856D3B94185900A7C57 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		A737396D0A9845F487162003 /* SafariServices.framework */ = {isa = PBXFileReference; name = "SafariServices.framework"; path = "System/Library/Frameworks/SafariServices.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		CC25E3BFEF014C5AAF61120A /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		B2C9FF320BF1405C8128BBAE /* AddressBook.framework */ = {isa = PBXFileReference; name = "AddressBook.framework"; path = "System/Library/Frameworks/AddressBook.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +358,11 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				4E18BC854A184F859C001EEF /* libRNVectorIcons.a in Frameworks */,
+				9D02086D6E9743178BA0B3B8 /* libRNGoogleSignin.a in Frameworks */,
+				B8880FD6E6EE4D3FBFC4AF3B /* libz.tbd in Frameworks */,
+				E5C4C8BC7997477C9CC66D69 /* SafariServices.framework in Frameworks */,
+				435D89179979489494EFC374 /* SystemConfiguration.framework in Frameworks */,
+				E4FA47E9F1A2482E968A9AC6 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +503,10 @@
 			isa = PBXGroup;
 			children = (
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
+				A03C5856D3B94185900A7C57 /* libz.tbd */,
+				A737396D0A9845F487162003 /* SafariServices.framework */,
+				CC25E3BFEF014C5AAF61120A /* SystemConfiguration.framework */,
+				B2C9FF320BF1405C8128BBAE /* AddressBook.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -525,6 +545,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				3194697F734643CC85CCF5A7 /* RNVectorIcons.xcodeproj */,
+				3EDFEB8873C940E4A10B399C /* RNGoogleSignin.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1135,10 +1156,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
 				);
 			};
 			name = Debug;
@@ -1160,10 +1183,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
 				);
 			};
 			name = Release;
@@ -1186,6 +1211,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
 				);
 			};
 			name = Debug;
@@ -1207,6 +1233,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
 				);
 			};
 			name = Release;
@@ -1237,10 +1264,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
 				);
 			};
 			name = Debug;
@@ -1271,10 +1300,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
 				);
 			};
 			name = Release;
@@ -1300,6 +1331,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1324,6 +1356,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};

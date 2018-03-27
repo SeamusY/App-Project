@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import MainScreen from './src/components/MainScreen';
-import LoginScreen from './src/components/LoginScreen'
+import LoginScreen from './src/components/LoginScreen';
  
 
 
@@ -17,7 +17,6 @@ export default class App extends Component {
   render() {
     return (
       <AppStackNavigator/>
-      // <LoginScreen/>
     );
   }
 }
@@ -31,7 +30,6 @@ const AppStackNavigator = StackNavigator ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFF',

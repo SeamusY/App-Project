@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "axios": "^0.18.0",
-    "react-native-google-signin": "^0.12.0"
-  }
-}
