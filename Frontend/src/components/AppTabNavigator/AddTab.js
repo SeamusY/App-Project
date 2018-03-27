@@ -6,6 +6,7 @@ import {
   View
 } from 'react-native';
 import { Icon } from 'native-base';
+import AddEvents from '../AddEvents'
 
 class AddTab extends Component {
 
@@ -18,9 +19,7 @@ class AddTab extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>AddTab</Text>
-      </View>
+      <AddEvents/>
     );
   }
 }

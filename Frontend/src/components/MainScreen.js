@@ -18,6 +18,7 @@ class MainScreen extends Component {
     static navigationOptions = {
 
         headerLeft: <Icon style={{ paddingLeft: 10 }} name="ios-person" />,
+       
         headerRight: <Icon style={{ paddingRight: 10 }} name="ios-search" />
 
     }

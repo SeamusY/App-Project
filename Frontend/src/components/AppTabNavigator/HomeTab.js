@@ -7,6 +7,7 @@ import {
  
 } from 'react-native';
 import { Icon } from 'native-base';
+import Carousel from '../Carousel'
 
 class HomeTab extends Component {
 
@@ -19,9 +20,7 @@ class HomeTab extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-      <Text>MapTab</Text>
-    </View>
+     <Carousel/>
     );
   }
 }

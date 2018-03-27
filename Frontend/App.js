@@ -9,31 +9,31 @@ import {
 } from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import { connect } from 'react-redux';
-// import MainScreen from './src/components/MainScreen';
+import MainScreen from './src/components/MainScreen';
 // import LoginScreen from './src/components/LoginScreen';
-import { addNum, minNum } from './src/store/actions/numberExport'
+//import { addNum, minNum } from './src/store/actions/numberExport'
 
 
 class App extends Component {
 
   render() {
     return (
-      // <AppStackNavigator/>
+      <AppStackNavigator/>
       // <LoginScreen/>
-      <View>
-      <Text>{this.props.displaynumber}</Text>
-      <Button title="Add" onPress={this.props.OnAdd} />
-      <Button title="Min" onPress={this.props.OnMin} />
-      </View>
+      // <View>
+      // <Text>{this.props.displaynumber}</Text>
+      // <Button title="Add" onPress={this.props.OnAdd} />
+      // <Button title="Min" onPress={this.props.OnMin} />
+      // </View>
     );
   }
 }
 
-// const AppStackNavigator = StackNavigator ({
-//   Main: {
-//     screen: MainScreen
-//   }
-// })
+const AppStackNavigator = StackNavigator ({
+  Main: {
+    screen: MainScreen
+  }
+})
 
 const styles = StyleSheet.create({
   container: {
