@@ -11,11 +11,6 @@ import {StackNavigator} from 'react-navigation';
 import MainScreen from './src/components/MainScreen';
 import LoginScreen from './src/components/LoginScreen';
 import { connect } from 'react-redux';
-<<<<<<< HEAD
-import MainScreen from './src/components/MainScreen';
-// import LoginScreen from './src/components/LoginScreen';
-//import { addNum, minNum } from './src/store/actions/numberExport'
-=======
 
 // * * * * Uncomment line below to activate the main page navigation * * * *
 // import MainScreen from './src/components/MainScreen';
@@ -25,26 +20,21 @@ import MainScreen from './src/components/MainScreen';
 // import LoginScreen from './src/components/LoginScreen';
 
 import { addNum, minNum } from './src/store/actions/number'
->>>>>>> telford-b
 
 
 class App extends Component {
 
   render() {
     return (
-      <AppStackNavigator/>
-<<<<<<< HEAD
-      // <LoginScreen/>
-=======
+
       // * * * * Uncomment line below to activate the main page navigation * * * *
-      // <AppStackNavigator/>
+    <AppStackNavigator/>
 
 
       // * * * *Uncomment line below to activate the Login Page Screen * * * *
       // <LoginScreen/>
 
       //* * * * Uncomment 5 lines below to activate the Redux Trial * * * *
->>>>>>> telford-b
       // <View>
       // <Text>{this.props.displaynumber}</Text>
       // <Button title="Add" onPress={this.props.OnAdd} />
@@ -54,11 +44,6 @@ class App extends Component {
   }
 }
 
-<<<<<<< HEAD
-const AppStackNavigator = StackNavigator ({
-  Main: {
-    screen: MainScreen
-=======
 // * * * * Uncomment 5 lines below to activate the main page navigation * * * *
 const AppStackNavigator = StackNavigator ({
   Main: {
@@ -66,7 +51,6 @@ const AppStackNavigator = StackNavigator ({
   },
   Profile: {
     screen: LoginScreen
->>>>>>> telford-b
   }
 })
 

@@ -18,17 +18,11 @@ class MainScreen extends Component {
 
     static navigationOptions = ({ navigation }) => {
 
-<<<<<<< HEAD
-        headerLeft: <Icon style={{ paddingLeft: 10 }} name="ios-person" />,
-       
-        headerRight: <Icon style={{ paddingRight: 10 }} name="ios-search" />
-=======
         return {
         headerLeft: 
             <Icon style={{ paddingLeft: 10 }} name="person" onPress={() => navigation.navigate('Profile')}/>, 
         headerRight: 
             <Icon style={{ paddingRight: 10 }} name="search" />
->>>>>>> telford-b
 
         }
     }
@@ -52,15 +46,15 @@ export default MainScreen;
 //     },
 // {initialRouteName: 'HeaderLeft'}),
 
-const AppStackNavigator = StackNavigator ({
-    Main: {
-      screen: MainScreen
-    },
-    Profile: {
-      screen: LoginScreen
-    },
-},
-{initialRouteName: 'Main'});
+// const AppStackNavigator = StackNavigator ({
+//     Main: {
+//       screen: MainScreen
+//     },
+//     Profile: {
+//       screen: LoginScreen
+//     },
+// },
+// {initialRouteName: 'Main'});
 
 const AppTabNavigator = TabNavigator({
 

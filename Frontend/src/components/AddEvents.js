@@ -52,11 +52,11 @@ export default class CardListExample extends Component {
               </Right>
             </CardItem>
 
-           <CardItem style={{alignSelf: 'center'}}>
-              <Button rounded info onPress={() =>alert('Event Is Created!')}>
+         
+              <Button full info style={{ backgroundColor: "#E75480",}} onPress={() =>alert('Event Is Created!')}>
                 <Text>Submit</Text>
               </Button>
-            </CardItem>
+           
       
 
           </Card>
