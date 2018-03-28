@@ -1,7 +1,8 @@
 const USERS = require('./tables').USERS;
 
-module.exports = class UserService {
+module.exports = class User {
     constructor(knex) {
+        // this.userId = userId;
         this.knex = knex;
     }
 
@@ -9,7 +10,10 @@ module.exports = class UserService {
         let query = this.knex.table(USERS).first('gmail').where('gmail', user.gmail)
         return query.then((u) => {
             if (!u) {
-                return this.knex.insert(user).into(USERS).returning("id");
+                return this.knex
+                .insert(user)
+                .into(USERS)
+                .returning("id");
             } else {
                 return null;
             }
