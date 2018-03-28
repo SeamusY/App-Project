@@ -1,40 +1,34 @@
-const PHOTOS = require('./tables').PHOTOS;
+const TAGS = require('./tables').TAGS;
 
-module.exports = class Photo {
+module.exports = class Tag {
     constructor(knex) {
         this.knex = knex;
     }
 
-    create(photo) {
+    create(tag) {
         return this.knex
-            .insert(photo)
-            .into(PHOTOS)
+            .insert(tag)
+            .into(TAGS)
             .returning("id");
     }
 
-    delete(photoId) {
-        return this.knex(PHOTOS)
-            .where("id", photoId)
+    delete(tagId) {
+        return this.knex(TAGS)
+            .where("id", tagId)
             .del();
     }
 
     list(limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(PHOTOS)
+            .from(TAGS)
             .limit(limit).offset(offset);
-    }
-
-    update(id, photo) {
-        return this.knex(PHOTOS)
-            .update(photo)
-            .where("id", id);
     }
 
     search(searchCriteria, limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(PHOTOS)
+            .from(TAGS)
             .where(searchCriteria)
             .limit(limit).offset(offset);
     }

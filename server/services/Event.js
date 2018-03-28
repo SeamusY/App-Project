@@ -1,35 +1,31 @@
-const USERS = require('./tables').USERS;
+const EVENTS = require('./tables').EVENTS;
 
-module.exports = class UserService {
+module.exports = class Event {
     constructor(knex) {
         this.knex = knex;
     }
 
-    create(user) {
-        let query = this.knex.table(USERS).first('gmail').where('gmail', user.gmail)
-        return query.then((u) => {
-            if (!u) {
-                return this.knex.insert(user).into(USERS).returning("id");
-            } else {
-                return null;
-            }
-        })
+    create(event) {
+        return this.knex
+            .insert(event)
+            .into(EVENTS)
+            .returning("id");
     }
 
-    delete(userId) {
-        return this.knex(USERS)
-            .where("id", userId)
+    delete(eventId) {
+        return this.knex(EVENTS)
+            .where("id", eventId)
             .del();
     }
 
     list(limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(USERS)
+            .from(EVENTS)
             .limit(limit).offset(offset);
     }
 
-    update(id, user) {
+    update(id, event) {
         return this.knex(USERS)
             .update(user)
             .where("id", id);

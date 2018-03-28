@@ -4,13 +4,13 @@ exports.up = function (knex, Promise) {
         if (!exists) {
             return knex.schema.createTable('tags', function (t) {
                 t.increments('id').primary();
-                t.string('tag_name');
+                t.string('tag_name').unique();
             });
         }
     });
 };
 
 exports.down = function (knex, Promise) {
-    knex.schema.dropTableIfExists('tags')
+    return knex.schema.dropTableIfExists('tags')
 
 };
