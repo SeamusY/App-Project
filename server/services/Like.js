@@ -12,7 +12,7 @@ module.exports = class Like {
                 'photo_id': photoId
             })
             .into(LIKES)
-            .returning("id");
+            .returning("*");
     }
 
     unlike(userId, photoId) {
