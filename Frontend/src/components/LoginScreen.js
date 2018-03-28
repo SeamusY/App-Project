@@ -23,7 +23,7 @@ export default class LoginScreen extends Component {
           <Text style={styles.context}>New way to learn photography</Text>
         </View>
         <GoogleSigninButton
-          style={{ width: 48, height: 48 }}
+          style={{ width: 48, height: 48, alignSelf:'center'}}
           size={GoogleSigninButton.Size.Icon}
           color={GoogleSigninButton.Color.Dark}
           onPress={() => this._signIn()} />
