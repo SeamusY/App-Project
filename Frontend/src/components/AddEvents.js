@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Card, CardItem, Text, Icon, Right, Button, } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Text, Icon, Right, Button, View} from 'native-base';
+
+
 export default class CardListExample extends Component {
   render() {
     return (
@@ -14,7 +16,9 @@ export default class CardListExample extends Component {
               <Icon active name="ios-sunny" style={{ color: "#E75480" }} />
               <Text>Choose A Date</Text>
               <Right>
-                <Icon name="arrow-forward" />
+                <Button transparent onPress={()=> alert('DatePicker API')}> 
+                  <Icon name="arrow-forward" style={{ color: "#E75480" }}/> 
+                  </Button>
               </Right>
             </CardItem>
 
@@ -22,7 +26,9 @@ export default class CardListExample extends Component {
               <Icon active name="ios-time" style={{ color: "#E75480" }} />
               <Text>Choose A Time</Text>
               <Right>
-                <Icon name="arrow-forward" />
+              <Button transparent onPress={()=> alert('TimePicker API')}> 
+                  <Icon name="arrow-forward" style={{color: "#E75480"}} /> 
+                  </Button>
               </Right>
             </CardItem>
 
@@ -30,23 +36,28 @@ export default class CardListExample extends Component {
               <Icon active name="ios-map" style={{ color: "#E75480" }} />
               <Text>Pick A Location</Text>
               <Right>
-                <Icon name="arrow-forward" />
+              <Button transparent onPress={()=> alert('Map API')}> 
+                  <Icon name="arrow-forward" style={{color: "#E75480"}} /> 
+                  </Button>
               </Right>
             </CardItem>
 
             <CardItem>
-              <Icon active name="ios-paper" style={{ color: "#E75480", fontsize}} />
+              <Icon active name="ios-paper" style={{ color: "#E75480",}} />
               <Text>Add Description</Text>
               <Right>
-                <Icon name="arrow-forward" />
+              <Button transparent> 
+                  <Icon name="arrow-forward" style={{color: "#E75480"}} /> 
+                  </Button>
               </Right>
             </CardItem>
 
-            <CardItem>
-              <Button rounded info>
-                <Text>Light</Text>
+           <CardItem style={{alignSelf: 'center'}}>
+              <Button rounded info onPress={() =>alert('Event Is Created!')}>
+                <Text>Submit</Text>
               </Button>
             </CardItem>
+      
 
           </Card>
         </Content>

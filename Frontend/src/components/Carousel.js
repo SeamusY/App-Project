@@ -47,7 +47,7 @@ export default class Carousel extends Component {
                                     <CardItem cardBody>
                                         <Image style={{ height: 300, flex: 1 }} source={item.image} />
                                     </CardItem>
-                                    <CardItem>
+                                    <CardItem style={{alignSelf: 'center'}}>
                                         <Button rounded style={{backgroundColor:'#a9a9a9', alignSelf:'center'}}>
                                             <Text>More Info</Text>
                                         </Button>
@@ -57,18 +57,18 @@ export default class Carousel extends Component {
                         />
                     </View>
 
-                    <View style={{ flexDirection: "row", flex: 1, position: "absolute", bottom: 450, left: 0, right: 0, justifyContent: 'space-between', padding: 30 }}>
-                        <Button rounded iconLeft onPress={() => this._deckSwiper._root.swipeLeft()} style={{ backgroundColor: '#E75480',}}>
+                    <View style={{ flexDirection: "row", flex: 1, position: "absolute", bottom: 480, left: 0, right: 0, justifyContent: 'space-between', padding: 15 }}>
+                        <Button rounded onPress={() => this._deckSwiper._root.swipeLeft()} style={{ backgroundColor: '#E75480', }}>
                             <Icon name="arrow-back" />
                          
                         </Button>
-                        <Button rounded iconRight onPress={() => this._deckSwiper._root.swipeRight()} style={{ backgroundColor: '#E75480', }}>
+                        <Button rounded  onPress={() => this._deckSwiper._root.swipeRight()} style={{ backgroundColor: '#E75480', }}>
                          
                             <Icon name="arrow-forward" />
                         </Button>
                     </View>
                 </Container>
-                
+
             </ScrollView>
         );
     }
