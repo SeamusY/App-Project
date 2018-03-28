@@ -9,7 +9,7 @@ import {
 import { Icon } from 'native-base';
 import { TabNavigator, TabView, TabBarTop} from 'react-navigation';
 import { StackNavigator } from 'react-navigation';
-import LoginScreen from './LoginScreen';
+import ProfileScreen from './ProfileScreen';
 import HomeTab from './AppTabNavigator/HomeTab';
 import AddTab from './AppTabNavigator/AddTab';
 import MapTab from './AppTabNavigator/MapTab';
@@ -38,23 +38,15 @@ class MainScreen extends Component {
 
 export default MainScreen;
 
-// const RootStack = StackNavigator(
-//     {
-//       headerLeft: {
-//         screen: AddTab,
-//       },
-//     },
-// {initialRouteName: 'HeaderLeft'}),
-
-// const AppStackNavigator = StackNavigator ({
-//     Main: {
-//       screen: MainScreen
-//     },
-//     Profile: {
-//       screen: LoginScreen
-//     },
-// },
-// {initialRouteName: 'Main'});
+const AppStackNavigator = StackNavigator ({
+    Main: {
+      screen: MainScreen
+    },
+    Profile: {
+      screen: ProfileScreen
+    },
+},
+{initialRouteName: 'Main'});
 
 const AppTabNavigator = TabNavigator({
 

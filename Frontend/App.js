@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import MainScreen from './src/components/MainScreen';
-import LoginScreen from './src/components/LoginScreen';
+import ProfileScreen from './src/components/ProfileScreen';
+// import LoginScreen from './src/components/LoginScreen';
 import { connect } from 'react-redux';
 
 // * * * * Uncomment line below to activate the main page navigation * * * *
@@ -26,10 +27,8 @@ class App extends Component {
 
   render() {
     return (
-
       // * * * * Uncomment line below to activate the main page navigation * * * *
     <AppStackNavigator/>
-
 
       // * * * *Uncomment line below to activate the Login Page Screen * * * *
       // <LoginScreen/>
@@ -50,9 +49,10 @@ const AppStackNavigator = StackNavigator ({
     screen: MainScreen
   },
   Profile: {
-    screen: LoginScreen
-  }
-})
+    screen: ProfileScreen
+  },
+},
+{initialRouteName: 'Main'});
 
 const styles = StyleSheet.create({
   container: {

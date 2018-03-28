@@ -7,25 +7,19 @@ import {
 } from 'react-native';
 import { Icon } from 'native-base';
 
-class MapTab extends Component {
+class ProfileScreen extends Component {
 
-  static navigatorOptions = {
-    
-        tabBarIcon: ({tintColor}) => (
-          <icon name="ios-map" style={{color: tintColor}}/>
-        )
-      }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>MapTab</Text>
+        <Text>Profile</Text>
       </View>
     );
   }
 }
 
-export default MapTab;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
   container: {
