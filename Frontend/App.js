@@ -7,7 +7,7 @@ import {
   View,
   Button
 } from 'react-native';
-import {StackNavigator} from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import MainScreen from './src/components/MainScreen';
 import LoginScreen from './src/components/LoginScreen';
 import { connect } from 'react-redux';
@@ -26,7 +26,7 @@ class App extends Component {
 
   render() {
     return (
-      <AppStackNavigator/>
+      <AppStackNavigator />
       // * * * * Uncomment line below to activate the main page navigation * * * *
       // <AppStackNavigator/>
 
@@ -35,21 +35,21 @@ class App extends Component {
       // <LoginScreen/>
 
       //* * * * Uncomment 5 lines below to activate the Redux Trial * * * *
-    //   <View>
-    //   <Text>{this.props.displaynumber}</Text>
-    //   <Button title="Add" onPress={this.props.OnAdd} />
-    //   <Button title="Min" onPress={this.props.OnMin} />
-    //   </View>
+      //   <View>
+      //   <Text>{this.props.displaynumber}</Text>
+      //   <Button title="Add" onPress={this.props.OnAdd} />
+      //   <Button title="Min" onPress={this.props.OnMin} />
+      //   </View>
     );
   }
 }
 
 // * * * * Uncomment 5 lines below to activate the main page navigation * * * *
-const AppStackNavigator = StackNavigator ({
+const AppStackNavigator = StackNavigator({
   Main: {
     screen: LoginScreen
   }
-})
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -69,10 +69,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return{
-    OnAdd: () => dispatch({type: 'ADD_NUM'}),
-    OnMin: () => dispatch({type: 'MIN_NUM'})
+  return {
+    OnAdd: () => dispatch({ type: 'ADD_NUM' }),
+    OnMin: () => dispatch({ type: 'MIN_NUM' })
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

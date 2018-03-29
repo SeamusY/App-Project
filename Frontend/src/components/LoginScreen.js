@@ -34,7 +34,7 @@ export default class LoginScreen extends Component {
     try {
       await GoogleSignin.hasPlayServices({ autoResolve: true });
       await GoogleSignin.configure({
-        webClientId: '125323859717-i7rjij5e52nir68eesn051gnjo86tkfp.apps.googleusercontent.com',
+        webClientId: '606784332815-el05u272910hau6jlvnmnn4nul21enus.apps.googleusercontent.com',
         offlineAccess: false
       });
       const user = await GoogleSignin.currentUserAsync();
