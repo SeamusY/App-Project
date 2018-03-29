@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
   ScrollView,
-
+  Image,
+  Dimensions
 } from 'react-native';
 
-import ProfilePhotos from './ProfilePageElements/ProfilePhotos'
-
-class ProfileScreen extends Component {
+class ProfileHeader extends Component {
 
   render() {
     return (
-      <ScrollView style = {{flex : 1}}>
-          <ProfilePhotos/>
-      </ScrollView>
+      
+      <View>
+          
+      </View>
+      
     );
   }
 }
 
-export default ProfileScreen;
+export default ProfileHeader
 
 const styles = StyleSheet.create({
   topcontainer: {
@@ -29,6 +29,3 @@ const styles = StyleSheet.create({
       backgroundColor: 'grey'
 },
 });
-
-
-
