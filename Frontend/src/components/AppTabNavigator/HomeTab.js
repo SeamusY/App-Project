@@ -4,10 +4,12 @@ import {
   StyleSheet,
   Text,
   View,
+  ScrollView
  
 } from 'react-native';
 import { Icon } from 'native-base';
 import Carousel from '../Carousel'
+import ProfilePhotos from '../ProfilePageElements/ProfilePhotos'
 
 class HomeTab extends Component {
 
@@ -20,7 +22,10 @@ class HomeTab extends Component {
 
   render() {
     return (
+    <ScrollView>
      <Carousel/>
+     <ProfilePhotos/>
+     </ScrollView>
     );
   }
 }

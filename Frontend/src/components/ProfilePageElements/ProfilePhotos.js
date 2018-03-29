@@ -10,24 +10,19 @@ import {
 } from 'react-native';
 
 let images = [
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg'),
-    require('../../../DSC06107.jpg')
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg'),
+    require('../../../doge.jpg')
+
 ]
 
 let {width,height}= Dimensions.get('window');

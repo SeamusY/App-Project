@@ -8,6 +8,7 @@ import {
 
 } from 'react-native';
 
+import ProfileHeader from './ProfilePageElements/ProfileHeader'
 import ProfilePhotos from './ProfilePageElements/ProfilePhotos'
 
 class ProfileScreen extends Component {
@@ -15,6 +16,7 @@ class ProfileScreen extends Component {
   render() {
     return (
       <ScrollView style = {{flex : 1}}>
+          <ProfileHeader/>
           <ProfilePhotos/>
       </ScrollView>
     );
