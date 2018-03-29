@@ -38,16 +38,6 @@ class MainScreen extends Component {
 
 export default MainScreen;
 
-const AppStackNavigator = StackNavigator ({
-    Main: {
-      screen: MainScreen
-    },
-    Profile: {
-      screen: ProfileScreen
-    },
-},
-{initialRouteName: 'Main'});
-
 const AppTabNavigator = TabNavigator({
 
     HomeTab: {
