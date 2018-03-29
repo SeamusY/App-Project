@@ -9,7 +9,7 @@ import {
   Dimensions
 } from 'react-native';
 
-class ProfileHeader extends Component {
+class Header extends Component {
 
   render() {
     return (
@@ -33,7 +33,7 @@ class ProfileHeader extends Component {
   }
 }
 
-export default ProfileHeader
+export default Header
 
 const styles = StyleSheet.create({
   headerBackground: {

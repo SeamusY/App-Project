@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { Icon } from 'native-base';
 import Carousel from '../Carousel'
-import ProfilePhotos from '../ProfilePageElements/ProfilePhotos'
+import Photos from '../ProfilePageElements/Photos'
 
 class HomeTab extends Component {
 
@@ -24,7 +24,7 @@ class HomeTab extends Component {
     return (
     <ScrollView>
      <Carousel/>
-     <ProfilePhotos/>
+     <Photos/>
      </ScrollView>
     );
   }

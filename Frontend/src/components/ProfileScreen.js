@@ -8,16 +8,16 @@ import {
 
 } from 'react-native';
 
-import ProfileHeader from './ProfilePageElements/ProfileHeader'
-import ProfilePhotos from './ProfilePageElements/ProfilePhotos'
+import Header from './ProfilePageElements/Header'
+import Photos from './ProfilePageElements/Photos'
 
 class ProfileScreen extends Component {
 
   render() {
     return (
       <ScrollView style = {{flex : 1}}>
-          <ProfileHeader/>
-          <ProfilePhotos/>
+          <Header/>
+          <Photos/>
       </ScrollView>
     );
   }

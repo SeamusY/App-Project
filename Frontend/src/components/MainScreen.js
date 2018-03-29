@@ -10,6 +10,7 @@ import { Icon } from 'native-base';
 import { TabNavigator, TabView, TabBarTop} from 'react-navigation';
 import { StackNavigator } from 'react-navigation';
 import ProfileScreen from './ProfileScreen';
+import SearchScreen from './SearchSreen';
 import HomeTab from './AppTabNavigator/HomeTab';
 import AddTab from './AppTabNavigator/AddTab';
 import MapTab from './AppTabNavigator/MapTab';
@@ -22,7 +23,7 @@ class MainScreen extends Component {
         headerLeft: 
             <Icon style={{ paddingLeft: 10 }} name="person" onPress={() => navigation.navigate('Profile')}/>, 
         headerRight: 
-            <Icon style={{ paddingRight: 10 }} name="search" />
+            <Icon style={{ paddingRight: 10 }} name="search" onPress={() => navigation.navigate('Search')}/>
 
         }
     }

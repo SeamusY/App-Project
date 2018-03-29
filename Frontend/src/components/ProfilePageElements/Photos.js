@@ -28,7 +28,7 @@ let images = [
 let {width,height}= Dimensions.get('window');
 
 
-class ProfilePhotos extends Component {
+class Photos extends Component {
 
   imageRender = () => 
 
@@ -58,7 +58,7 @@ class ProfilePhotos extends Component {
   }
 }
 
-export default ProfilePhotos;
+export default Photos;
 
 
 const styles = StyleSheet.create({
