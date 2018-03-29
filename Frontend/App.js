@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import MainScreen from './src/components/MainScreen';
-import LoginScreen from './src/components/LoginScreen';
+import ProfileScreen from './src/components/ProfileScreen';
+// import LoginScreen from './src/components/LoginScreen';
 import { connect } from 'react-redux';
 
 // * * * * Uncomment line below to activate the main page navigation * * * *
@@ -20,26 +21,25 @@ import { connect } from 'react-redux';
 // import LoginScreen from './src/components/LoginScreen';
 
 import { addNum, minNum } from './src/store/actions/number'
+import LoginScreen from './src/components/LoginScreen';
 
 
 class App extends Component {
 
   render() {
     return (
-      <AppStackNavigator />
       // * * * * Uncomment line below to activate the main page navigation * * * *
-      // <AppStackNavigator/>
-
+      <AppStackNavigator />
 
       // * * * *Uncomment line below to activate the Login Page Screen * * * *
       // <LoginScreen/>
 
       //* * * * Uncomment 5 lines below to activate the Redux Trial * * * *
-      //   <View>
-      //   <Text>{this.props.displaynumber}</Text>
-      //   <Button title="Add" onPress={this.props.OnAdd} />
-      //   <Button title="Min" onPress={this.props.OnMin} />
-      //   </View>
+      // <View>
+      // <Text>{this.props.displaynumber}</Text>
+      // <Button title="Add" onPress={this.props.OnAdd} />
+      // <Button title="Min" onPress={this.props.OnMin} />
+      // </View>
     );
   }
 }
@@ -48,8 +48,12 @@ class App extends Component {
 const AppStackNavigator = StackNavigator({
   Main: {
     screen: LoginScreen
-  }
-});
+  },
+  Profile: {
+    screen: ProfileScreen
+  },
+},
+  { initialRouteName: 'Main' });
 
 const styles = StyleSheet.create({
   container: {

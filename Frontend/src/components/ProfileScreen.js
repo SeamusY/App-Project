@@ -6,25 +6,20 @@ import {
   View
 } from 'react-native';
 import { Icon } from 'native-base';
-import AddEvents from '../AddEvents'
 
-class AddTab extends Component {
+class ProfileScreen extends Component {
 
-  static navigatorOptions = {
-    
-        tabBarIcon: ({tintColor}) => (
-          <icon name="ios-add-circle" style={{color: tintColor}}/>
-        )
-      }
 
   render() {
     return (
-      <AddEvents/>
+      <View style={styles.container}>
+        <Text>Profile</Text>
+      </View>
     );
   }
 }
 
-export default AddTab;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -35,4 +30,6 @@ const styles = StyleSheet.create({
 
   },
 });
+
+
 
