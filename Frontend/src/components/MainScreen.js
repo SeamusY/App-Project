@@ -45,7 +45,6 @@ const AppTabNavigator = TabNavigator({
     MapTab: {
         screen: MapTab
     }
-
 }, {
         animationEnabled: true,
         swipeEnabled: true,

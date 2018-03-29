@@ -58,11 +58,11 @@ export default class Carousel extends Component {
                     </View>
 
                     <View style={{ flexDirection: "row", flex: 1, position: "absolute", bottom: 480, left: 0, right: 0, justifyContent: 'space-between', padding: 15 }}>
-                        <Button rounded onPress={() => this._deckSwiper._root.swipeLeft()} style={{ backgroundColor: '#E75480', }}>
+                        <Button rounded onPress={() => this._deckSwiper._root.swipeLeft()} style={{ backgroundColor: '#ffb6c1', }}>
                             <Icon name="arrow-back" />
                          
                         </Button>
-                        <Button rounded  onPress={() => this._deckSwiper._root.swipeRight()} style={{ backgroundColor: '#E75480', }}>
+                        <Button rounded  onPress={() => this._deckSwiper._root.swipeRight()} style={{ backgroundColor: '#ffb6c1', }}>
                          
                             <Icon name="arrow-forward" />
                         </Button>
