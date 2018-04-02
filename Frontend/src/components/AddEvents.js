@@ -51,12 +51,12 @@ export default class CardListExample extends Component {
                   </Button>
               </Right>
             </CardItem>
-
-          
-              <Button full onPress={() =>alert('Event Is Created!')} style={{backgroundColor:'#E75480'}}>
+    
+         
+              <Button full info style={{ backgroundColor: "#E75480",}} onPress={() =>alert('Event Is Created!')}>
                 <Text>Submit</Text>
               </Button>
-    
+
       
 
           </Card>
