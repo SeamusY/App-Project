@@ -10,14 +10,16 @@ const knexFile = require('./knexfile')[NODE_ENV]
 const knex = require('knex')(knexFile)
 
 app.use(cors());
+
 app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({extended: true}));
 
 // app.use('/user', guard, router);
 
 // app.use("/user",);
 
-app.get('/', (req, res) => {
+app.get('/', router, (req, res) => {
     res.send('working');
 })
 app.listen(PORT, () => console.log('Listening on :', PORT));

@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import { Button } from 'native-base';
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 
 export default class LoginScreen extends Component {
   componentDidMount() {
@@ -24,9 +26,9 @@ export default class LoginScreen extends Component {
         </View>
         <GoogleSigninButton
           style={{ width: 48, height: 48, alignSelf:'center'}}
-          size={GoogleSigninButton.Size.Icon}
+          size={GoogleSigninButton.Size.Standard}
           color={GoogleSigninButton.Color.Dark}
-          onPress={() => this._signIn()} />
+          onPress={()=>this._signIn()} />
       </ImageBackground >
     );
   }
@@ -38,25 +40,30 @@ export default class LoginScreen extends Component {
         offlineAccess: false
       });
       const user = await GoogleSignin.currentUserAsync();
-      console.log(user);
       this.setState({ user });
     }
     catch (err) {
-      console.log("Play services error", err.code, err.message);
+      alert("Play services error", err.code, err.message);
     }
   }
   _signIn() {
-    alert("This Ran");
     GoogleSignin.signIn().then((user) => {
-      console.log(user);
+      fetch("/user/post", {
+        method: "POST",
+        body: GoogleSignin.currentUserAsync(),
+        headers: {
+          "Content-Type" : "application/json"
+        }
+      })
+      .then((res)=> /* store JWT*/this.setState({token: res}))
+      .then(()=> /*Send them to the other page*/ navigate('Profile'))
     })
       .catch((err) => {
-        console.log('WRONG SIGNIN', err);
+        alert('WRONG SIGNIN', err);
       })
       .done();
   }
 }
-
 
 const styles = StyleSheet.create({
   backgroundImage: {

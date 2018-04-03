@@ -1,7 +1,7 @@
 package com.betaproject;
 
 import android.app.Application;
-
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.react.ReactApplication;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.react.ReactNativeHost;
