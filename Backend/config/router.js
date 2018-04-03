@@ -13,7 +13,7 @@ router.post("/:id",(req, res) => {
 });
 router.post("/post",(req, res) => {
     console.log(req);
-    console.log(req.route);
+    console.log(req.body);
     res.send("Some File");
 });
 

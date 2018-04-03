@@ -8,9 +8,14 @@ import {
 } from 'react-native';
 import { Button } from 'native-base';
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
-
+import MapView from 'react-native-maps';
+// require('es6-promise').polyfill();
+// require('isomorphic-fetch');
+// require('whatwg-fetch');
+// // module.exports = self.fetch.bind(self);
+// var globalObject = typeof self === "undefined" ? global : self;
+// module.exports = globalObject.fetch.bind(globalObject);
+import 'whatwg-fetch'
 export default class LoginScreen extends Component {
   componentDidMount() {
     this._setupGoogleSignin();
@@ -25,10 +30,10 @@ export default class LoginScreen extends Component {
           <Text style={styles.context}>New way to learn photography</Text>
         </View>
         <GoogleSigninButton
-          style={{ width: 48, height: 48, alignSelf:'center'}}
+          style={{ width: 48, height: 48, alignSelf: 'center' }}
           size={GoogleSigninButton.Size.Standard}
           color={GoogleSigninButton.Color.Dark}
-          onPress={()=>this._signIn()} />
+          onPress={() => this._signIn()} />
       </ImageBackground >
     );
   }
@@ -47,21 +52,21 @@ export default class LoginScreen extends Component {
     }
   }
   _signIn() {
-    GoogleSignin.signIn().then((user) => {
-      fetch("/user/post", {
-        method: "POST",
-        body: GoogleSignin.currentUserAsync(),
-        headers: {
-          "Content-Type" : "application/json"
-        }
-      })
-      .then((res)=> /* store JWT*/this.setState({token: res}))
-      .then(()=> /*Send them to the other page*/ navigate('Profile'))
-    })
-      .catch((err) => {
-        alert('WRONG SIGNIN', err);
-      })
-      .done();
+    GoogleSignin.signIn()
+          .then((res) => /* store JWT && REDUX set information*/ alert(res))
+          .catch((err) => {
+            alert('WRONG SIGNIN' + err);
+          })
+      GoogleSignin.getAccessToken().then((info)=>(
+        fetch("/user/post", {
+          method: "POST",
+          body: info,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+      ))
+      
   }
 }
 
