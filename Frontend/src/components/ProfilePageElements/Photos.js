@@ -13,12 +13,12 @@ let images = [
     require('../../../assets/Images/image1.jpg'),
     require('../../../assets/Images/image2.jpg'),
     require('../../../assets/Images/image3.jpg'),
-    require('../../../assets/Images/image1.jpg'),
-    require('../../../assets/Images/image2.jpg'),
-    require('../../../assets/Images/image3.jpg'),
-    require('../../../assets/Images/image1.jpg'),
-    require('../../../assets/Images/image2.jpg'),
-    require('../../../assets/Images/image3.jpg'),
+    require('../../../assets/Images/image4.jpg'),
+    require('../../../assets/Images/image5.jpg'),
+    require('../../../assets/Images/image6.jpg'),
+    require('../../../assets/Images/image7.jpg'),
+    require('../../../assets/Images/image8.jpg'),
+    require('../../../assets/Images/image9.jpg'),
    
 ]
 
