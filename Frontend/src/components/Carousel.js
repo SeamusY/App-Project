@@ -58,7 +58,7 @@ export default class Carousel extends Component {
                     </View>
 
 
-                    <View style={{ flexDirection: "row", flex: 1, position: "absolute", bottom: 285, left: 0, right: 0, justifyContent: 'space-between', padding: 15 }}>
+                    <View style={{ flexDirection: "row", flex: 1, position: "absolute", bottom: 290, left: 0, right: 0, justifyContent: 'space-between', padding: 15 }}>
 
                    
 

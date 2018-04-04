@@ -7,7 +7,7 @@ import {
   View,
   Button
 } from 'react-native';
-import {StackNavigator} from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import MainScreen from './src/components/MainScreen';
 import ProfileScreen from './src/components/ProfileScreen';
 import SearchScreen from './src/components/SearchScreen';
@@ -24,12 +24,13 @@ import { connect } from 'react-redux';
 import { addNum, minNum } from './src/store/actions/number'
 
 
+
 class App extends Component {
 
   render() {
     return (
       // * * * * Uncomment line below to activate the main page navigation * * * *
-    <AppStackNavigator/>
+      <AppStackNavigator />
 
       // * * * *Uncomment line below to activate the Login Page Screen * * * *
       // <LoginScreen/>
@@ -45,7 +46,7 @@ class App extends Component {
 }
 
 // * * * * Uncomment 5 lines below to activate the main page navigation * * * *
-const AppStackNavigator = StackNavigator ({
+const AppStackNavigator = StackNavigator({
   Main: {
     screen: MainScreen
   },
@@ -53,10 +54,12 @@ const AppStackNavigator = StackNavigator ({
     screen: ProfileScreen
   },
   Search: {
+
    screen: SearchScreen
+
   }
 },
-{initialRouteName: 'Main'});
+  { initialRouteName: 'Main' });
 
 const styles = StyleSheet.create({
   container: {
@@ -76,10 +79,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return{
-    OnAdd: () => dispatch({type: 'ADD_NUM'}),
-    OnMin: () => dispatch({type: 'MIN_NUM'})
+  return {
+    OnAdd: () => dispatch({ type: 'ADD_NUM' }),
+    OnMin: () => dispatch({ type: 'MIN_NUM' })
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -24,7 +24,9 @@ class MainScreen extends Component {
         headerLeft: 
             <Icon style={{ paddingLeft: 10 }} name="person" onPress={() => navigation.navigate('Profile')}/>, 
         headerRight: 
+
             <Icon style={{ paddingRight: 10 }} name="search" onPress={()=> navigation.navigate('Search')} />
+
 
         }
     }
@@ -40,6 +42,7 @@ class MainScreen extends Component {
 
 export default MainScreen;
 
+
 const AppStackNavigator = StackNavigator ({
     Main: {
       screen: MainScreen
@@ -52,6 +55,7 @@ const AppStackNavigator = StackNavigator ({
     }
 },
 {initialRouteName: 'Main'});
+
 
 const AppTabNavigator = TabNavigator({
 
@@ -81,7 +85,7 @@ const AppTabNavigator = TabNavigator({
             showLabel: true,
             showIcon: true,
         }
-        // tabBarComponent: ({ navigation, ...rest}) => <TabBarTop {...rest} navigation={{ ...navigation, state: { ...navigation.state, routes: navigation.state.routes.filter(r => r.name !== '') } }}/>
+     
 
     })
 

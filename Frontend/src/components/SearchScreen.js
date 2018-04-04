@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import { Icon } from 'native-base';
-
+import { Container, Header, Item, Input, Icon, Button, Text } from 'native-base';
 export default class SearchScreen extends Component {
-render() {
-      return (
-      <Text>hugo</Text>
-      );
-    }
+  render() {
+    return (
+      <Container>
+        <Header searchBar rounded style={{backgroundColor:"#F2F2F2"}}>
+          <Item>
+            <Icon name="ios-search"/>
+            <Input placeholder="Search" />
+            <Icon name="ios-people"  style={{color: "#E75480"}}/>
+          </Item>
+          <Button transparent>
+            <Text style={{color: "#E75480"}}>Search</Text>
+          </Button>
+        </Header>
+      </Container>
+    );
   }
-  
-const styles = StyleSheet.create({
-  container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      
-
-  },
-});
-
-
+}
