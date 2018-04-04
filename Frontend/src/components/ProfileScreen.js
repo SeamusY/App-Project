@@ -18,10 +18,10 @@ class ProfileScreen extends Component {
       <HeaderStatic/>
       <Container>
         <Tabs>
-          <Tab heading={ <TabHeading style={{backgroundColor:"#FFF"}}><Icon name="camera" style={{color:"#E75480"}} /><Text style={{color:"#000000"}}>Photos</Text></TabHeading>}>
+          <Tab heading={ <TabHeading style={{backgroundColor:"#FFF"}}><Icon name="ios-camera" style={{color:"#ff8396"}} /><Text style={{color:"#000000"}}>Photos</Text></TabHeading>}>
             <Photos />
           </Tab>
-          <Tab heading={ <TabHeading style={{backgroundColor:"#FFF"}}><Icon name="bookmarks" style={{color:"#E75480"}}/><Text style={{color:"#000000"}}>Events</Text></TabHeading>}>
+          <Tab heading={ <TabHeading style={{backgroundColor:"#FFF"}}><Icon name="ios-bookmarks" style={{color:"#ff8396"}}/><Text style={{color:"#000000"}}>Events</Text></TabHeading>}>
             <Events />
           </Tab>
         </Tabs>

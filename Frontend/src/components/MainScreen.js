@@ -80,8 +80,8 @@ const AppTabNavigator = TabNavigator({
                     }
                 })
             },
-            activeTintColor: '#E75480',
-            inactiveTintColor: '#d1cece',
+            activeTintColor: '#ff8396',
+            inactiveTintColor: '#919191',
             showLabel: true,
             showIcon: true,
         }
