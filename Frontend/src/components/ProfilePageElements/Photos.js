@@ -34,7 +34,7 @@ class Photos extends Component {
       return(
      
       <View style={[{width:(width)/3},{height:(width)/3},
-        index % 3 !== 0 ? { paddingLeft:2 } : { paddingLeft:0 }
+        index % 3 !== 0 ? { paddingLeft:2 } : { paddingTop:2 } 
       ]}>
       <Image style={{flex:1, width:undefined, height:undefined}}
       source={image}/>
