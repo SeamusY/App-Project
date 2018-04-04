@@ -60,13 +60,24 @@ const AppStackNavigator = StackNavigator ({
 const AppTabNavigator = TabNavigator({
 
     HomeTab: {
-        screen: HomeTab
-    },
+        screen: HomeTab,
+        navigationOptions: {
+            tabBarIcon:  ({tintColor})=>{return(<Icon name="ios-home"/>)},
+            activeTintColor: '#E75480',
+            inactiveTintColor: '#cccccc'
+    }
+},
     AddTab: {
-        screen: AddTab
+        screen: AddTab,
+        navigationOptions: {
+            tabBarIcon:  ({tintColor})=>{return(<Icon name="ios-add-circle"/>)}
+    }
     },
     MapTab: {
-        screen: MapTab
+        screen: MapTab,
+        navigationOptions: {
+            tabBarIcon:  ({tintColor})=>{return(<Icon name="ios-map"/>)}
+    }
     }
 }, {
         animationEnabled: true,
@@ -76,16 +87,15 @@ const AppTabNavigator = TabNavigator({
             style: {
                 ...Platform.select({
                     android: {
-                        backgroundColor: '#fff'
+                        backgroundColor: 'transparent'
                     }
                 })
             },
-            activeTintColor: '#ff8396',
-            inactiveTintColor: '#919191',
-            showLabel: true,
+            
             showIcon: true,
+            showLabel: false
         }
-     
+        // tabBarComponent: ({ navigation, ...rest}) => <TabBarTop {...rest} navigation={{ ...navigation, state: { ...navigation.state, routes: navigation.state.routes.filter(r => r.name !== '') } }}/>
 
     })
 
