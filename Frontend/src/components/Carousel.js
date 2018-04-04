@@ -51,7 +51,7 @@ export default class DeckSwiperExample extends Component {
                         renderItem={item =>
                             <Card style={{ elevation: 6 }}>
                                 <CardItem cardBody>
-                                    <Image style={{ height: 480, flex: 1 }} source={item.image} />
+                                    <Image style={{ height: 400, flex: 1 }} source={item.image} />
                                 </CardItem>
                                 <CardItem>
                                     <Left>
