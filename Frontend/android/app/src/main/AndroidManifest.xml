@@ -22,10 +22,5 @@
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
-    <application>
-    <!-- You will only need to add this meta-data tag, but make sure it's a child of application -->
-    <meta-data
-      android:name="com.google.android.geo.API_KEY"
-      android:value="AIzaSyAm6sMTv-rLWGfXUNtw_ef6YDRcS7sRGaE"/>
-</application>
+
 </manifest>

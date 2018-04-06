@@ -1,10 +1,13 @@
 import { createStore, combineReducers } from 'redux';
 
-import reducer from './reducers/number';
+import number_reducer from './reducers/number';
 
 const rootReducer = combineReducers({
-    numbers: reducer
-})
+    numbers: number_reducer,
+    // email: email_reducer,
+    // name: name_reducer,
+    // access_token: token,
+    })
 
 const configStore = () => {
     return createStore(rootReducer)

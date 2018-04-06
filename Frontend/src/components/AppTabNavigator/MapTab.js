@@ -19,9 +19,8 @@ class MapTab extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
         <MapView
-          style={styles.map}
+          style={{width: 50}}
           initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
@@ -29,7 +28,6 @@ class MapTab extends Component {
             longitudeDelta: 0.0421,
           }}
         />
-      </View>
     );
   }
 }

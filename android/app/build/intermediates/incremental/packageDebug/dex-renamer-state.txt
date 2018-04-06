@@ -1,0 +1,4 @@
+#Wed Apr 04 11:44:36 CST 2018
+base.0=D\:\\acceleratehk\\React-Native\\gophoter\\Frontend\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=D\:\\acceleratehk\\React-Native\\gophoter\\Frontend\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

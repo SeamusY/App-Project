@@ -47,7 +47,7 @@ class App extends Component {
 // * * * * Uncomment 5 lines below to activate the main page navigation * * * *
 const AppStackNavigator = StackNavigator({
   Main: {
-    screen: MainScreen
+    screen: LoginScreen
   },
   Profile: {
     screen: ProfileScreen

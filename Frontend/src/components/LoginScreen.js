@@ -45,28 +45,38 @@ export default class LoginScreen extends Component {
         offlineAccess: false
       });
       const user = await GoogleSignin.currentUserAsync();
-      this.setState({ user });
+      // this.setState({ user });
     }
     catch (err) {
       alert("Play services error", err.code, err.message);
     }
   }
   _signIn() {
-    GoogleSignin.signIn()
-          .then((res) => /* store JWT && REDUX set information*/ alert(res))
-          .catch((err) => {
-            alert('WRONG SIGNIN' + err);
-          })
-      GoogleSignin.getAccessToken().then((info)=>(
+    // GoogleSignin.signIn()
+    //   .then((res) => /* store JWT && REDUX set information*/ alert(res))
+    //   .catch((err) => {
+    //     alert('WRONG SIGNIN' + err);
+    //   })
+    // GoogleSignin.getAccessToken().then((info)=>(
+    //   fetch("/user/post", {
+    //     method: "POST",
+    //     body: info,
+    //     headers: {
+    //       "Content-Type": "application/json"
+    //     }
+    //   })
+    // ))
+    Promise.all([GoogleSignin.signIn(), GoogleSignin.getAccessToken()])
+      .then(([result1, result2]) =>
+        alert(result1),
+        alert(result2),
         fetch("/user/post", {
           method: "POST",
-          body: info,
           headers: {
             "Content-Type": "application/json"
-          }
-        })
-      ))
-      
+          },
+          body: result2
+        }))
   }
 }
 
