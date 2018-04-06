@@ -19,13 +19,13 @@ class ProfileScreen extends Component {
       <HeaderStatic/>
       <Container>
         <Tabs>
-          <Tab heading={ <TabHeading style={{backgroundColor:"#FFF"}}><Icon name="ios-camera" style={{color:"#ff8396"}} /><Text style={{color:"#000000"}}>Photos</Text></TabHeading>}>      
+          <Tab heading={ <TabHeading style={styles.heading}><Icon name="ios-camera" style={styles.icon} /><Text style={styles.text}>Photos</Text></TabHeading>}>      
             <Photos />
           </Tab>
-          <Tab heading={ <TabHeading style={{backgroundColor:"#FFF"}}><Icon name="ios-bookmarks" style={{color:"#ff8396"}}/><Text style={{color:"#000000"}}>Events</Text></TabHeading>}>
+          <Tab heading={ <TabHeading style={styles.heading}><Icon name="ios-bookmarks" style={styles.icon} /><Text style={styles.text}>Events</Text></TabHeading>}>
             <Events />
           </Tab>
-          <Tab heading={ <TabHeading style={{backgroundColor:"#FFF"}}><Icon name="ios-navigate" style={{color:"#ff8396"}}/><Text style={{color:"#000000"}}>Spots</Text></TabHeading>}>
+          <Tab heading={ <TabHeading style={styles.heading}><Icon name="ios-navigate" style={styles.icon}/><Text style={styles.text}>Spots</Text></TabHeading>}>
             <Spots />
           </Tab>
         </Tabs>
@@ -38,3 +38,16 @@ class ProfileScreen extends Component {
 }
 
 export default ProfileScreen;
+
+const styles = StyleSheet.create({
+heading: {
+  backgroundColor: "#FFF"
+},
+icon: {
+  color: "#ff8396"
+},
+text:{
+  color: "#000000"
+}
+
+});
