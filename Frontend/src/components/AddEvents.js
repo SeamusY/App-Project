@@ -11,11 +11,11 @@ export default class Events extends Component {
               <Left>
                 <Icon name="sunny" style={{ color: '#ff8396' }} />
               </Left>
-              <Body>
+              <Body style={{borderBottomWidth: 0}}>
                 <Text style={{ alignSelf: 'center', fontSize: 20}}>Choose A Date</Text>
                 <Text note style={{ alignSelf: 'center' }}>10th May, Thursday</Text>
               </Body>
-              <Right>
+              <Right style={{borderBottomWidth: 0}}>
                 <Icon name="arrow-forward" />
               </Right>
             </ListItem>
@@ -24,15 +24,15 @@ export default class Events extends Component {
 
         <Content>
           <List>
-            <ListItem icon>
+            <ListItem icon noBorder>
               <Left>
                 <Icon name="ios-time" style={{ color: '#ff8396' }}/>
               </Left>
-              <Body>
+              <Body style={{borderBottomWidth: 0}}>
                 <Text style={{ alignSelf: 'center',  fontSize: 20 }}>Choose A Time</Text>
                 <Text note style={{ alignSelf: 'center' }}>10th May, Thursday</Text>
               </Body>
-              <Right>
+              <Right style={{borderBottomWidth: 0}}>
                 <Icon name="arrow-forward" />
               </Right>
             </ListItem>
@@ -41,15 +41,15 @@ export default class Events extends Component {
 
         <Content>
           <List>
-            <ListItem icon>
+            <ListItem icon noBorder>
               <Left>
                 <Icon name="ios-navigate" style={{ color: '#ff8396'}} />
               </Left>
-              <Body>
+              <Body style={{borderBottomWidth: 0}}>
                 <Text style={{ alignSelf: 'center',  fontSize: 20 }}>Pick A Location</Text>
                 <Text note style={{ alignSelf: 'center' }}>Deep Water Bay</Text>
               </Body>
-              <Right>
+              <Right style={{borderBottomWidth: 0}}>
                 <Icon name="arrow-forward" />
               </Right>
             </ListItem>
@@ -58,15 +58,15 @@ export default class Events extends Component {
 
         <Content>
           <List>
-            <ListItem icon>
+            <ListItem icon noBorder>
               <Left>
                 <Icon name="ios-paper" style={{ color: '#ff8396' }} />
               </Left>
-              <Body>
+              <Body style={{borderBottomWidth: 0}}>
                 <Text style={{ alignSelf: 'center',fontSize: 20}}>Add Desciption</Text>
                 <Text note style={{ alignSelf: 'center' }}>10th May, Thursday</Text>
               </Body>
-              <Right>
+              <Right style={{borderBottomWidth: 0}}>
                 <Icon name="arrow-forward" />
               </Right>
             </ListItem>

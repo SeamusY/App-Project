@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import { Icon } from 'native-base';
-import { TabNavigator, TabView, TabBarTop} from 'react-navigation';
+import { TabNavigator, TabView, TabBarTop } from 'react-navigation';
 import { StackNavigator } from 'react-navigation';
 import ProfileScreen from './ProfileScreen';
 import SearchScreen from './SearchScreen';
@@ -21,11 +21,11 @@ class MainScreen extends Component {
     static navigationOptions = ({ navigation }) => {
 
         return {
-        headerLeft: 
-            <Icon style={{ paddingLeft: 10 }} name="person" onPress={() => navigation.navigate('Profile')}/>, 
-        headerRight: 
+            headerLeft:
+            <Icon style={{ paddingLeft: 10 }} name="person" onPress={() => navigation.navigate('Profile')} />,
+            headerRight:
 
-            <Icon style={{ paddingRight: 10 }} name="search" onPress={()=> navigation.navigate('Search')} />
+            <Icon style={{ paddingRight: 10 }} name="search" onPress={() => navigation.navigate('Search')} />
 
 
         }
@@ -43,18 +43,18 @@ class MainScreen extends Component {
 export default MainScreen;
 
 
-const AppStackNavigator = StackNavigator ({
+const AppStackNavigator = StackNavigator({
     Main: {
-      screen: MainScreen
+        screen: MainScreen
     },
     Profile: {
-      screen: ProfileScreen
+        screen: ProfileScreen
     },
     Search: {
-     screen: SearchScreen
+        screen: SearchScreen
     }
 },
-{initialRouteName: 'Main'});
+    { initialRouteName: 'Main' });
 
 
 const AppTabNavigator = TabNavigator({
@@ -62,22 +62,22 @@ const AppTabNavigator = TabNavigator({
     HomeTab: {
         screen: HomeTab,
         navigationOptions: {
-            tabBarIcon:  ({tintColor})=>{return(<Icon name="ios-home"/>)},
+            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-home" />) },
             activeTintColor: '#E75480',
             inactiveTintColor: '#cccccc'
-    }
-},
+        }
+    },
     AddTab: {
         screen: AddTab,
         navigationOptions: {
-            tabBarIcon:  ({tintColor})=>{return(<Icon name="ios-add-circle"/>)}
-    }
+            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-add-circle" />) }
+        }
     },
     MapTab: {
         screen: MapTab,
         navigationOptions: {
-            tabBarIcon:  ({tintColor})=>{return(<Icon name="ios-map"/>)}
-    }
+            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-map" />) }
+        }
     }
 }, {
         animationEnabled: true,
@@ -87,15 +87,15 @@ const AppTabNavigator = TabNavigator({
             style: {
                 ...Platform.select({
                     android: {
-                        backgroundColor: 'transparent'
+                        backgroundColor: '#fff'
                     }
                 })
             },
-            
+
             showIcon: true,
             showLabel: false
         }
-        // tabBarComponent: ({ navigation, ...rest}) => <TabBarTop {...rest} navigation={{ ...navigation, state: { ...navigation.state, routes: navigation.state.routes.filter(r => r.name !== '') } }}/>
+       
 
     })
 
