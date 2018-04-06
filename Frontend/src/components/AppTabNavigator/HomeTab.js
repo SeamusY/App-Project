@@ -4,10 +4,15 @@ import {
   StyleSheet,
   Text,
   View,
+  ScrollView
  
 } from 'react-native';
 import { Icon } from 'native-base';
 import Carousel from '../Carousel'
+<<<<<<< HEAD
+=======
+
+>>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
 
 class HomeTab extends Component {
 
@@ -20,7 +25,14 @@ class HomeTab extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
      <Carousel/>
+=======
+    <ScrollView>
+     <Carousel/>
+
+     </ScrollView>
+>>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
     );
   }
 }

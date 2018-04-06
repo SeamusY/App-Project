@@ -10,9 +10,11 @@ import { Icon } from 'native-base';
 import { TabNavigator, TabView, TabBarTop} from 'react-navigation';
 import { StackNavigator } from 'react-navigation';
 import ProfileScreen from './ProfileScreen';
+import SearchScreen from './SearchScreen';
 import HomeTab from './AppTabNavigator/HomeTab';
 import AddTab from './AppTabNavigator/AddTab';
 import MapTab from './AppTabNavigator/MapTab';
+
 
 class MainScreen extends Component {
 
@@ -22,7 +24,9 @@ class MainScreen extends Component {
         headerLeft: 
             <Icon style={{ paddingLeft: 10 }} name="person" onPress={() => navigation.navigate('Profile')}/>, 
         headerRight: 
-            <Icon style={{ paddingRight: 10 }} name="search" />
+
+            <Icon style={{ paddingRight: 10 }} name="search" onPress={()=> navigation.navigate('Search')} />
+
 
         }
     }
@@ -45,8 +49,12 @@ const AppStackNavigator = StackNavigator ({
     Profile: {
       screen: ProfileScreen
     },
+    Search: {
+     screen: SearchScreen
+    }
 },
 {initialRouteName: 'Main'});
+
 
 const AppTabNavigator = TabNavigator({
 
@@ -59,7 +67,6 @@ const AppTabNavigator = TabNavigator({
     MapTab: {
         screen: MapTab
     }
-
 }, {
         animationEnabled: true,
         swipeEnabled: true,
@@ -77,8 +84,7 @@ const AppTabNavigator = TabNavigator({
             showLabel: true,
             showIcon: true,
         }
-        // tabBarComponent: ({ navigation, ...rest}) => <TabBarTop {...rest} navigation={{ ...navigation, state: { ...navigation.state, routes: navigation.state.routes.filter(r => r.name !== '') } }}/>
-
+     
     })
 
 const styles = StyleSheet.create({

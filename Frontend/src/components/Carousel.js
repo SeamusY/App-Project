@@ -22,7 +22,7 @@ const cards = [
 export default class Carousel extends Component {
     render() {
         return (
-            <ScrollView>
+               <ScrollView>
                 <Container>
                     <View>
                         <DeckSwiper
@@ -57,7 +57,11 @@ export default class Carousel extends Component {
                         />
                     </View>
 
-                    <View style={{ flexDirection: "row", flex: 1, position: "absolute", bottom: 205, left: 0, right: 0, justifyContent: 'space-between', padding: 15 }}>
+
+                    <View style={{ flexDirection: "row", flex: 1, position: "absolute", bottom: 290, left: 0, right: 0, justifyContent: 'space-between', padding: 15 }}>
+
+                   
+
                         <Button rounded onPress={() => this._deckSwiper._root.swipeLeft()} style={{ backgroundColor: '#ffb6c1', }}>
                             <Icon name="arrow-back" />
                          
@@ -68,9 +72,8 @@ export default class Carousel extends Component {
                         </Button>
                     </View>
                 </Container>
+                </ScrollView>
 
-            </ScrollView>
         );
     }
 }
-

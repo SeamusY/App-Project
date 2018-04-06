@@ -52,20 +52,6 @@ export default class LoginScreen extends Component {
     }
   }
   _signIn() {
-    // GoogleSignin.signIn()
-    //   .then((res) => /* store JWT && REDUX set information*/ alert(res))
-    //   .catch((err) => {
-    //     alert('WRONG SIGNIN' + err);
-    //   })
-    // GoogleSignin.getAccessToken().then((info)=>(
-    //   fetch("/user/post", {
-    //     method: "POST",
-    //     body: info,
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     }
-    //   })
-    // ))
     Promise.all([GoogleSignin.signIn(), GoogleSignin.getAccessToken()])
       .then(([result1, result2]) =>
         alert(result1),

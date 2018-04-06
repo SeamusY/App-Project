@@ -94,6 +94,17 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
+<<<<<<< HEAD
+=======
+    signingConfigs {
+        config {
+            keyAlias 'android'
+            keyPassword 'android'
+            storeFile file('/Users/hugocheng/Desktop/gophoter/Frontend/android/keystores/debug.jks')
+            storePassword 'android'
+        }
+    }
+>>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
