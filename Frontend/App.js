@@ -7,10 +7,7 @@ import {
   View,
   Button
 } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-import MainScreen from './src/components/MainScreen';
-import ProfileScreen from './src/components/ProfileScreen';
-import SearchScreen from './src/components/SearchScreen';
+import LoginScreen from './src/components/LoginScreen';
 // import LoginScreen from './src/components/LoginScreen';
 import { connect } from 'react-redux';
 
@@ -27,13 +24,15 @@ import { addNum, minNum } from './src/store/actions/number'
 
 class App extends Component {
 
+
   render() {
     return (
       // * * * * Uncomment line below to activate the main page navigation * * * *
-      <AppStackNavigator />
+      
+      // <AppStackNavigator />
 
       // * * * *Uncomment line below to activate the Login Page Screen * * * *
-      // <LoginScreen/>
+      <LoginScreen/>
 
       //* * * * Uncomment 5 lines below to activate the Redux Trial * * * *
       // <View>
@@ -46,20 +45,18 @@ class App extends Component {
 }
 
 // * * * * Uncomment 5 lines below to activate the main page navigation * * * *
-const AppStackNavigator = StackNavigator({
-  Main: {
-    screen: MainScreen
-  },
-  Profile: {
-    screen: ProfileScreen
-  },
-  Search: {
+// const AppStackNavigator = StackNavigator({
 
-   screen: SearchScreen
-
-  }
-},
-  { initialRouteName: 'Main' });
+//   Main: {
+//     screen: MainScreen
+//   },
+//   Profile: {
+//     screen: ProfileScreen
+//   },
+//   Search: {
+//    screen: SearchScreen
+//   }
+// });
 
 const styles = StyleSheet.create({
   container: {

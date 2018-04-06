@@ -8,14 +8,28 @@ import {
 } from 'react-native';
 import { Button } from 'native-base';
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
+import { StackNavigator } from 'react-navigation';
+import MainScreen from './MainScreen';
+import ProfileScreen from './ProfileScreen';
+import SearchScreen from './SearchScreen';
+
 
 export default class LoginScreen extends Component {
+  
+  state = {
+    checkLoggedIn: false
+  }
+  
   componentDidMount() {
     this._setupGoogleSignin();
   }
   render() {
-    return (
-      <ImageBackground source={require('../../DSC06107.jpg')} style={styles.backgroundImage}>
+
+    return (this.state.checkLoggedIn) ?
+      <AppStackNavigator/>
+    
+    :
+        <ImageBackground source={require('../../DSC06107.jpg')} style={styles.backgroundImage}>
         <View style={styles.top}>
           <Text style={styles.header}>GO Photer</Text>
         </View>
@@ -28,7 +42,7 @@ export default class LoginScreen extends Component {
           color={GoogleSigninButton.Color.Dark}
           onPress={() => this._signIn()} />
       </ImageBackground >
-    );
+    ;
   }
   async _setupGoogleSignin() {
     try {
@@ -46,17 +60,30 @@ export default class LoginScreen extends Component {
     }
   }
   _signIn() {
-    alert("This Ran");
+    this.setState({checkLoggedIn: true})
     GoogleSignin.signIn().then((user) => {
-      console.log(user);
+      
+      
     })
-      .catch((err) => {
-        console.log('WRONG SIGNIN', err);
-      })
-      .done();
+    .catch((err) => {
+      console.log('WRONG SIGNIN', err);
+    })
+    .done();
   }
 }
 
+const AppStackNavigator = StackNavigator({
+
+  Main: {
+    screen: MainScreen
+  },
+  Profile: {
+    screen: ProfileScreen
+  },
+  Search: {
+   screen: SearchScreen
+  }
+});
 
 const styles = StyleSheet.create({
   backgroundImage: {
