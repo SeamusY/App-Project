@@ -1,22 +1,4 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import { Icon } from 'native-base';
-
-class ProfileScreen extends Component {
-
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Profile</Text>
-      </View>
-=======
 
 import {
   StyleSheet,
@@ -46,25 +28,8 @@ class ProfileScreen extends Component {
       </ScrollView>
       
 
->>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
     );
   }
 }
 
 export default ProfileScreen;
-<<<<<<< HEAD
-
-const styles = StyleSheet.create({
-  container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      
-
-  },
-});
-
-
-
-=======
->>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9

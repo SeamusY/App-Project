@@ -52,17 +52,19 @@ export default class LoginScreen extends Component {
     }
   }
   _signIn() {
-    Promise.all([GoogleSignin.signIn(), GoogleSignin.getAccessToken()])
-      .then(([result1, result2]) =>
-        alert(result1),
-        alert(result2),
-        fetch("/user/post", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: result2
-        }))
+    GoogleSignin.signIn()
+    .then((send)=> navigate( 'Main'))
+    // Promise.all([GoogleSignin.signIn(), GoogleSignin.getAccessToken()])
+    //   .then(([result1, result2]) =>
+    //     alert(result1),
+    //     alert(result2),
+    //     fetch("/user/post", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json"
+    //       },
+    //       body: result2
+    //     }))
   }
 }
 

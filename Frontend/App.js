@@ -10,10 +10,7 @@ import {
 import { StackNavigator } from 'react-navigation';
 import MainScreen from './src/components/MainScreen';
 import ProfileScreen from './src/components/ProfileScreen';
-<<<<<<< HEAD
-=======
 import SearchScreen from './src/components/SearchScreen';
->>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
 // import LoginScreen from './src/components/LoginScreen';
 import { connect } from 'react-redux';
 
@@ -52,19 +49,11 @@ class App extends Component {
 // * * * * Uncomment 5 lines below to activate the main page navigation * * * *
 const AppStackNavigator = StackNavigator({
   Main: {
-<<<<<<< HEAD
-    screen: LoginScreen
-=======
     screen: MainScreen
->>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
   },
   Profile: {
     screen: ProfileScreen
   },
-<<<<<<< HEAD
-},
-  { initialRouteName: 'Main' });
-=======
   Search: {
 
    screen: SearchScreen
@@ -75,7 +64,6 @@ const AppStackNavigator = StackNavigator({
     initialRouteName: 'Main' 
   }
 );
->>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
 
 const styles = StyleSheet.create({
   container: {

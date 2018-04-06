@@ -8,12 +8,6 @@ export default class CardListExample extends Component {
 
       <Container>
         <Content>
-<<<<<<< HEAD
-          <Header style={{ backgroundColor: "#fff" }}>
-            <Text style={{ justifyContent: "center", color: "#E75480" }}>Create Your Event</Text>
-          </Header>
-=======
->>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
           <Card>
             <CardItem>
               <Icon active name="ios-sunny" style={{ color: "#E75480" }} />
@@ -36,11 +30,7 @@ export default class CardListExample extends Component {
             </CardItem>
 
             <CardItem>
-<<<<<<< HEAD
-              <Icon active name="ios-map" style={{ color: "#E75480" }} />
-=======
               <Icon active name="ios-navigate" style={{ color: "#E75480" }} />
->>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
               <Text>Pick A Location</Text>
               <Right>
               <Button transparent onPress={()=> alert('Map API')}> 
@@ -58,22 +48,11 @@ export default class CardListExample extends Component {
                   </Button>
               </Right>
             </CardItem>
-<<<<<<< HEAD
-
-=======
     
->>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
          
               <Button full info style={{ backgroundColor: "#E75480",}} onPress={() =>alert('Event Is Created!')}>
                 <Text>Submit</Text>
               </Button>
-<<<<<<< HEAD
-           
-=======
-
->>>>>>> bd58374d24534cc3050cdebfbd505784c8ad0ff9
-      
-
           </Card>
         </Content>
       </Container>

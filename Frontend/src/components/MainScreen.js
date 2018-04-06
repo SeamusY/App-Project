@@ -14,6 +14,7 @@ import SearchScreen from './SearchScreen';
 import HomeTab from './AppTabNavigator/HomeTab';
 import AddTab from './AppTabNavigator/AddTab';
 import MapTab from './AppTabNavigator/MapTab';
+import LoginScreen from './LoginScreen';
 
 
 class MainScreen extends Component {
@@ -51,6 +52,9 @@ const AppStackNavigator = StackNavigator ({
     },
     Search: {
      screen: SearchScreen
+    },
+    Login: {
+        screen: LoginScreen
     }
 },
 {initialRouteName: 'Main'});
