@@ -73,8 +73,8 @@ class Photos extends Component {
 )
   render() {
     return (
-      <ScrollView>
-      <View style = {{flexDirection: 'row', flexWrap: 'wrap'}}>
+      <ScrollView style={{ flexGrow: 1 }}>
+      <View style = {{flexDirection: 'row', flexWrap: 'wrap', flex: 1}}>
         {this.imageRender()}
       </View>
       </ScrollView>
