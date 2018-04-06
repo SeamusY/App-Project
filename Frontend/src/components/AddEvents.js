@@ -7,7 +7,7 @@ export default class Events extends Component {
       <Container style={{ backgroundColor: '#fff', paddingTop: 70 }}>
         <Content>
           <List>
-            <ListItem icon style={{ paddingTop: 50, paddingBottom: 50 }}>
+            <ListItem icon>
               <Left>
                 <Icon name="sunny" style={{ color: '#ff8396' }} />
               </Left>
@@ -22,13 +22,9 @@ export default class Events extends Component {
           </List>
         </Content>
 
-<<<<<<< HEAD
-            <ListItem icon style={{ paddingTop: 50, paddingBottom: 50 }}>
-=======
         <Content>
           <List>
             <ListItem icon>
->>>>>>> 6fcb68f3797b99fc65b11598d8966170a432bd27
               <Left>
                 <Icon name="ios-time" style={{ color: '#ff8396' }}/>
               </Left>
@@ -43,13 +39,9 @@ export default class Events extends Component {
           </List>
         </Content>
 
-<<<<<<< HEAD
-            <ListItem icon style={{ paddingTop: 50, paddingBottom: 50 }}>
-=======
         <Content>
           <List>
             <ListItem icon>
->>>>>>> 6fcb68f3797b99fc65b11598d8966170a432bd27
               <Left>
                 <Icon name="ios-navigate" style={{ color: '#ff8396'}} />
               </Left>
@@ -64,13 +56,9 @@ export default class Events extends Component {
           </List>
         </Content>
 
-<<<<<<< HEAD
-            <ListItem icon style={{ paddingTop: 50, paddingBottom: 50 }}>
-=======
         <Content>
           <List>
             <ListItem icon>
->>>>>>> 6fcb68f3797b99fc65b11598d8966170a432bd27
               <Left>
                 <Icon name="ios-paper" style={{ color: '#ff8396' }} />
               </Left>
