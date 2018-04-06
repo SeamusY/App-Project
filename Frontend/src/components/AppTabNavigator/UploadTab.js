@@ -7,14 +7,16 @@ import {
   ScrollView
 } from 'react-native';
 import { Icon } from 'native-base';
-import Recommendations from '../Recommendations';
 
-class MapTab extends Component {
+
+class UploadTab extends Component {
 
   render() {
     return (
        <ScrollView>
-        <MapEvents />
+         <Text>
+             Upload Photo
+          </Text>
         </ScrollView>
  
 
@@ -23,7 +25,7 @@ class MapTab extends Component {
   }
 }
 
-export default MapTab;
+export default UploadTab;
 
 const styles = StyleSheet.create({
           container: {

@@ -13,7 +13,8 @@ import ProfileScreen from './ProfileScreen';
 import SearchScreen from './SearchScreen';
 import HomeTab from './AppTabNavigator/HomeTab';
 import AddTab from './AppTabNavigator/AddTab';
-import MapTab from './AppTabNavigator/MapTab';
+import RecommendationsTab from './AppTabNavigator/RecommendationsTab'
+import UploadTab from './AppTabNavigator/UploadTab'
 
 
 class MainScreen extends Component {
@@ -70,13 +71,19 @@ const AppTabNavigator = TabNavigator({
     AddTab: {
         screen: AddTab,
         navigationOptions: {
-            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-add-circle" />) }
+            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-paper" />) }
         }
     },
-    MapTab: {
-        screen: MapTab,
+    RecommendationsTab: {
+        screen: RecommendationsTab,
         navigationOptions: {
-            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-map" />) }
+            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-bulb" />) }
+        }
+    },
+    UploadTab: {
+        screen: UploadTab,
+        navigationOptions: {
+            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-camera" />) }
         }
     }
 }, {
