@@ -3,33 +3,31 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
 import { Icon } from 'native-base';
+import Recommendations from '../Recommendations';
 
 class MapTab extends Component {
 
-  static navigatorOptions = {
-    
-        tabBarIcon: ({tintColor}) => (
-          <icon name="ios-map" style={{color: tintColor}}/>
-        )
-      }
-
   render() {
     return (
-      <View style={styles.container}>
-        <Text>MapTab</Text>
-      </View>
-    );
+       <ScrollView>
+        <MapEvents />
+        </ScrollView>
+ 
+
+
+        );
   }
 }
 
 export default MapTab;
 
 const styles = StyleSheet.create({
-  container: {
-      flex: 1,
+          container: {
+          flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
       
