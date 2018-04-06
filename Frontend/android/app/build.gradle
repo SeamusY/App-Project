@@ -98,7 +98,7 @@ android {
         config {
             keyAlias 'android'
             keyPassword 'android'
-            storeFile file('/Users/hugocheng/Desktop/gophoter/Frontend/android/keystores/debug.jks')
+            storeFile file('D:/gophoter/Frontend/android/keystores/debug.jks')
             storePassword 'android'
         }
     }
@@ -147,6 +147,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-image-picker')
     compile project(':react-native-google-signin')
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.0.1'
