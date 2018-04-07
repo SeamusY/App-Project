@@ -5,6 +5,7 @@ import {
   Text,
   View,
   ScrollView,
+  Image,
   TouchableOpacity
 } from 'react-native';
 import { Icon } from 'native-base';
@@ -20,13 +21,13 @@ const options = {
 };
 class UploadTab extends Component {
 
-  constructor () {
+  constructor() {
     super()
     this.state = {
       imageSource: null
     }
   }
-  selectPhoto () {
+  selectPhoto() {
     ImagePicker.showImagePicker(options, (response) => {
       console.log('Response = ', response);
 
@@ -53,17 +54,24 @@ class UploadTab extends Component {
   }
   render() {
     return (
-       <ScrollView>
-        <View style={styles.container}>
-        <Image style={style.image}
-        source={this.state.imageSource != null }
-        />
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.text}>Select</Text>
-          </TouchableOpacity>
+      //  <ScrollView>
+      <View style={styles.container}>
+        {/* <Image style={styles.image}
+        source={this.state.imageSource == null ? require('../../../assets/Images/upload.png'): this.state.imageSource}
+        /> */}
+        <TouchableOpacity onPress={() => this.selectPhoto()}>
+          <Image style={styles.image}
+            source={require('../../../assets/Images/upload.png')} />
+          {/* <Text style={styles.text}>Select</Text> */}
+        </TouchableOpacity>
+        
+        <TouchableOpacity>
+          <Text style={styles.text}>Upload</Text>
+        </TouchableOpacity>
 
-        </View>
-       </ScrollView>
+
+      </View>
+      //  </ScrollView>
     );
   }
 }
@@ -79,12 +87,18 @@ const styles = StyleSheet.create({
   button: {
     width: 250,
     height: 50,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    marginTop: 15
   },
   text: {
     color: 'pink',
     fontSize: 30,
     textAlign: 'center'
+  },
+  image: {
+    width: 300,
+    height: 300,
+    marginTop: 50
   }
 });
 
