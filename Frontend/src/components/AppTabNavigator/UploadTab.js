@@ -49,19 +49,20 @@ class UploadTab extends Component {
 
         this.setState({
           imageSource: source,
-          data: response.data
+          data: response
         });
       }
     });
   }
 
   uploadPhoto() {
-    RNFetchBlob.fetch('POST', 'http://locahost3000/upload', {
+    console.log('run')
+    RNFetchBlob.fetch('POST', 'http://192.168.0.105:3000/upload', {
       Authorization: "Bearer access-token",
       otherHeader: "foo",
       'Content-Type': 'multipart/form-data',
     }, [
-        { name: 'image', filename: 'image.png', type: 'image/png', data: this.state.data }
+        { name: 'image', filename: 'image.png', type: this.state.data.type, data: this.state.data.data }
       ]).then((resp) => {
         // ...
       }).catch((err) => {
@@ -72,13 +73,12 @@ class UploadTab extends Component {
     return (
       //  <ScrollView>
       <View style={styles.container}>
-        {/* <Image style={styles.image}
+        <Image style={styles.image}
         source={this.state.imageSource == null ? require('../../../assets/Images/upload.png'): this.state.imageSource}
-        /> */}
+        />
         <TouchableOpacity onPress={() => this.selectPhoto()}>
-          <Image style={styles.image}
-            source={require('../../../assets/Images/upload.png')} />
-          {/* <Text style={styles.text}>Select</Text> */}
+          <Image style={styles.image} />
+           <Text style={styles.text}>Select</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.uploadPhoto()}>
