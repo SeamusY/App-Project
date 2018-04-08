@@ -58,6 +58,7 @@ class UploadTab extends Component {
   }
 
   uploadPhoto() {
+    if (this.state.data != null) {
     this.setState({ loading: true });
     RNFetchBlob.fetch('POST', 'http://192.168.0.105:3000/upload', {
       Authorization: "Bearer access-token",
@@ -70,6 +71,7 @@ class UploadTab extends Component {
       }).catch((err) => {
         // ...
       })
+    }
   }
 
   renderUpload() {
