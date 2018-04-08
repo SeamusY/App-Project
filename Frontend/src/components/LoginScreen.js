@@ -43,7 +43,11 @@ export default class LoginScreen extends Component {
       await GoogleSignin.configure({
         webClientId: '606784332815-el05u272910hau6jlvnmnn4nul21enus.apps.googleusercontent.com',
         offlineAccess: false
-      });
+      }).then(()=> 
+      GoogleSignin.signIn()
+      .then((user)=> alert("USERS:"+ user))
+      .catch((err)=> alert("Error "+ err))
+    );
       const user = await GoogleSignin.currentUserAsync();
       // this.setState({ user });
     }
@@ -53,7 +57,8 @@ export default class LoginScreen extends Component {
   }
   _signIn() {
     GoogleSignin.signIn()
-    .then((send)=> navigate( 'Main'))
+    .then((user)=> alert("USERS:"+ user))
+    .catch((err)=> alert("Error "+ err))
     // Promise.all([GoogleSignin.signIn(), GoogleSignin.getAccessToken()])
     //   .then(([result1, result2]) =>
     //     alert(result1),
