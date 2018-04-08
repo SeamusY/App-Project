@@ -6,7 +6,8 @@ import {
   View,
   ScrollView,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  ActivityIndicator
 } from 'react-native';
 import { Icon } from 'native-base';
 
@@ -25,7 +26,8 @@ class UploadTab extends Component {
     super()
     this.state = {
       imageSource: null,
-      data: null
+      data: null,
+      loading: false
     }
   }
   selectPhoto() {
@@ -56,7 +58,7 @@ class UploadTab extends Component {
   }
 
   uploadPhoto() {
-    console.log('run')
+    this.setState({ loading: true });
     RNFetchBlob.fetch('POST', 'http://192.168.0.105:3000/upload', {
       Authorization: "Bearer access-token",
       otherHeader: "foo",
@@ -64,26 +66,34 @@ class UploadTab extends Component {
     }, [
         { name: 'image', filename: 'image.png', type: this.state.data.type, data: this.state.data.data }
       ]).then((resp) => {
-        // ...
+        this.setState({ loading: false})
       }).catch((err) => {
         // ...
       })
+  }
+
+  renderUpload() {
+    if (this.state.loading === false) {
+      return (
+        <TouchableOpacity onPress={() => this.uploadPhoto()}>
+          <Text style={styles.text}>Upload</Text>
+        </TouchableOpacity>)
+    }
+    return <ActivityIndicator size="large" color="#00ff00" />;
   }
   render() {
     return (
       //  <ScrollView>
       <View style={styles.container}>
         <Image style={styles.image}
-        source={this.state.imageSource == null ? require('../../../assets/Images/upload.png'): this.state.imageSource}
+          source={this.state.imageSource == null ? require('../../../assets/Images/upload.png') : this.state.imageSource}
         />
         <TouchableOpacity onPress={() => this.selectPhoto()}>
           <Image style={styles.image} />
-           <Text style={styles.text}>Select</Text>
+          <Text style={styles.text}>Select</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => this.uploadPhoto()}>
-          <Text style={styles.text}>Upload</Text>
-        </TouchableOpacity>
+        {this.renderUpload()}
 
 
       </View>
