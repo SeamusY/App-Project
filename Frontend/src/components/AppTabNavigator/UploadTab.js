@@ -11,6 +11,7 @@ import {
 import { Icon } from 'native-base';
 
 import ImagePicker from 'react-native-image-picker';
+import RNFetchBlob from 'react-native-fetch-blob';
 
 const options = {
   title: 'Select a photo',
@@ -20,11 +21,11 @@ const options = {
 
 };
 class UploadTab extends Component {
-
   constructor() {
     super()
     this.state = {
-      imageSource: null
+      imageSource: null,
+      data: null
     }
   }
   selectPhoto() {
@@ -47,10 +48,25 @@ class UploadTab extends Component {
         // let source = { uri: 'data:image/jpeg;base64,' + response.data };
 
         this.setState({
-          imageSource: source
+          imageSource: source,
+          data: response.data
         });
       }
     });
+  }
+
+  uploadPhoto() {
+    RNFetchBlob.fetch('POST', 'http://locahost3000/upload', {
+      Authorization: "Bearer access-token",
+      otherHeader: "foo",
+      'Content-Type': 'multipart/form-data',
+    }, [
+        { name: 'image', filename: 'image.png', type: 'image/png', data: this.state.data }
+      ]).then((resp) => {
+        // ...
+      }).catch((err) => {
+        // ...
+      })
   }
   render() {
     return (
@@ -64,8 +80,8 @@ class UploadTab extends Component {
             source={require('../../../assets/Images/upload.png')} />
           {/* <Text style={styles.text}>Select</Text> */}
         </TouchableOpacity>
-        
-        <TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.uploadPhoto()}>
           <Text style={styles.text}>Upload</Text>
         </TouchableOpacity>
 
