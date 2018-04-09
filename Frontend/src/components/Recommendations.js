@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { ImageBackground, Image, ScrollView, View, StyleSheet } from 'react-native';
 import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 export default class Recommendations extends Component {
+
+      
+
     render() {
         return (
             <ScrollView style={{ flexGrow: 1 }}>
@@ -12,6 +15,7 @@ export default class Recommendations extends Component {
                             <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Braemar Hill</Text>
+                             
                                 </View>
                             </ImageBackground>
                         </CardItem>
@@ -22,6 +26,7 @@ export default class Recommendations extends Component {
                             <ImageBackground source={require('../../assets/Images/instagrampeir.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Instagram Pier</Text>
+                                    <Text note>10th May, Thursday</Text>
                                 </View>
                             </ImageBackground>
                         </CardItem>
@@ -183,5 +188,5 @@ const styles = StyleSheet.create({
     imagebackground: {
         height: 200,
         flex: 1
-    }
+    },
 });
