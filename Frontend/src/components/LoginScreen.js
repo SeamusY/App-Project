@@ -82,9 +82,6 @@ const AppStackNavigator = StackNavigator({
   },
   Search: {
    screen: SearchScreen
-  },
-  Photo1: {
-    screen: Photo1screen
   }
 });
 
