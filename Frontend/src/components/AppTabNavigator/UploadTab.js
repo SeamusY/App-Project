@@ -31,6 +31,7 @@ class UploadTab extends Component {
     }
   }
   selectPhoto() {
+    this.setState({ loading: false })
     ImagePicker.showImagePicker(options, (response) => {
       console.log('Response = ', response);
 
