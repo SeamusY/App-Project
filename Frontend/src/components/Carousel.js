@@ -63,7 +63,7 @@ export default class DeckSwiperExample extends Component {
                                         </Body>
                                     </Left>
                                 </CardItem>
-                                <Button full info style={{ backgroundColor: '#ff8396' }}>
+                                <Button full info style={{ backgroundColor: '#ff8396', marginTop: 5 }}>
                                     <Text>Info</Text>
                                 </Button>
                             </Card>
