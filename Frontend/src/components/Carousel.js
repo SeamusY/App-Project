@@ -7,6 +7,7 @@ const cards = [
         description: 'Central Long Exposure',
         name: 'One',
         image: require('../../assets/Images/image4.jpg'),
+        
     },
     {
         text: 'Virginia Nirgo',
@@ -55,14 +56,14 @@ export default class DeckSwiperExample extends Component {
                                 </CardItem>
                                 <CardItem>
                                     <Left>
-                                        <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/04697c22c18a6b9911e1789414581bf4/5B63C1A3/t51.2885-19/s150x150/20479307_259226047906088_8664596465227661312_a.jpg' }}/>
+                                        <Thumbnail source={{uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/04697c22c18a6b9911e1789414581bf4/5B63C1A3/t51.2885-19/s150x150/20479307_259226047906088_8664596465227661312_a.jpg'}} />
                                         <Body>
                                             <Text>{item.text}</Text>
                                             <Text note>{item.description}</Text>
                                         </Body>
                                     </Left>
                                 </CardItem>
-                                <Button full info style={{backgroundColor: '#ff8396'}}>
+                                <Button full info style={{ backgroundColor: '#ff8396' }}>
                                     <Text>Info</Text>
                                 </Button>
                             </Card>

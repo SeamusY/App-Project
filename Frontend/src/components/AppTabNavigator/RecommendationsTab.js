@@ -13,24 +13,24 @@ class RecommendationsTab extends Component {
 
   render() {
     return (
-       <ScrollView>
-        <Recommendations/>
-        </ScrollView>
- 
+      <ScrollView>
+        <Recommendations />
+      </ScrollView>
 
 
-        );
+
+    );
   }
 }
 
 export default RecommendationsTab;
 
 const styles = StyleSheet.create({
-          container: {
-          flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+
 
   },
 });
