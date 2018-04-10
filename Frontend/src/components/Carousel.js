@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Modal, TouchableHighlight  } from 'react-native';
+import { Image, StyleSheet, Modal, TouchableHighlight } from 'react-native';
 import { Container, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body, Icon, Button } from 'native-base';
 const cards = [
     {
@@ -56,13 +56,14 @@ export default class DeckSwiperExample extends Component {
             <Container>
 
                 <View>
-                <Modal
-                    animationType="slide"
-                    transparent={false}
-                    visible={this.state.modalVisible}
-                >
-                    <View style={{ marginTop: 22 }}>
-                        
+                    <Modal
+                        animationType="slide"
+                        transparent={false}
+                        visible={this.state.modalVisible}
+                    >
+                        <Text style={styles.logo}>Go Photer</Text>
+
+
 
                         <TouchableHighlight
                             button onPress={() => {
@@ -70,15 +71,15 @@ export default class DeckSwiperExample extends Component {
                             }}>
                             <Text>Hide Modal</Text>
                         </TouchableHighlight>
-                    </View>
-                </Modal>
+
+                    </Modal>
 
                     <DeckSwiper
                         dataSource={cards}
                         renderItem={item =>
                             <Card style={{ elevation: 6 }}>
                                 <CardItem cardBody>
-                                    <Image style={{ height: 400, flex: 1 }} source={item.image} />
+                                    <Image style={{ height: 500, flex: 1 }} source={item.image} />
                                 </CardItem>
                                 <CardItem>
                                     <Left>
@@ -89,7 +90,7 @@ export default class DeckSwiperExample extends Component {
                                         </Body>
                                     </Left>
                                 </CardItem>
-                                <Button full info style={{ backgroundColor: '#ff8396', marginTop: 5 }} onPress={()=>this.setModalVisible(true)}>
+                                <Button full info style={{ backgroundColor: '#ff8396', marginTop: 5 }} onPress={() => this.setModalVisible(true)}>
                                     <Text>Info</Text>
                                 </Button>
                             </Card>
@@ -100,3 +101,14 @@ export default class DeckSwiperExample extends Component {
         );
     }
 }
+const styles = StyleSheet.create({
+    logo: {
+        textAlign: 'center',
+        fontFamily: 'Pacifico',
+        fontSize: 60,
+        color: '#ff8396',
+        paddingTop: 30,
+
+
+    },
+});

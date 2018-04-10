@@ -1,85 +1,115 @@
 import React, { Component } from 'react';
 import { ImageBackground, Image, ScrollView, View, StyleSheet, Modal } from 'react-native';
-import { Content, Card, CardItem, Text, Left, Right, Thumbnail, Body, Icon, Button } from 'native-base';
+import { Content, Card, CardItem, Text, Left, Right, Body, Thumbnail, Icon, Button } from 'native-base';
 
 const RecommendArray = [
     {
         Photo: require('../../assets/Images/test.jpg'),
         Location: 'Braemar Hill',
-        Photographer: 'Steve Devish'
-
+        Photographer: 'By Ammr Eltilib',
+        Distance: '2.6K',
+        Description: 'To photograph the splendid night scene of Hong Kong, Braemar Hill is a nice place where you can take nightscape photos, remember to bring a tripod.'
     },
     {
         Photo: require('../../assets/Images/instagrampeir.jpg'),
         Location: 'Instagram Pier',
-        Photographer: 'Hugo Cheng'
+        Photographer: 'By Hugo Cheng',
+        Distance: '1.5K',
+        Description: 'One of the best open area in the city, you will meet a lot of instagrammers there, best to shoot during golden hour'
     },
     {
         Photo: require('../../assets/Images/test.jpg'),
         Location: 'Hopewell Center Elavator',
-        Photographer: 'Gordan Chung'
+        Photographer: 'By Gordan Chung',
+        Distance: '7.6K',
+        Description: 'From the 17th floor to the 64th floor, you will be able to get some awesome footage, best to bring a wide angle lens'
     },
     {
         Photo: require('../../assets/Images/mansion.jpg'),
         Location: 'Montane Mansion',
-        Photographer: 'Thomas Lee'
+        Photographer: 'By Thomas Lee',
+        Distance: '4.6K',
+        Description: 'Also known as the monster buidling, you will see a lot of photographer haning around and waiting to shoot long exposure during night time '
     },
     {
         Photo: require('../../assets/Images/test.jpg'),
         Location: 'Dragon\'s Back',
-        Photographer: 'Erik Hendenfalk'
+        Photographer: 'By Erik Hendenfalk',
+        Distance: '8.6K',
+        Description: 'A relatively easy hike, the view is sensational, seriosuly bring a drone!'
+
     },
     {
         Photo: require('../../assets/Images/mongkok.jpg'),
         Location: 'Mong Kok Streets',
-        Photographer: 'Rex Wong'
+        Photographer: 'By Rex Wong',
+        Distance: '3.6K',
+        Description: 'The heart of urban streets, you will able to find a lot of local culture and one of the best place for street photography'
 
     },
     {
-        Photo: require('../../assets/Images/templestreet.jpg'),
+        Photo: require('../../assets/Images/templestreets.jpg'),
         Location: 'Temple Street',
-        Photographer: 'Tim Ching'
+        Photographer: 'By Tim Ching',
+        Distance: '1.6K',
+        Description: 'There are a couple of rooftops,carpark opposite the temple street allow you to capture some beautiful street photography'
     },
     {
         Photo: require('../../assets/Images/central.jpg'),
         Location: 'Central District',
-        Photographer: 'Hugo Cheng'
+        Photographer: 'By Hugo Cheng',
+        Distance: '2.6K',
+        Description:'There are so many places that you can shoot in central, we highly recommend to go to Tamar Park during sunset and night hour'
     },
     {
-        Photo: require('../../assets/Images/chinacity.jpg'),
+        Photo: require('../../assets/Images/chinacitybuilding.jpg'),
         Location: 'China City Building',
-        Photographer: 'Jessica Chen'
+        Photographer: 'By Jessica Chen',
+        Distance: '1.8K',
+        Description: 'If you are into symmetrical photography, this is a place where you can go to point your camera upwards and capture that moment '
     },
     {
         Photo: require('../../assets/Images/image1.jpg'),
         Location: 'Jockey Club Innovation Tower',
-        Photographer: 'Rex Wong'
+        Photographer: 'By Rex Wong',
+        Distance: '3.2K',
+        Description: 'A great place for interior and portriat photography, the architecture of the buidling is simply amazing '
     },
     {
         Photo: require('../../assets/Images/midlevel.jpg'),
         Location: 'Mid-Level Escalator',
-        Photographer: 'Hugo Cheng'
+        Photographer: 'By Hugo Cheng',
+        Distance: '5.6K',
+        Description: 'Head up to the Mid-Levels Escalators and shoot your vertical horizons there.'
 
     },
     {
         Photo: require('../../assets/Images/choihung.jpg'),
         Location: 'Choi Hung Estates',
-        Photographer: 'Hugo Cheng'
+        Photographer: 'By Hugo Cheng',
+        Distance: '6.6K',
+        Description: 'Located on the top of the carpark. This is usually a very crowded place, try to go during weekdays.'
     },
     {
         Photo: require('../../assets/Images/swimmingshed.jpg'),
-        Location: 'Sai Wan Swimming Shed',
-        Photographer: 'Alistair Tam'
+        Location: 'Swimming Shed',
+        Photographer: 'By Alistair Tam',
+        Distance: '1.6K',
+        Description: 'An amazing sunset spot hidden in Sai Wan, it required a 15 mins walk to reach there from Kennedy Town,'
     },
     {
         Photo: require('../../assets/Images/replusebay.jpg'),
         Location: 'Repluse Bay',
-        Photographer: 'Denise Cheng'
+        Photographer: 'By Denise Cheng',
+        Distance: '4.6K',
+        Description: 'A great place for relexation and portrait photography, best to bring a 50mm lens'
     },
     {
         Photo: require('../../assets/Images/lugardroad.jpg'),
         Location: 'Lugard Road',
-        Photographer: 'Erik Hendenfalk'
+        Photographer: ' By Erik Hendenfalk',
+        Distance: '3.1K',
+        Description: 'Breath-taking view of Hong Kong city, try to stay there until it gets dark, you wont regret it!'
     }
 ]
 
@@ -91,17 +121,19 @@ export default class Recommendations extends Component {
 
     state = {
         modalVisible: false,
+        Objnumber: 0
     };
 
-    setModalVisible(visible) {
+    setModalVisible(visible, i) {
         this.setState({ modalVisible: visible });
+        this.state.Objnumber = i
     }
 
     render_Recommendation() {
         return RecommendArray.map(function (rec, i) {
             return (
                 <Card key={i}>
-                    <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
+                    <CardItem cardBody button onPress={() => this.setModalVisible(true, i)}>
                         <ImageBackground source={rec.Photo} style={styles.imagebackground}>
                             <View style={styles.middle}>
                                 <Text style={styles.context}>{rec.Location}</Text>
@@ -118,36 +150,33 @@ export default class Recommendations extends Component {
     render() {
         return (
             <View>
-
                 <Modal
                     animationType="slide"
                     transparent={false}
                     visible={this.state.modalVisible}
                 >
-
                     <Card>
                         <CardItem cardBody>
-                            <Image style={styles.modalimage} source={rec.Photo} />
+                            <Image style={styles.modalimage} source={RecommendArray[this.state.Objnumber].Photo} />
                         </CardItem>
                         <CardItem>
                             <Left>
                                 <Body>
-                                    <Text style={styles.modaltext}>{rec.Location}</Text>
-                                    <Text note>{rec.Photographer}</Text>
+                                    <Text style={styles.modaltext}>{RecommendArray[this.state.Objnumber].Location}</Text>
+                                    <Text note>  {RecommendArray[this.state.Objnumber].Photographer}</Text>
                                 </Body>
                             </Left>
                             <Right>
-
                                 <Text style={styles.direction}>Directions</Text>
-                                <Text note>2.6K</Text>
+                                <Text note>{RecommendArray[this.state.Objnumber].Distance}</Text>
                             </Right>
-
+                        </CardItem>
+                        <CardItem>
+                            <Text style={{textAlign: 'center'}}>{RecommendArray[this.state.Objnumber].Description}</Text>
                         </CardItem>
                     </Card>
-
-
                     <Button style={styles.modalbutton} full info onPress={() => {
-                        this.setModalVisible(!this.state.modalVisible);
+                        this.setModalVisible(false, 0);
                     }}>
                         <Icon name="arrow-back" />
                         <Text>Recommendations</Text>
@@ -166,7 +195,6 @@ export default class Recommendations extends Component {
                     {/* </Container> */}
                 </ScrollView>
             </View>
-
 
         );
     }
@@ -192,15 +220,17 @@ const styles = StyleSheet.create({
         flex: 1
     },
     modalimage: {
-        height: 500,
+        height: 450,
         flex: 1
     },
     modaltext: {
+        paddingTop: 20,
         fontSize: 20
     },
     direction: {
         fontSize: 20,
-        color: "#ff8396"
+        color: "#ff8396",
+        paddingTop: 20
     },
     modalbutton: {
         backgroundColor: '#ff8396',
