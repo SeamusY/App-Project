@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ImageBackground, Image, ScrollView, View, StyleSheet, Modal} from 'react-native';
-import { Content, Card, CardItem, Text, Left, Right, Thumbnail, Body, Icon, Button} from 'native-base';
+import { Content, Card, CardItem, Text, Left, Right, Body, Icon, Button} from 'native-base';
 
 const RecommendArray = [
     {
