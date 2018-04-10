@@ -10,7 +10,7 @@ const knexFile = require('./knexfile')[NODE_ENV]
 const knex = require('knex')(knexFile)
 
 //serve the images
-app.use(express.static('uploads'));
+// app.use(express.static('uploads'));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
