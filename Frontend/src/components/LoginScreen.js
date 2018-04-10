@@ -4,72 +4,80 @@ import {
   Text,
   ImageBackground,
   View,
-  Alert
+  Alert,
+  Linking
 } from 'react-native';
 import { Button } from 'native-base';
-import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
+
 import MapView from 'react-native-maps';
-// require('es6-promise').polyfill();
-// require('isomorphic-fetch');
-// require('whatwg-fetch');
-// // module.exports = self.fetch.bind(self);
-// var globalObject = typeof self === "undefined" ? global : self;
-// module.exports = globalObject.fetch.bind(globalObject);
-import 'whatwg-fetch'
+import Icon from 'react-native-vector-icons/FontAwesome';
+import axios from 'axios';
+import qs from 'qs';
+
 export default class LoginScreen extends Component {
+  state = {
+    jwtToken: undefined,
+    msg: ""
+  }
+
   componentDidMount() {
-    this._setupGoogleSignin();
+    Linking.addEventListener('url', this._handleURL);
+    Linking.getInitialURL().then((url) => {
+      if (url) {
+        this._handleURL(url);
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    Linking.removeEventListener('url', this._handleURL);
+  }
+
+  async _handleURL(event) {
+    try {
+      var [, query] = event.match(/\#(.*)/)
+      const jsonQuery = qs.parse(query);
+      //const response = await axios.post('http://10.0.2.2:8080/api/auth/google', { accessToken: jsonQuery.access_token, email: this.prop.email });
+      //const jwtToken = response.data.token;
+      this.setState({ jwtToken: jsonQuery.access_token });
+    } catch (err) {
+      this.setState({ msg: "Error" });
+    }
+  }
+  loginGoogle = () => {
+    //change it and save it somewhere else.
+    const CLIENT_ID = "606784332815-el05u272910hau6jlvnmnn4nul21enus.apps.googleusercontent.com";
+    const REDIRECT_URL = "http%3A%2F%2Fandroid.googlelinker.com"; //https://lens.auth.com, must be the same as the data tag in AndroidManifest.xml
+    const GOOGLE_AUTH_URL = [
+      "https://accounts.google.com/o/oauth2/v2/auth?",
+      "scope=email%20profile&",
+      "include_granted_scopes=true&state=state_parameter_passthrough_value&",
+      "redirect_uri=http%3A%2F%2Fandroid.googlelinker.com&response_type=token&",
+      "client_id=", CLIENT_ID
+    ].join('')
+
+    Linking.openURL(GOOGLE_AUTH_URL);
   }
   render() {
+    const loginScreen = <ImageBackground source={require('../../DSC06107.jpg')} style={styles.backgroundImage}>
+                          <View style={styles.top}>
+                            <Text style={styles.header}>GO Photer</Text>
+                          </View>
+                          <View style={styles.middle}>
+                            <Text style={styles.context}>New way to learn photography</Text>
+                            <Icon.Button
+                              name="google"
+                              backgroundColor="#DD4B39"
+                              onPress={this.loginGoogle}
+                            >
+                              Google
+                                              </Icon.Button>
+                          </View>
+                        </ImageBackground >
+    const homeScreen = <View><Text>Hello</Text></View>
     return (
-      <ImageBackground source={require('../../DSC06107.jpg')} style={styles.backgroundImage}>
-        <View style={styles.top}>
-          <Text style={styles.header}>GO Photer</Text>
-        </View>
-        <View style={styles.middle}>
-          <Text style={styles.context}>New way to learn photography</Text>
-        </View>
-        <GoogleSigninButton
-          style={{ width: 48, height: 48, alignSelf: 'center' }}
-          size={GoogleSigninButton.Size.Standard}
-          color={GoogleSigninButton.Color.Dark}
-          onPress={() => this._signIn()} />
-      </ImageBackground >
+      (this.state.jwtToken) ? homeScreen : loginScreen
     );
-  }
-  async _setupGoogleSignin() {
-    try {
-      await GoogleSignin.hasPlayServices({ autoResolve: true });
-      await GoogleSignin.configure({
-        webClientId: '606784332815-el05u272910hau6jlvnmnn4nul21enus.apps.googleusercontent.com',
-        offlineAccess: false
-      }).then(()=> 
-      GoogleSignin.signIn()
-      .then((user)=> alert("USERS:"+ user))
-      .catch((err)=> alert("Error "+ err))
-    );
-      const user = await GoogleSignin.currentUserAsync();
-      // this.setState({ user });
-    }
-    catch (err) {
-      alert("Play services error", err.code, err.message);
-    }
-  }
-  _signIn() {
-    GoogleSignin.signIn()
-    .then((user)=> alert("USERS:"+ user))
-    .catch((err)=> alert("Error "+ err))
-    // Promise.all([GoogleSignin.signIn(), GoogleSignin.getAccessToken()])
-    //   .then(([result1, result2]) =>
-    //     alert(result1),
-    //     alert(result2),
-    //     fetch("/user/post", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json"
-    //       },
-    //       body: result2
-    //     }))
   }
 }
 

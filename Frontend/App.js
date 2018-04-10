@@ -11,7 +11,7 @@ import { StackNavigator } from 'react-navigation';
 import MainScreen from './src/components/MainScreen';
 import ProfileScreen from './src/components/ProfileScreen';
 import SearchScreen from './src/components/SearchScreen';
-// import LoginScreen from './src/components/LoginScreen';
+import LoginScreen from './src/components/LoginScreen';
 import { connect } from 'react-redux';
 
 // * * * * Uncomment line below to activate the main page navigation * * * *
@@ -21,8 +21,8 @@ import { connect } from 'react-redux';
 // * * * * Uncomment line below to activate the Login Page Screen * * * *
 // import LoginScreen from './src/components/LoginScreen';
 
-import { addNum, minNum } from './src/store/actions/number'
-import LoginScreen from './src/components/LoginScreen';
+// import { addNum, minNum } from './src/store/actions/number'
+// import LoginScreen from './src/components/LoginScreen';
 
 
 
@@ -56,13 +56,14 @@ const AppStackNavigator = StackNavigator({
     screen: ProfileScreen
   },
   Search: {
-
-   screen: SearchScreen
-
+    screen: SearchScreen
+  },
+  Login: {
+    screen: LoginScreen
   }
-}, 
-  { 
-    initialRouteName: 'Main' 
+},
+  {
+    initialRouteName: 'Login'
   }
 );
 
@@ -79,15 +80,13 @@ const styles = StyleSheet.create({
 // * * * * Uncomment all lines below to activate the Redux Trial * * * *
 const mapStateToProps = state => {
   return {
-    displaynumber: state.numbers.counter
+    displaynumber: state.numbers.id
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    OnAdd: () => dispatch({ type: 'ADD_NUM' }),
-    OnMin: () => dispatch({ type: 'MIN_NUM' })
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps)(App)
