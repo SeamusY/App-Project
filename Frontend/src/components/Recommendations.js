@@ -6,209 +6,168 @@ import { Content, Card, CardItem, Text } from 'native-base';
 
 export default class Recommendations extends Component {
 
-    state = {
-        modalVisible: false,
-    };
-  
-    setModalVisible(visible) {
-      this.setState({modalVisible: visible});
-    }
+      
 
     render() {
         return (
-            <View>
-            {/* <Modal 
-            
-            position={"top"} ref={"modal2"} 
-            backdropPressToClose={true}
-            isOpen={this.state.isOpen}
-            onOpened={() => this.setState({isOpen: true})}
-            onClosed={() => this.setState({isOpen: false})}>
-                <Text style={styles.text}>Modal on top</Text>
-                <Button onPress={() => this.setState({isOpen: !this.state.isOpen},
-               )} style={styles.btn}>Close ({this.state.isOpen ? "true" : "false"})</Button>
-            </Modal>  */}
+            <ScrollView style={{ flexGrow: 1 }}>
 
+                <Content style={{ flex: 1 }}>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Braemar Hill</Text>
+                             
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/instagrampeir.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Instagram Pier</Text>
+                                    <Text note>10th May, Thursday</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Hopewell Center Elavator</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                <ScrollView style={{ flexGrow: 1 }}>
-                    {/* <Container> */}
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/mansion.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Montane Mansion</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                    <Content style={{ flex: 1 }}>
-                        <Card>
-                            <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>High West Peak</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Dragon's Back</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        </Card>
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Instagram Pier</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/mongkok.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Mong Kok Streets</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Hopewell Center Elavator</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/templestreet.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Temple Street</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Montane Mansion</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/central.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Central District</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Dragon's Back</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/chinacity.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>China City Building</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Mong Kok Streets</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/choihung.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Choi Hung Estates</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Temple Street</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Central District</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Jockey Club Innovation Tower</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        <Card>
-                            <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Lugard Road</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/midlevel.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Mid-Level Escalator </Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Choi Hung Estates</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/swimmingshed.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Sai Wan Swimming Shed</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Jockey Club Innovation Tower</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Mid-Level Escalator </Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/replusebay.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Repulse Bay</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Sai Wan Swimming Shed</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
+                    <Card>
+                        <CardItem cardBody>
+                            <ImageBackground source={require('../../assets/Images/lugardroad.jpg')} style={styles.imagebackground}>
+                                <View style={styles.middle}>
+                                    <Text style={styles.context}>Lugard Road</Text>
+                                </View>
+                            </ImageBackground>
+                        </CardItem>
+                    </Card>
 
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Cultural Centre Corridors</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                        <Card>
-                            <CardItem cardBody>
-                                <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>China Hong Kong City Building</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-
-                    </Content>
-
-
-
-                    {/* </Container> */}
-                </ScrollView>
-                <Modal
-                    animationType="slide"
-                    transparent={false}
-                    visible={this.state.modalVisible}
-                    >
-                    <View style={{marginTop: 22}}>
-                        <Text>Hello World!</Text>
-
-                        <TouchableHighlight
-                            onPress={() => {
-                            this.setModalVisible(!this.state.modalVisible);
-                            }}>
-                            <Text>Hide Modal</Text>
-                        </TouchableHighlight>
-                    </View>
-                </Modal>
-            </View>
-
+                </Content>
+                {/* </Container> */}
+            </ScrollView>
 
 
         );
@@ -233,17 +192,4 @@ const styles = StyleSheet.create({
         height: 200,
         flex: 1
     },
-
-    modal2: {
-        position: 'relative',
-        marginTop: 100,
-        height: 300,
-        width: 300
-    },
-
-    text: {
-        color: "black",
-        fontSize: 22
-    }
-
 });

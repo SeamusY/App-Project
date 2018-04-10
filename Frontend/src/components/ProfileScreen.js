@@ -15,9 +15,9 @@ import Spots from './ProfilePageElements/Spots';
 class ProfileScreen extends Component {
   render() {
     return (
-     <ScrollView style={{ flexGrow: 1 }}>
+     <View style={{ flexGrow: 1 }}> 
       <HeaderStatic/>
-      <Container>
+      <Container style={{flex: 1}}>
         <Tabs>
           <Tab heading={ <TabHeading style={styles.heading}><Icon name="ios-camera" style={styles.icon} /><Text style={styles.text}>Photos</Text></TabHeading>}>      
             <Photos />
@@ -30,8 +30,7 @@ class ProfileScreen extends Component {
           </Tab>
         </Tabs>
       </Container>
-      </ScrollView>
-      
+      </View>
 
     );
   }
@@ -47,7 +46,9 @@ icon: {
   color: "#ff8396"
 },
 text:{
-  color: "#000000"
+  color: "#000000",
+
+  
 }
 
 });
