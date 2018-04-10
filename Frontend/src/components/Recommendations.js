@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-import { ImageBackground, ScrollView, View, StyleSheet, Container, Button } from 'react-native';
+import { ImageBackground, ScrollView, View, StyleSheet, TouchableHighlight, Modal} from 'react-native';
 import { Content, Card, CardItem, Text } from 'native-base';
-import PopupDialog from 'react-native-popup-dialog';
+
 
 
 export default class Recommendations extends Component {
 
+    state = {
+        modalVisible: false,
+    };
+  
+    setModalVisible(visible) {
+      this.setState({modalVisible: visible});
+    }
+
     render() {
         return (
             <View>
-                {/* <Modal 
-            style={[styles.modal, styles.modal2]} 
-            backdrop={true}  position={"top"} ref={"modal2"} 
+            {/* <Modal 
+            
+            position={"top"} ref={"modal2"} 
             backdropPressToClose={true}
             isOpen={this.state.isOpen}
             onOpened={() => this.setState({isOpen: true})}
@@ -19,7 +27,7 @@ export default class Recommendations extends Component {
                 <Text style={styles.text}>Modal on top</Text>
                 <Button onPress={() => this.setState({isOpen: !this.state.isOpen},
                )} style={styles.btn}>Close ({this.state.isOpen ? "true" : "false"})</Button>
-            </Modal> */}
+            </Modal>  */}
 
 
 
@@ -29,7 +37,7 @@ export default class Recommendations extends Component {
 
                     <Content style={{ flex: 1 }}>
                         <Card>
-                            <CardItem cardBody button onPress={() => navigation.navigate('Profile')}>
+                            <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                                 <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
                                     <View style={styles.middle}>
                                         <Text style={styles.context}>High West Peak</Text>
@@ -108,7 +116,7 @@ export default class Recommendations extends Component {
                         </Card>
 
                         <Card>
-                            <CardItem cardBody>
+                            <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                                 <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
                                     <View style={styles.middle}>
                                         <Text style={styles.context}>Lugard Road</Text>
@@ -183,6 +191,22 @@ export default class Recommendations extends Component {
 
                     {/* </Container> */}
                 </ScrollView>
+                <Modal
+                    animationType="slide"
+                    transparent={false}
+                    visible={this.state.modalVisible}
+                    >
+                    <View style={{marginTop: 22}}>
+                        <Text>Hello World!</Text>
+
+                        <TouchableHighlight
+                            onPress={() => {
+                            this.setModalVisible(!this.state.modalVisible);
+                            }}>
+                            <Text>Hide Modal</Text>
+                        </TouchableHighlight>
+                    </View>
+                </Modal>
             </View>
 
 
