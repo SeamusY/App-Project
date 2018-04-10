@@ -6,15 +6,41 @@ import { Content, Card, CardItem, Text } from 'native-base';
 
 export default class Recommendations extends Component {
 
+    state = {
+        modalVisible: false,
+      };
+    
+      setModalVisible(visible) {
+        this.setState({modalVisible: visible});
+      }
       
 
     render() {
         return (
+            <View>
+
+                 <Modal
+                    animationType="slide"
+                    transparent={false}
+                    visible={this.state.modalVisible}
+                    >
+                    <View style={{marginTop: 22}}>
+                        <Text>Hello World!</Text>
+
+                        <TouchableHighlight
+                            button onPress={() => {
+                            this.setModalVisible(!this.state.modalVisible);
+                            }}>
+                            <Text>Hide Modal</Text>
+                        </TouchableHighlight>
+                    </View>
+                </Modal>
+
             <ScrollView style={{ flexGrow: 1 }}>
 
                 <Content style={{ flex: 1 }}>
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Braemar Hill</Text>
@@ -25,7 +51,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/instagrampeir.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Instagram Pier</Text>
@@ -36,7 +62,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Hopewell Center Elavator</Text>
@@ -46,7 +72,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/mansion.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Montane Mansion</Text>
@@ -56,7 +82,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Dragon's Back</Text>
@@ -66,7 +92,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/mongkok.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Mong Kok Streets</Text>
@@ -76,7 +102,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/templestreet.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Temple Street</Text>
@@ -86,7 +112,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/central.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Central District</Text>
@@ -96,7 +122,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/chinacity.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>China City Building</Text>
@@ -106,7 +132,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/choihung.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Choi Hung Estates</Text>
@@ -116,7 +142,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Jockey Club Innovation Tower</Text>
@@ -126,7 +152,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/midlevel.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Mid-Level Escalator </Text>
@@ -136,7 +162,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/swimmingshed.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Sai Wan Swimming Shed</Text>
@@ -146,7 +172,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/replusebay.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Repulse Bay</Text>
@@ -156,7 +182,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                     <Card>
-                        <CardItem cardBody>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/lugardroad.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>Lugard Road</Text>
@@ -168,6 +194,7 @@ export default class Recommendations extends Component {
                 </Content>
                 {/* </Container> */}
             </ScrollView>
+            </View>
 
 
         );
