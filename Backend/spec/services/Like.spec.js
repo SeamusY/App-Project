@@ -1,4 +1,4 @@
-const { Like, User, Photo } = require('../../services');
+const { LikeService, UserService, PhotoService } = require('../../services');
 const { LIKES, USERS, PHOTOS } = require('../../services/tables');
 const knexFile = require('../../knexfile')['testing'];
 const knex = require('knex')(knexFile);
@@ -8,7 +8,7 @@ describe('class Like in services', () => {
     let userId, photoId, like;
 
     beforeEach((done) => {
-        user = new User(knex);
+        user = new UserService(knex);
         knex(USERS).del()
             .then(() => {
                 user.create({
@@ -19,7 +19,7 @@ describe('class Like in services', () => {
                     .then(() => user.list())
                     .then((data) => { userId = data[0].id; })
                     .then(() => {
-                        photo = new Photo(knex);
+                        photo = new PhotoService(knex);
                         knex(PHOTOS).del()
                             .then(() => {
                                 photo.create({
@@ -36,7 +36,7 @@ describe('class Like in services', () => {
                                         photoId = data[0].id;
                                     })
                                     .then( () => {
-                                        like = new Like(knex);
+                                        like = new LikeService(knex);
                                         knex(LIKES).del().then(() => done());
                                     })
                             })

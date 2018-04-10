@@ -1,6 +1,6 @@
 const USERS = require('./tables').USERS;
 
-module.exports = class User {
+module.exports = class UserService {
     constructor(knex) {
         // this.userId = userId;
         this.knex = knex;

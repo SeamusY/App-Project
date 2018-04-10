@@ -2,7 +2,7 @@ const PHOTOS = require('./tables').PHOTOS;
 const PHOTOTAGS = require('./tables').PHOTOTAGS;
 const LIKES = require('./tables').LIKES;
 
-module.exports = class Photo {
+module.exports = class PhotoService {
     constructor(knex) {
         this.knex = knex;
     }

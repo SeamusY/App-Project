@@ -1,6 +1,6 @@
 const EVENTS = require('./tables').EVENTS;
 
-module.exports = class Event {
+module.exports = class EventService {
     constructor(knex) {
         this.knex = knex;
     }
