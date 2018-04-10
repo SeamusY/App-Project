@@ -62,7 +62,7 @@ export default class DeckSwiperExample extends Component {
                     visible={this.state.modalVisible}
                 >
                     <View style={{ marginTop: 22 }}>
-                        <Text>Hello World!</Text>
+                        
 
                         <TouchableHighlight
                             button onPress={() => {

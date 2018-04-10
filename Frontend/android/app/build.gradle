@@ -98,7 +98,7 @@ android {
         config {
             keyAlias 'android'
             keyPassword 'android'
-            storeFile file('/Users/fung/Desktop/gophoter/Frontend/android/keystores/debug.jks')
+            storeFile file('/Users/hugocheng/Desktop/gophoter/Frontend/android/keystores/debug.jks')
             storePassword 'android'
         }
     }
