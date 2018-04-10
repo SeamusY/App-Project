@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { ImageBackground, Image, ScrollView, View, StyleSheet, Modal} from 'react-native';
-import { Content, Card, CardItem, Text, Left, Right, Body, Icon, Button} from 'native-base';
+import { Content, Card, CardItem, Text, Left, Right, Body, Thumbnail, Icon, Button} from 'native-base';
 
 const RecommendArray = [
     {
         Photo: require('../../assets/Images/test.jpg'),
-        Description: 'Braemar Hill'
+        Description: 'Braemar Hill',
+        Photographer: 'abc'
     },
     {
         Photo: require('../../assets/Images/instagrampeir.jpg'),
-        Description: 'Instagram Pier'
+        Description: 'Instagram Pier',
+        Photographer: 'def'
     },
     {
         Photo: require('../../assets/Images/test.jpg'),
@@ -70,17 +72,19 @@ export default class Recommendations extends Component {
 
     state = {
         modalVisible: false,
+        Objnumber: 0
       };
     
-      setModalVisible(visible) {
+      setModalVisible(visible, i) {
         this.setState({modalVisible: visible});
+        this.state.Objnumber = i
       }
 
       render_Recommendation() {
         return RecommendArray.map(function(rec, i){
           return(
             <Card key = {i}>
-                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
+                        <CardItem cardBody button onPress={()=>this.setModalVisible(true, i)}>
                             <ImageBackground source={rec.Photo} style={styles.imagebackground}>
                                 <View style={styles.middle}>
                                     <Text style={styles.context}>{rec.Description}</Text>
@@ -104,17 +108,17 @@ export default class Recommendations extends Component {
                     visible={this.state.modalVisible}
                 >
 
-                    <Card >
+                    <Card>
 
                         <CardItem cardBody>
-                            <Image style={styles.modalimage} source={require('../../assets/Images/test.jpg')} />
+                            <Image style={styles.modalimage} source={RecommendArray[this.state.Objnumber].Photo} />
                         </CardItem>
                         <CardItem>
                             <Left>
-                                <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/04697c22c18a6b9911e1789414581bf4/5B63C1A3/t51.2885-19/s150x150/20479307_259226047906088_8664596465227661312_a.jpg' }} />
+                                
                                 <Body>
-                                    <Text style={styles.modaltext}>Braemar Hill</Text>
-                                    <Text note> By Ashley Grait</Text>
+                                    <Text style={styles.modaltext}>{RecommendArray[this.state.Objnumber].Description}</Text>
+                                    <Text note> {RecommendArray[this.state.Objnumber].Photographer}</Text>
                                 </Body>
                             </Left>
                             <Right>
@@ -128,7 +132,7 @@ export default class Recommendations extends Component {
 
 
                     <Button style={styles.modalbutton} full info onPress={() => {
-                        this.setModalVisible(!this.state.modalVisible);
+                        this.setModalVisible(false, 0);
                     }}>
                         <Icon name="arrow-back" />
                         <Text>Recommendations</Text>
