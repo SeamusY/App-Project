@@ -49,7 +49,7 @@ class UploadTab extends Component {
 
         // You can also display the image using data:
         // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-        
+
         this.setState({
           imageSource: source,
           data: response
@@ -96,7 +96,6 @@ class UploadTab extends Component {
           </TouchableOpacity>
 
           {this.renderUpload()}
-
         </View>
       </Container>
     );
@@ -131,7 +130,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "#fff"
   },
-
 
   image: {
     width: 200,

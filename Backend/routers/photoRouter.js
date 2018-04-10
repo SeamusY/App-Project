@@ -4,14 +4,14 @@ const fs = require('fs');
 const path = require('path');
 
 isDirExist = (req, res, next) => {
-  fs.stat(path.join(__dirname,`../uploads/${req.params.id}`), (err) => {
-    console.log('1',err)
+  fs.stat(path.join(__dirname, `../uploads/${req.params.id}`), (err) => {
+    console.log('1', err)
     if (!err) {
       next();
     }
-    fs.mkdir(path.join(__dirname,`../uploads/${req.params.id}`), (err) => {
-      if(err) {
-        console.log('2',err)
+    fs.mkdir(path.join(__dirname, `../uploads/${req.params.id}`), (err) => {
+      if (err) {
+        console.log('2', err)
       }
       next()
     })
@@ -31,7 +31,6 @@ const storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 let router = express.Router();
-
 
 router.post('/:id', isDirExist, upload.single('image'), function (req, res, next) {
   // req.file is the `avatar` file
