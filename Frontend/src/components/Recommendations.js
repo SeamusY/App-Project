@@ -5,64 +5,65 @@ import { Content, Card, CardItem, Text, Left, Right, Body, Thumbnail, Icon, Butt
 const RecommendArray = [
     {
         Photo: require('../../assets/Images/test.jpg'),
-        Description: 'Braemar Hill',
+        Location: 'Braemar Hill',
         Photographer: 'abc'
     },
     {
         Photo: require('../../assets/Images/instagrampeir.jpg'),
-        Description: 'Instagram Pier',
+        Location: 'Instagram Pier',
         Photographer: 'def'
     },
     {
         Photo: require('../../assets/Images/test.jpg'),
-        Description: 'Hopewell Center Elavator'
+        Location: 'Hopewell Center Elavator',
+        Photographer: 'Hugo'
     },
     {
         Photo: require('../../assets/Images/mansion.jpg'),
-        Description: 'Montane Mansion'
+        Location: 'Montane Mansion'
     },
     {
         Photo: require('../../assets/Images/test.jpg'),
-        Description: 'Dragon\'s Back'
+        Location: 'Dragon\'s Back'
     },
     {
         Photo: require('../../assets/Images/mongkok.jpg'),
-        Description: 'Mong Kok Streets'
+        Location: 'Mong Kok Streets'
     },
     {
         Photo: require('../../assets/Images/templestreet.jpg'),
-        Description: 'Temple Street'
+        Location: 'Temple Street'
     },
     {
         Photo: require('../../assets/Images/central.jpg'),
-        Description: 'Central District'
+        Location: 'Central District'
     },
     {
         Photo: require('../../assets/Images/chinacity.jpg'),
-        Description: 'China City Building'
+        Location: 'China City Building'
     },
     {
         Photo: require('../../assets/Images/image1.jpg'),
-        Description: 'Jockey Club Innovation Tower'
+        Location: 'Jockey Club Innovation Tower'
     },
     {
         Photo: require('../../assets/Images/midlevel.jpg'),
-        Description: 'Mid-Level Escalator'
+        Location: 'Mid-Level Escalator'
     },
     {
         Photo: require('../../assets/Images/choihung.jpg'),
-        Description: 'Choi Hung Estates'
+        Location: 'Choi Hung Estates'
     },
     {
         Photo: require('../../assets/Images/swimmingshed.jpg'),
-        Description: 'Sai Wan Swimming Shed'},
+        Location: 'Sai Wan Swimming Shed'},
     {
         Photo: require('../../assets/Images/replusebay.jpg'),
-        Description: 'Repluse Bay'
+        Location: 'Repluse Bay'
     },
     {
         Photo: require('../../assets/Images/lugardroad.jpg'),
-        Description: 'Lugard Road'
+        Location: 'Lugard Road'
     }
     
 
@@ -87,7 +88,7 @@ export default class Recommendations extends Component {
                         <CardItem cardBody button onPress={()=>this.setModalVisible(true, i)}>
                             <ImageBackground source={rec.Photo} style={styles.imagebackground}>
                                 <View style={styles.middle}>
-                                    <Text style={styles.context}>{rec.Description}</Text>
+                                    <Text style={styles.context}>{rec.Location}</Text>
                              
                                 </View>
                             </ImageBackground>
@@ -117,7 +118,7 @@ export default class Recommendations extends Component {
                             <Left>
                                 
                                 <Body>
-                                    <Text style={styles.modaltext}>{RecommendArray[this.state.Objnumber].Description}</Text>
+                                    <Text style={styles.modaltext}>{RecommendArray[this.state.Objnumber].Location}</Text>
                                     <Text note> {RecommendArray[this.state.Objnumber].Photographer}</Text>
                                 </Body>
                             </Left>
