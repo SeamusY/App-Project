@@ -163,7 +163,7 @@ export default class Recommendations extends Component {
                     </Card>
 
                 </Content>
-                {/* </Container> */}
+               
             </ScrollView>
 
 
