@@ -171,6 +171,22 @@ const styles = StyleSheet.create({
         height: 200,
         flex: 1
     },
+    modalimage: {
+        height: 500,
+        flex: 1
+    },
+    modaltext: {
+        fontSize: 20
+    },
+    direction: {
+        fontSize: 20,
+        color: "#ff8396"
+    },
+    modalbutton: {
+        backgroundColor: '#ff8396',
+        marginBottom: 16
+    }
+    
 });
 
                     {/* <Card>
