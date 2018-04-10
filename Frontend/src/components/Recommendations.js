@@ -1,145 +1,139 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import { ImageBackground, Image, ScrollView, View, StyleSheet, TouchableHighlight, Modal } from 'react-native';
-import { Content, Card, CardItem, Body, Text, Left, Right, Thumbnail, Icon, Button } from 'native-base';
-=======
-import { ImageBackground, Image, ScrollView, View, StyleSheet, Modal} from 'react-native';
-import { Content, Card, CardItem, Text, Left, Right, Thumbnail, Body, Icon, Button} from 'native-base';
->>>>>>> telford-b
+import { ImageBackground, Image, ScrollView, View, StyleSheet, Modal } from 'react-native';
+import { Content, Card, CardItem, Text, Left, Right, Thumbnail, Body, Icon, Button } from 'native-base';
 
 const RecommendArray = [
     {
         Photo: require('../../assets/Images/test.jpg'),
-        Description: 'Braemar Hill'
+        Location: 'Braemar Hill',
+        Photographer: 'Steve Devish'
+
     },
     {
         Photo: require('../../assets/Images/instagrampeir.jpg'),
-        Description: 'Instagram Pier'
+        Location: 'Instagram Pier',
+        Photographer: 'Hugo Cheng'
     },
     {
         Photo: require('../../assets/Images/test.jpg'),
-        Description: 'Hopewell Center Elavator'
+        Location: 'Hopewell Center Elavator',
+        Photographer: 'Gordan Chung'
     },
     {
         Photo: require('../../assets/Images/mansion.jpg'),
-        Description: 'Montane Mansion'
+        Location: 'Montane Mansion',
+        Photographer: 'Thomas Lee'
     },
     {
         Photo: require('../../assets/Images/test.jpg'),
-        Description: 'Dragon\'s Back'
+        Location: 'Dragon\'s Back',
+        Photographer: 'Erik Hendenfalk'
     },
     {
         Photo: require('../../assets/Images/mongkok.jpg'),
-        Description: 'Mong Kok Streets'
+        Location: 'Mong Kok Streets',
+        Photographer: 'Rex Wong'
+
     },
     {
         Photo: require('../../assets/Images/templestreet.jpg'),
-        Description: 'Temple Street'
+        Location: 'Temple Street',
+        Photographer: 'Tim Ching'
     },
     {
         Photo: require('../../assets/Images/central.jpg'),
-        Description: 'Central District'
+        Location: 'Central District',
+        Photographer: 'Hugo Cheng'
     },
     {
         Photo: require('../../assets/Images/chinacity.jpg'),
-        Description: 'China City Building'
+        Location: 'China City Building',
+        Photographer: 'Jessica Chen'
     },
     {
         Photo: require('../../assets/Images/image1.jpg'),
-        Description: 'Jockey Club Innovation Tower'
+        Location: 'Jockey Club Innovation Tower',
+        Photographer: 'Rex Wong'
     },
     {
         Photo: require('../../assets/Images/midlevel.jpg'),
-        Description: 'Mid-Level Escalator'
+        Location: 'Mid-Level Escalator',
+        Photographer: 'Hugo Cheng'
+
     },
     {
         Photo: require('../../assets/Images/choihung.jpg'),
-        Description: 'Choi Hung Estates'
+        Location: 'Choi Hung Estates',
+        Photographer: 'Hugo Cheng'
     },
     {
         Photo: require('../../assets/Images/swimmingshed.jpg'),
-        Description: 'Sai Wan Swimming Shed'},
+        Location: 'Sai Wan Swimming Shed',
+        Photographer: 'Alistair Tam'
+    },
     {
         Photo: require('../../assets/Images/replusebay.jpg'),
-        Description: 'Repluse Bay'
+        Location: 'Repluse Bay',
+        Photographer: 'Denise Cheng'
     },
     {
         Photo: require('../../assets/Images/lugardroad.jpg'),
-        Description: 'Lugard Road'
+        Location: 'Lugard Road',
+        Photographer: 'Erik Hendenfalk'
     }
-    
-
 ]
+
+
+
+
 
 export default class Recommendations extends Component {
 
     state = {
         modalVisible: false,
-<<<<<<< HEAD
     };
 
     setModalVisible(visible) {
         this.setState({ modalVisible: visible });
     }
 
-=======
-      };
-    
-      setModalVisible(visible) {
-        this.setState({modalVisible: visible});
-      }
+    render_Recommendation() {
+        return RecommendArray.map(function (rec, i) {
+            return (
+                <Card key={i}>
+                    <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
+                        <ImageBackground source={rec.Photo} style={styles.imagebackground}>
+                            <View style={styles.middle}>
+                                <Text style={styles.context}>{rec.Location}</Text>
 
-      render_Recommendation() {
-        return RecommendArray.map(function(rec, i){
-          return(
-            <Card key = {i}>
-                        <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
-                            <ImageBackground source={rec.Photo} style={styles.imagebackground}>
-                                <View style={styles.middle}>
-                                    <Text style={styles.context}>{rec.Description}</Text>
-                             
-                                </View>
-                            </ImageBackground>
-                        </CardItem>
-                    </Card>
-          );
+                            </View>
+                        </ImageBackground>
+                    </CardItem>
+                </Card>
+            );
         }, this);
-      }
-      
->>>>>>> telford-b
+    }
+
 
     render() {
         return (
             <View>
 
-<<<<<<< HEAD
                 <Modal
-=======
-                  <Modal
->>>>>>> telford-b
                     animationType="slide"
                     transparent={false}
                     visible={this.state.modalVisible}
                 >
-<<<<<<< HEAD
 
-                    <Card >
-
+                    <Card>
                         <CardItem cardBody>
-                            <Image style={styles.modalimage} source={require('../../assets/Images/test.jpg')} />
-=======
-
-                    <Card >
-
-                        <CardItem cardBody>
-                            <Image style={styles.modalimage} source={require('../../assets/Images/test.jpg')} />
+                            <Image style={styles.modalimage} source={rec.Photo} />
                         </CardItem>
                         <CardItem>
                             <Left>
-                                <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/04697c22c18a6b9911e1789414581bf4/5B63C1A3/t51.2885-19/s150x150/20479307_259226047906088_8664596465227661312_a.jpg' }} />
                                 <Body>
-                                    <Text style={styles.modaltext}>Braemar Hill</Text>
-                                    <Text note> By Ashley Grait</Text>
+                                    <Text style={styles.modaltext}>{rec.Location}</Text>
+                                    <Text note>{rec.Photographer}</Text>
                                 </Body>
                             </Left>
                             <Right>
@@ -161,22 +155,23 @@ export default class Recommendations extends Component {
 
                 </Modal>
 
-            <ScrollView style={{ flexGrow: 1 }}>
+                <ScrollView style={{ flexGrow: 1 }}>
 
-                <Content style={{ flex: 1 }}>
+                    <Content style={{ flex: 1 }}>
 
-                {this.render_Recommendation()}
+                        {this.render_Recommendation()}
 
 
-                </Content>
-                {/* </Container> */}
-            </ScrollView>
+                    </Content>
+                    {/* </Container> */}
+                </ScrollView>
             </View>
 
 
         );
     }
 }
+
 
 const styles = StyleSheet.create({
     context: {
@@ -211,10 +206,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#ff8396',
         marginBottom: 16
     }
-    
+
 });
 
-                    {/* <Card>
+{/* <Card>
                         <CardItem cardBody button button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/test.jpg')} style={styles.imagebackground}>
                                 <View style={styles.middle}>
@@ -232,7 +227,6 @@ const styles = StyleSheet.create({
                                     <Text style={styles.context}>Instagram Pier</Text>
                                 </View>
                             </ImageBackground>
->>>>>>> telford-b
                         </CardItem>
                         <CardItem>
                             <Left>
@@ -316,153 +310,6 @@ const styles = StyleSheet.create({
                             </CardItem>
                         </Card>
 
-<<<<<<< HEAD
-                        <Card>
-                            <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/mongkok.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Mong Kok Streets</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                        <Card>
-                            <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/templestreet.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Temple Street</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                        <Card>
-                            <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/central.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Central District</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                        <Card>
-                            <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/chinacity.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>China City Building</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                        <Card>
-                            <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/choihung.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Choi Hung Estates</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                        <Card>
-                            <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/image1.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Jockey Club Innovation Tower</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                        <Card>
-                            <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/midlevel.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Mid-Level Escalator </Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                        <Card>
-                            <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/swimmingshed.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Sai Wan Swimming Shed</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                        <Card>
-                            <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/replusebay.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Repulse Bay</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                        <Card>
-                            <CardItem cardBody button onPress={() => this.setModalVisible(true)}>
-                                <ImageBackground source={require('../../assets/Images/lugardroad.jpg')} style={styles.imagebackground}>
-                                    <View style={styles.middle}>
-                                        <Text style={styles.context}>Lugard Road</Text>
-                                    </View>
-                                </ImageBackground>
-                            </CardItem>
-                        </Card>
-
-                    </Content>
-
-                </ScrollView>
-            </View>
-
-
-        );
-    }
-}
-
-const styles = StyleSheet.create({
-    context: {
-        fontFamily: 'Pacifico',
-        color: '#fff',
-        fontSize: 25,
-        textAlign: 'center',
-        padding: 80
-    },
-    middle: {
-
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-
-    imagebackground: {
-        height: 200,
-        flex: 1
-    },
-    modalimage: {
-        height: 500,
-        flex: 1
-    },
-    modaltext: {
-        fontSize: 20
-    },
-    direction: {
-        fontSize: 20,
-        color: "#ff8396"
-    },
-    modalbutton: {
-        backgroundColor: '#ff8396',
-        marginBottom: 16
-    }
-
-});
-=======
                     <Card>
                         <CardItem cardBody button onPress={()=>this.setModalVisible(true)}>
                             <ImageBackground source={require('../../assets/Images/lugardroad.jpg')} style={styles.imagebackground}>
@@ -472,4 +319,3 @@ const styles = StyleSheet.create({
                             </ImageBackground>
                         </CardItem>
                     </Card> */}
->>>>>>> telford-b
