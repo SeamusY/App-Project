@@ -49,7 +49,7 @@ class UploadTab extends Component {
 
         // You can also display the image using data:
         // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
+        
         this.setState({
           imageSource: source,
           data: response
@@ -86,23 +86,19 @@ class UploadTab extends Component {
   }
   render() {
     return (
-     <Container>
-      <View style={styles.container}>
-        <Text style={styles.logo}>Go Photer</Text>
-        <TouchableOpacity onPress={() => this.selectPhoto()}>
-          <Image style={styles.image}
-            source={this.state.imageSource == null ? require('../../../assets/Images/upload.png') : this.state.imageSource}
-          />
-          {/* <Image style={styles.image} />
-          <Text style={styles.text}>Select</Text> */}
-        </TouchableOpacity>
+      <Container>
+        <View style={styles.container}>
+          <Text style={styles.logo}>Go Photer</Text>
+          <TouchableOpacity onPress={() => this.selectPhoto()}>
+            <Image style={styles.image}
+              source={this.state.imageSource == null ? require('../../../assets/Images/upload.png') : this.state.imageSource}
+            />
+          </TouchableOpacity>
 
-        {this.renderUpload()}
+          {this.renderUpload()}
 
-
-      </View>
+        </View>
       </Container>
-
     );
   }
 }
@@ -128,8 +124,6 @@ const styles = StyleSheet.create({
     fontSize: 60,
     color: '#ff8396',
     paddingTop: 30,
-   
-
   },
 
   text: {
