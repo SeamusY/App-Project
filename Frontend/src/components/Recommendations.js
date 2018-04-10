@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ImageBackground, ScrollView, View, StyleSheet, TouchableHighlight, Modal} from 'react-native';
-import { Content, Card, CardItem, Text } from 'native-base';
+import { ImageBackground, Image, ScrollView, View, StyleSheet, Modal} from 'react-native';
+import { Content, Card, CardItem, Text, Left, Right, Thumbnail, Body, Icon, Button} from 'native-base';
 
 const RecommendArray = [
     {
@@ -98,21 +98,42 @@ export default class Recommendations extends Component {
         return (
             <View>
 
-                 <Modal
+                  <Modal
                     animationType="slide"
                     transparent={false}
                     visible={this.state.modalVisible}
-                    >
-                    <View style={{marginTop: 22}}>
-                        <Text>Hello World!</Text>
+                >
 
-                        <TouchableHighlight
-                            button onPress={() => {
-                            this.setModalVisible(!this.state.modalVisible);
-                            }}>
-                            <Text>Hide Modal</Text>
-                        </TouchableHighlight>
-                    </View>
+                    <Card >
+
+                        <CardItem cardBody>
+                            <Image style={styles.modalimage} source={require('../../assets/Images/test.jpg')} />
+                        </CardItem>
+                        <CardItem>
+                            <Left>
+                                <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/04697c22c18a6b9911e1789414581bf4/5B63C1A3/t51.2885-19/s150x150/20479307_259226047906088_8664596465227661312_a.jpg' }} />
+                                <Body>
+                                    <Text style={styles.modaltext}>Braemar Hill</Text>
+                                    <Text note> By Ashley Grait</Text>
+                                </Body>
+                            </Left>
+                            <Right>
+
+                                <Text style={styles.direction}>Directions</Text>
+                                <Text note>2.6K</Text>
+                            </Right>
+
+                        </CardItem>
+                    </Card>
+
+
+                    <Button style={styles.modalbutton} full info onPress={() => {
+                        this.setModalVisible(!this.state.modalVisible);
+                    }}>
+                        <Icon name="arrow-back" />
+                        <Text>Recommendations</Text>
+                    </Button>
+
                 </Modal>
 
             <ScrollView style={{ flexGrow: 1 }}>
