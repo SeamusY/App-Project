@@ -1,20 +1,18 @@
+const login = require('./google');
 const express = require('express');
 const app = express();
-const router = express.Router();
 
-router.get("/:id", (req, res) => {
-    console.log(req.route);
-});
-
-router.post("/:id",(req, res) => {
-    console.log(req);
-    console.log(req.route);
-    res.send("Some File");
-});
-router.post("/post",(req, res) => {
-    console.log(req);
-    console.log(req.body);
-    res.send("Some File");
-});
-
-module.exports = router;
+export default class Route{
+    constructor(option){
+        this.email = option.email;
+        this.id = option.user;
+    }
+    postRouter() {
+        router.use("/user", login.getRouter());
+        return router;
+    }
+    getRouter(){
+        router.use("/user", login.getRouter());
+        return router;
+    }
+}

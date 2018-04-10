@@ -63,7 +63,7 @@ const AppStackNavigator = StackNavigator({
   }
 },
   {
-    initialRouteName: 'Login'
+    initialRouteName: 'Main'
   }
 );
 

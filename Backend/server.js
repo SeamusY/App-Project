@@ -1,3 +1,5 @@
+import JwtStrategy from '../../express-oauth/util/auth/JwtStrategy';
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = require("./config/router");
@@ -7,20 +9,17 @@ const cors = require('cors');
 const app = express();
 
 const knexFile = require('./knexfile')[NODE_ENV]
-const knex = require('knex')(knexFile)
-
+const knex = require('knex')(knexFile);
+const users;
+const jwt = JwtStrategy()
 app.use(cors());
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.use('/user', guard, router);
 
-// app.use("/user",);
+app.use('/auth', router.getRouter());
 
-app.get('/', router, (req, res) => {
-    res.send('working');
-})
 app.listen(PORT, () => console.log('Listening on :', PORT));
 
