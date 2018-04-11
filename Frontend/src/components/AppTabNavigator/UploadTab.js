@@ -68,7 +68,11 @@ class UploadTab extends Component {
       }, [
           { name: 'image', filename: this.state.data.fileName, type: this.state.data.type, data: this.state.data.data }
         ]).then((resp) => {
-          this.setState({ loading: false })
+          this.setState({ 
+            loading: false,
+            imageSource: null,
+            data: null
+          })
         }).catch((err) => {
           // ...
         })
