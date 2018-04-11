@@ -5,7 +5,6 @@ const path = require('path');
 
 isDirExist = (req, res, next) => {
   fs.stat(path.join(__dirname, `../uploads/${req.params.id}`), (err) => {
-    console.log('1', err)
     if (!err) {
       next();
     }
@@ -19,7 +18,7 @@ isDirExist = (req, res, next) => {
 }
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    // console.log(req);
+    console.log(req);
     cb(null, path.join(`uploads/${req.params.id}`))
   },
   filename: function (req, file, cb) {
