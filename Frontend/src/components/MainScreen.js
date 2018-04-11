@@ -25,10 +25,10 @@ class MainScreen extends Component {
 
         return {
             headerLeft:
-                <Icon style={{ paddingLeft: 10 }} name="ios-person" onPress={() => navigation.navigate('Profile')} />,
+            <Icon style={{ paddingLeft: 10 }} name="ios-person" onPress={() => navigation.navigate('Profile')} />,
             headerRight:
 
-                <Icon style={{ paddingRight: 10 }} name="search" onPress={() => navigation.navigate('Search')} />
+            <Icon style={{ paddingRight: 10 }} name="search" onPress={() => navigation.navigate('Search')} />
 
         }
     }
@@ -78,16 +78,16 @@ const AppTabNavigator = TabNavigator({
             tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-paper" />) }
         }
     },
-    RecommendationsTab: {
-        screen: RecommendationsTab,
-        navigationOptions: {
-            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-bulb" />) }
-        }
-    },
     UploadTab: {
         screen: UploadTab,
         navigationOptions: {
             tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-camera" />) }
+        }
+    },
+    RecommendationsTab: {
+        screen: RecommendationsTab,
+        navigationOptions: {
+            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-bulb" />) }
         }
     }
 }, {
