@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { Container, Content, List, ListItem, Thumbnail, Text, Body, Right, Button } from 'native-base';
 import { Image, StyleSheet, Modal } from 'react-native';
-import { View, DeckSwiper, Container, Card, CardItem, Thumbnail, Text, Left, Right, Body, Button, List, ListItem, Icon} from 'native-base';
+import { View, DeckSwiper, Container, Content, Card, CardItem, Thumbnail, Text, Left, Right, Body, Button, List, ListItem, Icon} from 'native-base';
 
 export default class Events extends Component {
 
@@ -16,7 +16,7 @@ setModalVisible(visible) {
   render() {
     return (
       <Container>
-
+                 <Content>
                   <View>
     
                     <Modal
@@ -187,6 +187,7 @@ setModalVisible(visible) {
           
        
        </View>
+       </Content>
       </Container>
     );
   }

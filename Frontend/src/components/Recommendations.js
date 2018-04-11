@@ -15,28 +15,28 @@ const RecommendArray = [
         Location: 'Instagram Pier',
         Photographer: 'By Hugo Cheng',
         Distance: '1.5K',
-        Description: 'One of the best open area in the city, you will meet a lot of instagrammers there, best to shoot during golden hour'
+        Description: 'If you want to take a break off the busy city, Instagram Pier is a great place to chill out after school or work. You will meet a lot of instagrammers there, best to shoot during golden hour'
     },
     {
         Photo: require('../../assets/Images/test.jpg'),
         Location: 'Hopewell Center Elavator',
         Photographer: 'By Gordan Chung',
         Distance: '7.6K',
-        Description: 'From the 17th floor to the 64th floor, you will be able to get some awesome footage, best to bring a wide angle lens'
+        Description: 'The elvator will take you from the 17th floor to the 64th floor, you will be able to get some awesome footage of the Hong Kong Island, best to bring a wide angle lens'
     },
     {
         Photo: require('../../assets/Images/mansion.jpg'),
         Location: 'Montane Mansion',
         Photographer: 'By Thomas Lee',
         Distance: '4.6K',
-        Description: 'Also known as the monster buidling, you will see a lot of photographer haning around and waiting to shoot long exposure during night time '
+        Description: 'Also known as the monster buidling, one of the most iconic photography shootout spot in Hong kong, best to shoot during night. '
     },
     {
         Photo: require('../../assets/Images/test.jpg'),
         Location: 'Dragon\'s Back',
         Photographer: 'By Erik Hendenfalk',
         Distance: '8.6K',
-        Description: 'A relatively easy hike, the view is sensational, seriosuly bring a drone!'
+        Description: 'A relatively easy hike, the view is sensational on top of the hill, seriosuly bring a drone!'
 
     },
     {
@@ -50,7 +50,7 @@ const RecommendArray = [
     {
         Photo: require('../../assets/Images/templestreets.jpg'),
         Location: 'Temple Street',
-        Photographer: 'By Tim Ching',
+        Photographer: 'By Alistair Lam',
         Distance: '1.6K',
         Description: 'There are a couple of rooftops,carpark opposite the temple street allow you to capture some beautiful street photography'
     },
@@ -59,21 +59,21 @@ const RecommendArray = [
         Location: 'Central District',
         Photographer: 'By Hugo Cheng',
         Distance: '2.6K',
-        Description:'There are so many places that you can shoot in central, we highly recommend to go to Tamar Park during sunset and night hour'
+        Description:'There are so many places that you can shoot in Central District, we highly recommend you to go to Tamar Park during sunset and night hour'
     },
     {
         Photo: require('../../assets/Images/chinacitybuilding.jpg'),
         Location: 'China City Building',
         Photographer: 'By Jessica Chen',
         Distance: '1.8K',
-        Description: 'If you are into symmetrical photography, this is a place where you can go to point your camera upwards and capture that moment '
+        Description: 'If you are into symmetrical photography, this is a place where you can go to point your camera upwards and capture that majestic moment '
     },
     {
         Photo: require('../../assets/Images/image1.jpg'),
         Location: 'Jockey Club Innovation Tower',
         Photographer: 'By Rex Wong',
         Distance: '3.2K',
-        Description: 'A great place for interior and portriat photography, the architecture of the buidling is simply amazing '
+        Description: 'A great place for interior and portriat photography, the architecture of the buidling is simply amazing. '
     },
     {
         Photo: require('../../assets/Images/midlevel.jpg'),
@@ -88,28 +88,28 @@ const RecommendArray = [
         Location: 'Choi Hung Estates',
         Photographer: 'By Hugo Cheng',
         Distance: '6.6K',
-        Description: 'Located on the top of the carpark. This is usually a very crowded place, try to go during weekdays.'
+        Description: 'Choi Hung Estates are surrounded with a lot of colorful buildings and basketball court, make it one of the most popular place for photography  .'
     },
     {
         Photo: require('../../assets/Images/swimmingshed.jpg'),
         Location: 'Swimming Shed',
         Photographer: 'By Alistair Tam',
         Distance: '1.6K',
-        Description: 'An amazing sunset spot hidden in Sai Wan, it required a 15 mins walk to reach there from Kennedy Town,'
+        Description: 'A sunset spot hidden in Sai Wan, it required a 15 mins walk to reach there from Kennedy Town.'
     },
     {
         Photo: require('../../assets/Images/replusebay.jpg'),
         Location: 'Repluse Bay',
         Photographer: 'By Denise Cheng',
         Distance: '4.6K',
-        Description: 'A great place for relexation and portrait photography, best to bring a 50mm lens'
+        Description: 'A great place for relexation and portrait photography, best to bring a portriat lens'
     },
     {
         Photo: require('../../assets/Images/lugardroad.jpg'),
         Location: 'Lugard Road',
         Photographer: ' By Erik Hendenfalk',
         Distance: '3.1K',
-        Description: 'Breath-taking view of Hong Kong city, try to stay there until it gets dark, you wont regret it!'
+        Description: ' A breath-taking view of Hong Kong city, try to stay there until it gets dark, you wont regret it!'
     }
 ]
 
