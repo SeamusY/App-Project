@@ -5,7 +5,6 @@ import {
   Text,
   View,
   ScrollView
-
 } from 'react-native';
 import { Icon } from 'native-base';
 import Carousel from '../Carousel'
@@ -22,7 +21,10 @@ class HomeTab extends Component {
 
   render() {
     return (
-      <Carousel />
+    <ScrollView>
+     <Carousel/>
+
+     </ScrollView>
     );
   }
 }

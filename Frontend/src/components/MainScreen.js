@@ -18,6 +18,7 @@ import UploadTab from './AppTabNavigator/UploadTab';
 import LoginScreen from './LoginScreen';
 
 
+
 class MainScreen extends Component {
 
     static navigationOptions = ({ navigation }) => {

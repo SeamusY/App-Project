@@ -12,39 +12,12 @@ let images = [
     require('../../../assets/Images/image1.jpg'),
     require('../../../assets/Images/image2.jpg'),
     require('../../../assets/Images/image3.jpg'),
-    require('../../../assets/Images/image4.jpg'),
-    require('../../../assets/Images/image5.jpg'),
-    require('../../../assets/Images/image6.jpg'),
-    require('../../../assets/Images/image7.jpg'),
-    require('../../../assets/Images/image8.jpg'),
-    require('../../../assets/Images/image9.jpg'),
     require('../../../assets/Images/image1.jpg'),
     require('../../../assets/Images/image2.jpg'),
     require('../../../assets/Images/image3.jpg'),
-    require('../../../assets/Images/image4.jpg'),
-    require('../../../assets/Images/image5.jpg'),
-    require('../../../assets/Images/image6.jpg'),
-    require('../../../assets/Images/image7.jpg'),
-    require('../../../assets/Images/image8.jpg'),
-    require('../../../assets/Images/image9.jpg'),
     require('../../../assets/Images/image1.jpg'),
     require('../../../assets/Images/image2.jpg'),
     require('../../../assets/Images/image3.jpg'),
-    require('../../../assets/Images/image4.jpg'),
-    require('../../../assets/Images/image5.jpg'),
-    require('../../../assets/Images/image6.jpg'),
-    require('../../../assets/Images/image7.jpg'),
-    require('../../../assets/Images/image8.jpg'),
-    require('../../../assets/Images/image9.jpg'),
-    require('../../../assets/Images/image1.jpg'),
-    require('../../../assets/Images/image2.jpg'),
-    require('../../../assets/Images/image3.jpg'),
-    require('../../../assets/Images/image4.jpg'),
-    require('../../../assets/Images/image5.jpg'),
-    require('../../../assets/Images/image6.jpg'),
-    require('../../../assets/Images/image7.jpg'),
-    require('../../../assets/Images/image8.jpg'),
-    require('../../../assets/Images/image9.jpg'),
    
 ]
 
@@ -60,7 +33,7 @@ class Photos extends Component {
       return(
      
       <View style={[{width:(width)/3},{height:(width)/3},
-        index % 3 !== 0 ? { paddingLeft:2 } : { paddingTop:2 } 
+        index % 3 !== 0 ? { paddingLeft:2 } : { paddingLeft:0 }
       ]}>
       <Image style={{flex:1, width:undefined, height:undefined}}
       source={image}/>
@@ -72,19 +45,14 @@ class Photos extends Component {
 )
   render() {
     return (
-      <ScrollView>
       <View style = {{flexDirection: 'row', flexWrap: 'wrap'}}>
         {this.imageRender()}
       </View>
-      </ScrollView>
-
-      
     );
   }
 }
 
 export default Photos;
-
 
 const styles = StyleSheet.create({
   topcontainer: {
