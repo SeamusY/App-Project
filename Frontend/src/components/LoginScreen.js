@@ -8,18 +8,19 @@ import {
   Linking
 } from 'react-native';
 import { Button } from 'native-base';
-
-import MapView from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import axios from 'axios';
 import qs from 'qs';
-
+import { StackNavigator } from 'react-navigation';
+import MainScreen from './MainScreen';
+import ProfileScreen from './ProfileScreen';
+import SearchScreen from './SearchScreen';
 export default class LoginScreen extends Component {
   state = {
     jwtToken: undefined,
-    msg: ""
+    msg: "",
+    checkLoggedIn: false
   }
-
   componentDidMount() {
     Linking.addEventListener('url', this._handleURL);
     Linking.getInitialURL().then((url) => {

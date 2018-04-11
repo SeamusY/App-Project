@@ -3,16 +3,19 @@ const express = require('express');
 const app = express();
 
 export default class Route{
-    constructor(option){
-        this.email = option.email;
-        this.id = option.user;
-    }
-    postRouter() {
-        router.use("/user", login.getRouter());
-        return router;
+    private jwtAtuh;
+    private userid;
+    
+    constructor(jwtToken, userid){
+        this.jwtToken = jwtToken;
+        this.userid = userid;
     }
     getRouter(){
-        router.use("/user", login.getRouter());
+        const router = express();
+        const AuthToken = new login();
+        const user = new loginUser();
+        router.use("/verify", login.getRouter());
+        router.use("/user", this.jwtAuth.authenticate(), login.getRouter());
         return router;
     }
 }
