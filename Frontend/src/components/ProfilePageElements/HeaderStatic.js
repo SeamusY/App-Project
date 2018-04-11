@@ -14,7 +14,6 @@ class HeaderStatic extends Component {
 
   render() {
     return (
-
       <ImageBackground style={styles.headerBackground} source={require('../../../assets/Images/image6.jpg')}>
 
         <View style={styles.header}>

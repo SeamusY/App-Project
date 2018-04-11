@@ -1,7 +1,6 @@
 package com.betaproject;
 
 import android.app.Application;
-
 import com.facebook.react.ReactApplication;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.imagepicker.ImagePickerPackage;
@@ -29,7 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
             new RNFetchBlobPackage(),
             new ImagePickerPackage(),
             new VectorIconsPackage()
-                  );
+      );
     }
 
     @Override

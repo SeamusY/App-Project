@@ -4,3 +4,4 @@ module.exports.LIKES = "likes";
 module.exports.PHOTO_TAGS = "'photo_tags";
 module.exports.TAGS = "tags";
 module.exports.EVENTS = "events";
+module.exports.PARTICIPANTS = "participants"

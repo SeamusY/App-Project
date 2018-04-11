@@ -25,10 +25,10 @@ class MainScreen extends Component {
 
         return {
             headerLeft:
-            <Icon style={{ paddingLeft: 10 }} name="ios-person" onPress={() => navigation.navigate('Profile')} />,
+                <Icon style={{ paddingLeft: 10 }} name="ios-person" onPress={() => navigation.navigate('Profile')} />,
             headerRight:
 
-            <Icon style={{ paddingRight: 10 }} name="search" onPress={() => navigation.navigate('Search')} />
+                <Icon style={{ paddingRight: 10 }} name="search" onPress={() => navigation.navigate('Search')} />
 
         }
     }
@@ -102,11 +102,9 @@ const AppTabNavigator = TabNavigator({
                     }
                 })
             },
-
             showIcon: true,
             showLabel: false
         }
-       
     })
 
 const styles = StyleSheet.create({
@@ -114,7 +112,5 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-
-
     },
 });

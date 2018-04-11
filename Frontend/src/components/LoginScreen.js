@@ -61,20 +61,20 @@ export default class LoginScreen extends Component {
   }
   render() {
     const loginScreen = <ImageBackground source={require('../../DSC06107.jpg')} style={styles.backgroundImage}>
-                          <View style={styles.top}>
-                            <Text style={styles.header}>GO Photer</Text>
-                          </View>
-                          <View style={styles.middle}>
-                            <Text style={styles.context}>New way to learn photography</Text>
-                            <Icon.Button
-                              name="google"
-                              backgroundColor="#DD4B39"
-                              onPress={this.loginGoogle}
-                            >
-                              Google
+      <View style={styles.top}>
+        <Text style={styles.header}>GO Photer</Text>
+      </View>
+      <View style={styles.middle}>
+        <Text style={styles.context}>New way to learn photography</Text>
+        <Icon.Button
+          name="google"
+          backgroundColor="#DD4B39"
+          onPress={this.loginGoogle}
+        >
+          Google
                                               </Icon.Button>
-                          </View>
-                        </ImageBackground >
+      </View>
+    </ImageBackground >
     const homeScreen = <View><Text>Hello</Text></View>
     return (
       (this.state.jwtToken) ? homeScreen : loginScreen

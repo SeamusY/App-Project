@@ -60,14 +60,18 @@ class UploadTab extends Component {
   uploadPhoto() {
     if (this.state.data != null) {
       this.setState({ loading: true });
-      RNFetchBlob.fetch('POST', 'http://10.0.2.2:3000/upload', {
+      RNFetchBlob.fetch('POST', `http://10.0.2.2:3000/upload/${1}`, {
         Authorization: "Bearer access-token",
         otherHeader: "foo",
         'Content-Type': 'multipart/form-data',
       }, [
           { name: 'image', filename: this.state.data.fileName, type: this.state.data.type, data: this.state.data.data }
         ]).then((resp) => {
-          this.setState({ loading: false })
+          this.setState({
+            loading: false,
+            imageSource: null,
+            data: null
+          })
         }).catch((err) => {
           // ...
         })
@@ -92,16 +96,12 @@ class UploadTab extends Component {
             <Image style={styles.image}
               source={this.state.imageSource == null ? require('../../../assets/Images/upload.png') : this.state.imageSource}
             />
-            {/* <Image style={styles.image} />
-          <Text style={styles.text}>Select</Text> */}
           </TouchableOpacity>
 
           {this.renderUpload()}
 
-
         </View>
       </Container>
-
     );
   }
 }
@@ -127,8 +127,6 @@ const styles = StyleSheet.create({
     fontSize: 60,
     color: '#ff8396',
     paddingTop: 30,
-
-
   },
 
   text: {
@@ -136,7 +134,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "#fff"
   },
-
 
   image: {
     width: 200,

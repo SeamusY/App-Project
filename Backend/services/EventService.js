@@ -1,6 +1,7 @@
 const EVENTS = require('./tables').EVENTS;
+const PARTICIPANTS = require('./tables').PARTICIPANTS;
 
-module.exports = class Event {
+module.exports = class EventService {
     constructor(knex) {
         this.knex = knex;
     }
@@ -18,11 +19,14 @@ module.exports = class Event {
             .del();
     }
 
-    list(limit = 100, offset = 0) {
+    addUser(userId, eventId) {
         return this.knex
-            .select("*")
-            .from(EVENTS)
-            .limit(limit).offset(offset);
+            .insert({
+                'user_id': userId,
+                'event_id': eventId
+            })
+            .into(PARTICIPANTS)
+            .returning("id");
     }
 
     update(id, event) {

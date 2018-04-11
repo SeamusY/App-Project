@@ -1,4 +1,4 @@
-const { User } = require('../../services');
+const { UserService } = require('../../services');
 const USERS = require('../../services/tables').USERS;
 const knexFile = require('../../knexfile')['testing'];
 const knex = require('knex')(knexFile);
@@ -12,7 +12,7 @@ describe('class User in services', () => {
     };
 
     beforeEach((done) => {
-        user = new User(knex);
+        user = new UserService(knex);
         knex(USERS).del().then(() => done());
     })
 

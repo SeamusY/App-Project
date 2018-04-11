@@ -1,4 +1,4 @@
-const { Photo } = require('../../services');
+const { PhotoService } = require('../../services');
 const PHOTOS = require('../../services/tables').PHOTOS;
 const knexFile = require('../../knexfile')['testing'];
 const knex = require('knex')(knexFile);
@@ -36,7 +36,7 @@ describe('class Photo in services', () => {
     // })
 
     beforeEach((done) => {
-        photo = new Photo(knex);
+        photo = new PhotoService(knex);
         knex(PHOTOS).del().then(() => done());
     })
 
