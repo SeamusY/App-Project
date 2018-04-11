@@ -30,7 +30,7 @@ module.exports = class PhotoService {
     tag(photoId, tagId) {
         return this.knex
             .insert({
-                'photo_id': userId,
+                'photo_id': photoId,
                 'tag_id': photoId
             })
             .into(PHOTOTAGS)
