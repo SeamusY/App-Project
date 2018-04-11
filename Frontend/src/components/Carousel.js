@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
 
     modalbutton: {
         backgroundColor: '#ff8396',
-        marginTop: 20
+        marginBottom: 0
     },
    
     logo: {
@@ -177,7 +177,5 @@ const styles = StyleSheet.create({
       paddingTop: 30,
       paddingBottom: 30,
      
-  
     },
-    
 });

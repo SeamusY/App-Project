@@ -113,10 +113,6 @@ const RecommendArray = [
     }
 ]
 
-
-
-
-
 export default class Recommendations extends Component {
 
     state = {

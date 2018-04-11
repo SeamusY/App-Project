@@ -10,7 +10,6 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { Icon, Button, Container } from 'native-base';
-
 import ImagePicker from 'react-native-image-picker';
 import RNFetchBlob from 'react-native-fetch-blob';
 
@@ -68,7 +67,7 @@ class UploadTab extends Component {
       }, [
           { name: 'image', filename: this.state.data.fileName, type: this.state.data.type, data: this.state.data.data }
         ]).then((resp) => {
-          this.setState({ 
+          this.setState({
             loading: false,
             imageSource: null,
             data: null
@@ -100,6 +99,7 @@ class UploadTab extends Component {
           </TouchableOpacity>
 
           {this.renderUpload()}
+
         </View>
       </Container>
     );

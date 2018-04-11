@@ -46,4 +46,10 @@ module.exports = class UserService {
             .where(searchCriteria)
             .limit(limit).offset(offset);
     }
+    findid(email){
+        return this.knex
+            .select("user.id")
+            .from(user)
+            .where(email, "user.gmail")
+    }
 }

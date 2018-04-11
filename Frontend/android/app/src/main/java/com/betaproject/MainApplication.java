@@ -1,12 +1,10 @@
 package com.betaproject;
 
 import android.app.Application;
-
 import com.facebook.react.ReactApplication;
 import com.RNFetchBlob.RNFetchBlobPackage;
-
 import com.imagepicker.ImagePickerPackage;
-import co.apptailor.googlesignin.RNGoogleSigninPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -29,7 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             new RNFetchBlobPackage(),
             new ImagePickerPackage(),
-            new RNGoogleSigninPackage()
+            new VectorIconsPackage()
       );
     }
 

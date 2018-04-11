@@ -1,26 +1,37 @@
-import { ADD_NUM, MIN_NUM } from '../actions/actionTypes'
+import { setname, setemail, setjwtToken, setid } from '../actions/actionTypes'
 
 const initialState = {
-    counter: 0
+    name: "",
+    email: "",
+    jwtToken: "",
+    id: 0
 }
 
 const reducer = (state = initialState, action) => {
-    switch(action.type){
-        case ADD_NUM:
-        return{
-            ...state,
-            counter : state.counter+1
+    switch (action.type) {
+        case setname:
+            return {
+                ...state,
+                name: state.name
+            }
+        case setemail:
+                return {
+                    ...state,
+                    email: state.email
+                }
+        case setjwtToken:
+            return {
+                ...state,
+                jwtToken: state.jwtToken
         }
-        case MIN_NUM:
-        return{
-            ...state,
-            counter: state.counter-1
+        case setid:
+            return {
+                ...state,
+                id: state.id
         }
         default:
-        return state
-        
+            return state
     }
-
 };
 
 export default reducer

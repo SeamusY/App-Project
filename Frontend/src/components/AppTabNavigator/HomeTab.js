@@ -5,7 +5,6 @@ import {
   Text,
   View,
   ScrollView
-
 } from 'react-native';
 import { Icon } from 'native-base';
 import Carousel from '../Carousel'
@@ -34,8 +33,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-
-
-
   },
 });
