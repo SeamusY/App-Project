@@ -14,17 +14,17 @@ class HeaderStatic extends Component {
 
   render() {
     return (
-      <ImageBackground style={styles.headerBackground} source={require('../../../assets/Images/image6.jpg')}>
+      <ImageBackground style={styles.headerBackground} source={require('../../../assets/Images/background.jpg')}>
 
         <View style={styles.header}>
 
           <View style={styles.propicContainer}>
-            <Image style={styles.propic} source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/4440751ad06d1a0aa40ccb9a92ef4dc1/5B39D952/t51.2885-19/s150x150/29087668_858655037626662_1753801491040174080_n.jpg' }} />
+            <Image style={styles.propic} source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/1d0408e3d5deae5556092bea73008978/5B62BE99/t51.2885-19/s150x150/30076615_711630672560721_2236927587479715840_n.jpg' }} />
 
           </View>
 
-          <Text style={styles.myname}>Hugo Chengo</Text>
-          <Text style={styles.mydescribe}>Co-Founder of GoPhoter</Text>
+          <Text style={styles.myname}>Elenibr</Text>
+          <Text style={styles.mydescribe}>21, Based in Rome, Italy</Text>
 
         </View>
 
