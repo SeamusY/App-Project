@@ -8,7 +8,7 @@ import {
   Modal,
   TouchableHighlight
 } from 'react-native';
-import { Content, Card, CardItem, Text,  Icon, Button } from 'native-base';
+import { Content, Card, CardItem, Text, Icon, Button, Thumbnail, Body, Left } from 'native-base';
 
 
 let images = [
@@ -59,12 +59,12 @@ class Photos extends Component {
   state = {
     modalVisible: false,
     Objnumber: 0
-};
+  };
 
   setModalVisible(visible, i) {
     this.setState({ modalVisible: visible });
     this.state.Objnumber = i
-}
+  }
 
   imageRender = () =>
 
@@ -72,16 +72,16 @@ class Photos extends Component {
 
       return (
 
-        <TouchableHighlight onPress={() => this.setModalVisible(true,index)}>
+        <TouchableHighlight onPress={() => this.setModalVisible(true, index)}>
 
-        <View style={[{ width: (width) / 3 }, { height: (width) / 3 },
-        index % 3 !== 0 ? { paddingLeft: 2 } : { paddingTop: 2 }
-        ]} >
-        
-          <Image style={{ flex: 1, width: undefined, height: undefined }}
-            source={image} />
- 
-        </View>
+          <View style={[{ width: (width) / 3 }, { height: (width) / 3 },
+          index % 3 !== 0 ? { paddingLeft: 2 } : { paddingTop: 2 }
+          ]} >
+
+            <Image style={{ flex: 1, width: undefined, height: undefined }}
+              source={image} />
+
+          </View>
         </TouchableHighlight>
 
 
@@ -91,32 +91,41 @@ class Photos extends Component {
   render() {
     return (
       <View>
-      <Modal
-      animationType="slide"
-      transparent={false}
-      visible={this.state.modalVisible}
-  >
-      <Card>
-          <CardItem cardBody>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+        >
+          <Card>
+            <CardItem style={{marginTop: 60}}>
+              <Left>
+                <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/04697c22c18a6b9911e1789414581bf4/5B63C1A3/t51.2885-19/s150x150/20479307_259226047906088_8664596465227661312_a.jpg' }} />
+                <Body>
+                  <Text>Elenibr</Text>
+                </Body>
+              </Left>
+            </CardItem>
+
+            <CardItem cardBody>
               <Image style={styles.modalimage} source={images[this.state.Objnumber]} />
-          </CardItem>
+            </CardItem>
 
-      </Card>
-      <Button style={styles.modalbutton} full info onPress={() => {
-          this.setModalVisible(false, 0);
-      }}>
-          <Icon name="arrow-back" />
-          <Text>Go Back</Text>
-      </Button>
+          </Card>
+          <Button style={styles.modalbutton} full info onPress={() => {
+            this.setModalVisible(false, 0);
+          }}>
+            <Icon name="arrow-back" />
+            <Text>Profile</Text>
+          </Button>
 
-    </Modal>
-      <ScrollView style={{ flexGrow: 1 }}>
-      
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', flex: 1 }}>
-          {this.imageRender()}
-        </View>
+        </Modal>
+        <ScrollView style={{ flexGrow: 1 }}>
 
-      </ScrollView>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', flex: 1 }}>
+            {this.imageRender()}
+          </View>
+
+        </ScrollView>
       </View>
 
 
@@ -133,32 +142,33 @@ const styles = StyleSheet.create({
     backgroundColor: 'grey'
   },
 
-middle: {
+  middle: {
 
     alignItems: 'center',
     justifyContent: 'center'
-},
+  },
 
-imagebackground: {
+  imagebackground: {
     height: 200,
     flex: 1
-},
-modalimage: {
+  },
+  modalimage: {
     height: 450,
     flex: 1,
-    marginTop: 200
-},
-modaltext: {
+    
+
+  },
+  modaltext: {
     paddingTop: 20,
     fontSize: 20
-},
-direction: {
+  },
+  direction: {
     fontSize: 20,
     color: "#ff8396",
     paddingTop: 20
-},
-modalbutton: {
+  },
+  modalbutton: {
     backgroundColor: '#ff8396',
-    marginBottom: 16
-}
+    marginBottom: 150
+  }
 });
