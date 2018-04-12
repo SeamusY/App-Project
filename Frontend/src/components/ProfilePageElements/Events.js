@@ -30,10 +30,10 @@ export default class Events extends Component {
 
                 <List>
                   <ListItem noBorder>
-                    <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/695935bde748f019008741abd712ba67/5B619350/t51.2885-19/s150x150/29095781_584119315300112_866345554152521728_n.jpg' }} />
+                    <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/78e1ab9d6d35eebdd2cde891e3a03cef/5B4FBC70/t51.2885-19/s150x150/26865485_161280891185375_4097005467279032320_n.jpg' }} />
                     <Body>
-                      <Text>Ashley Grait</Text>
-                      <Text note>Shueng Wan Photography shootout</Text>
+                      <Text>Erik Hendenfalk</Text>
+                      <Text note>Central's District Photography shootout</Text>
                     </Body>
                   </ListItem>
                 </List>
@@ -59,10 +59,10 @@ export default class Events extends Component {
                 </List>
                 <List>
                   <ListItem noBorder>
-                    <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/4a605eeb2f017ad33c1966b1f9bf5daf/5B716F60/t51.2885-19/s150x150/27878361_160231621301541_7126166951058997248_n.jpg' }} />
+                    <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/c0abd48aa5ba098f00d9299b9d73acfc/5B5C8E6B/t51.2885-19/s150x150/25011150_168512277078212_8245775920518922240_n.jpg' }} />
                     <Body>
-                      <Text>Sophia Gaede</Text>
-                      <Text note>Deep Water Bay Sunset Shootout</Text>
+                      <Text>Tim Ching</Text>
+                      <Text note>Choi Hung Estate Shootout</Text>
                     </Body>
 
                   </ListItem>
@@ -96,10 +96,10 @@ export default class Events extends Component {
 
             <List>
               <ListItem>
-                <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/695935bde748f019008741abd712ba67/5B619350/t51.2885-19/s150x150/29095781_584119315300112_866345554152521728_n.jpg' }} />
+                <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/78e1ab9d6d35eebdd2cde891e3a03cef/5B4FBC70/t51.2885-19/s150x150/26865485_161280891185375_4097005467279032320_n.jpg' }} />
                 <Body>
-                  <Text>Ashley Grait</Text>
-                  <Text note>Shueng Wan Photography shootout</Text>
+                  <Text>Erik Hendenfalk</Text>
+                  <Text note>Central's District shootout</Text>
                 </Body>
                 <Right>
                   <Button transparent onPress={() => this.setModalVisible(true)}>
@@ -140,10 +140,10 @@ export default class Events extends Component {
             </List>
             <List>
               <ListItem>
-                <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/4a605eeb2f017ad33c1966b1f9bf5daf/5B716F60/t51.2885-19/s150x150/27878361_160231621301541_7126166951058997248_n.jpg' }} />
+                <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/a3e2f173acc623c0d281761abf692174/5B523277/t51.2885-19/s150x150/14031651_316214658727036_306004320_a.jpg' }} />
                 <Body>
-                  <Text>Sophia Gaede</Text>
-                  <Text note>Deep Water Bay Sunset Shootout</Text>
+                  <Text>Alistair Lam</Text>
+                  <Text note>Mong Kok Shootout</Text>
                 </Body>
                 <Right>
                   <Button transparent onPress={() => this.setModalVisible(true)}>
@@ -155,10 +155,10 @@ export default class Events extends Component {
 
             <List>
               <ListItem>
-                <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/97f64bc02a1c9769b6682542bcfe7fb8/5B6DC30F/t51.2885-19/s150x150/23101118_500379713668935_3755597520487579648_n.jpg' }} />
+                <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/b37d75acf4787debe4847ae76b622756/5B63B70D/t51.2885-19/s150x150/23416395_152436502033835_6553802966195765248_n.jpg' }} />
                 <Body>
-                  <Text>Emilie Boreel</Text>
-                  <Text note >Central Night Photography</Text>
+                  <Text>Steve Divish</Text>
+                  <Text note >High West drone shootout</Text>
                 </Body>
                 <Right>
                   <Button transparent onPress={() => this.setModalVisible(true)}>
@@ -170,9 +170,9 @@ export default class Events extends Component {
 
             <List>
               <ListItem>
-                <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/3b755db87e67ce845987bab35738e7fb/5B5CC2CA/t51.2885-19/s150x150/24838910_245316479335281_5980282591452856320_n.jpg' }} />
+                <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/ca75e7c9e0471c5ca6a6d1182670e19d/5B5CD445/t51.2885-19/s150x150/14262883_301061306925458_1843307609_a.jpg' }} />
                 <Body>
-                  <Text>Lexie Smith</Text>
+                  <Text>Tommy Worden</Text>
                   <Text note>Lugard Road, The Peak Shootout</Text>
                 </Body>
                 <Right>

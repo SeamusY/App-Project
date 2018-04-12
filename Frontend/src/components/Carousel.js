@@ -3,7 +3,7 @@ import { Image, StyleSheet, Modal } from 'react-native';
 import { View, DeckSwiper, Container, Card, CardItem, Thumbnail, Text, Left, Right, Body, Button, List, ListItem, Icon} from 'native-base';
 const cards = [
     {
-        text: 'Ashley Giralt',
+        text: 'Steve Divish',
         description: 'Central Long Exposure',
         name: 'One',
         image: require('../../assets/Images/image4.jpg'),
@@ -68,9 +68,9 @@ export default class DeckSwiperExample extends Component {
 
                             <List>
                                 <ListItem noBorder>
-                                    <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/695935bde748f019008741abd712ba67/5B619350/t51.2885-19/s150x150/29095781_584119315300112_866345554152521728_n.jpg' }} />
+                                    <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/78e1ab9d6d35eebdd2cde891e3a03cef/5B4FBC70/t51.2885-19/s150x150/26865485_161280891185375_4097005467279032320_n.jpg' }} />
                                     <Body>
-                                        <Text>Ashley Grait</Text>
+                                        <Text>Erik Hendenfalk</Text>
                                         <Text note>Shueng Wan Photography shootout</Text>
                                     </Body>
                                 </ListItem>
@@ -98,10 +98,10 @@ export default class DeckSwiperExample extends Component {
 
                             <List>
                                 <ListItem noBorder>
-                                    <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/4a605eeb2f017ad33c1966b1f9bf5daf/5B716F60/t51.2885-19/s150x150/27878361_160231621301541_7126166951058997248_n.jpg' }} />
+                                    <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/a3e2f173acc623c0d281761abf692174/5B523277/t51.2885-19/s150x150/14031651_316214658727036_306004320_a.jpg' }} />
                                     <Body>
-                                        <Text>Sophia Gaede</Text>
-                                        <Text note>Deep Water Bay Sunset Shootout</Text>
+                                        <Text>Alistair Lam</Text>
+                                        <Text note>Mong Kok Shooutout</Text>
                                     </Body>
 
                                 </ListItem>
@@ -142,7 +142,7 @@ export default class DeckSwiperExample extends Component {
                                 </CardItem>
                                 <CardItem>
                                     <Left>
-                                        <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/04697c22c18a6b9911e1789414581bf4/5B63C1A3/t51.2885-19/s150x150/20479307_259226047906088_8664596465227661312_a.jpg' }} />
+                                        <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/ca75e7c9e0471c5ca6a6d1182670e19d/5B5CD445/t51.2885-19/s150x150/14262883_301061306925458_1843307609_a.jpg' }} />
                                         <Body>
                                             <Text>{item.text}</Text>
                                             <Text note>{item.description}</Text>
