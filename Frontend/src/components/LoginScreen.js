@@ -38,11 +38,11 @@ export default class LoginScreen extends Component {
     try {
       var [, query] = event.match(/\#(.*)/)
       const jsonQuery = qs.parse(query);
-      //const response = await axios.post('http://10.0.2.2:8080/api/auth/google', { accessToken: jsonQuery.access_token, email: this.prop.email });
-      //const jwtToken = response.data.token;
-      this.setState({ jwtToken: jsonQuery.access_token });
+      const response = await axios.post('http://10.0.2.2:8080/auth/verify/google ', { accessToken: jsonQuery.access_token});
+      const jwtAcessToken = response.data.token;
+      this.setState({ jwtToken: jwtAcessToken });
     } catch (err) {
-      this.setState({ msg: "Error" });
+      alert("Error ", err);
     }
   }
   loginGoogle = () => {

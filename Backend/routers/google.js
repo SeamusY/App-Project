@@ -1,11 +1,11 @@
-import * as express     from 'express';
-import axios            from 'axios';
-import * as jwtSimple   from 'jwt-simple';
-import config           from '../database';
+const express =require('express');
+const axios =require('axios');
+const jwtSimple =('jwt-simple');
+const config = require('./server-config');
 const app = express();
 const router = express.Router();
 
-export default class AuthRouter{
+class AuthRouter{
     constructor() {
     }
     getRouter() {
@@ -31,3 +31,5 @@ export default class AuthRouter{
         }
     }
 }
+
+module.exports = AuthRouter;
