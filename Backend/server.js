@@ -7,8 +7,6 @@ const router = require("./config/router");
 const { PORT, NODE_ENV } = require('./config/server-config');
 const cors = require('cors');
 const app = express();
-
-const PhotoRouter = require('./routers/PhotoRouter');
 const knexFile = require('./knexfile')[NODE_ENV]
 const knex = require('knex')(knexFile);
 
@@ -25,8 +23,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // app.use('/auth', router.getRouter());
+const { PhotoRouter } = require('./routers');
 
-app.use('/upload', PhotoRouter);
+app.use('/upload', new PhotoRouter().router());
 app.get('/', (req, res) => {
     res.send('working');
 })
