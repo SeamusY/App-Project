@@ -3,25 +3,33 @@ const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        console.log(req);
-        cb(null, path.join(`uploads/${req.params.id}`))
-    },
-    filename: function (req, file, cb) {
-        console.log(file.fieldname);
-        cb(null, file.fieldname + '-' + Date.now())
-    }
-})
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, path.join(`uploads/${req.params.id}`))
+//     },
+//     filename: function (req, file, cb) {
+//         console.log(file);
+//         cb(null, file.fieldname + '-' + Date.now())
+//     }
+// })
 
 module.exports = class PhotoRouter {
     constructor() {
         // this.photoService = photoService;
-        this.upload = multer({ storage: storage })
+        this.upload = multer({
+            storage: multer.diskStorage({
+                destination: function (req, file, cb) {
+                    cb(null, path.join(`uploads/${req.params.id}`))
+                },
+                filename: function (req, file, cb) {
+                    cb(null, file.fieldname + '-' + Date.now())
+                }
+            })
+        })
     }
 
     // check if the directory existed 
-    isDirExist (req, res, next) {
+    isDirExist(req, res, next) {
         fs.stat(path.join(__dirname, `../uploads/${req.params.id}`), (err) => {
             if (!err) {
                 next();
@@ -41,9 +49,8 @@ module.exports = class PhotoRouter {
         return router;
     }
 
-    post(req, res){
-        console.log(req.body)
-        console.log(req.file)
+    post(req, res) {    
+        console.log(file)
         return res.status(201).send('success')
     }
 } 
