@@ -1,7 +1,7 @@
 const express =require('express');
 const axios =require('axios');
 const jwtSimple =('jwt-simple');
-const config = require('./server-config');
+const config = require('../config/server-config');
 const app = express();
 const router = express.Router();
 

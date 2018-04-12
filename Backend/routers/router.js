@@ -1,18 +1,21 @@
-// const login = require('./google');
-// const express = require('express');
-// const app = express();
+const login = require('./google');
+const express = require('express');
+const app = express();
+const loginUser = require('./JwtStrategy');
+const userService = require('../services/UserService');
+const UserRouter = require('./userRouter');
 
 module.exports = class Route{  
     constructor(jwtToken, userid){
         this.jwtToken = jwtToken;
-        this.userid = userid;
+        this.userService =userService;
     }
     getRouter(){
         const router = express();
         const AuthToken = new login();
-        const user = new loginUser(this.userid);
+        const userRouter = new UserRouter(this.userService);
         router.use("/verify", AuthToken.getRouter());
-        router.use("/user", this.jwtAuth.authenticate(), login.getRouter());
+        router.use("/user", this.jwtToken.authenticate(), userRouter.getRouter());
         return router;
     }
 }
