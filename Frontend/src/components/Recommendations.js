@@ -230,7 +230,8 @@ const styles = StyleSheet.create({
     },
     modalbutton: {
         backgroundColor: '#ff8396',
-        marginBottom: 16
+        marginBottom: 30
+        
     }
 
 });

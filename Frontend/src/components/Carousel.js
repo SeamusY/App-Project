@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Modal } from 'react-native';
-import { View, DeckSwiper, Container, Card, CardItem, Thumbnail, Text, Left, Right, Body, Button, List, ListItem, Icon} from 'native-base';
+import { View, DeckSwiper, Container, Card, CardItem, Thumbnail, Text, Left, Right, Body, Button, List, ListItem, Icon } from 'native-base';
 const cards = [
     {
         text: 'Steve Divish',
@@ -56,81 +56,62 @@ export default class DeckSwiperExample extends Component {
             <Container>
 
                 <View>
-                    
+
                     <Modal
                         animationType="slide"
                         transparent={false}
                         visible={this.state.modalVisible}
                     >
-                        <View>
+
                         <Text style={styles.logo}>Go Photer</Text>
+                        <Icon name="ios-navigate" style={{ alignSelf: 'center', color: '#ff8396' }} />
+                        <Text style={{ alignSelf: 'center', fontSize: 20 }}>
+                            Central-Shootout
+                             </Text>
 
+                        <Text style={{alignSelf: 'center', fontSize: 20}}>Attenders</Text>
+                      
 
+                        <View style={{ marginTop: 40, alignSelf: 'center', }}>
                             <List>
                                 <ListItem noBorder>
                                     <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/78e1ab9d6d35eebdd2cde891e3a03cef/5B4FBC70/t51.2885-19/s150x150/26865485_161280891185375_4097005467279032320_n.jpg' }} />
-                                    <Body>
-                                        <Text>Erik Hendenfalk</Text>
-                                        <Text note>Shueng Wan Photography shootout</Text>
-                                    </Body>
+                                    <Text style={styles.attenders} >Erik Hendenfalk</Text>
                                 </ListItem>
                             </List>
 
                             <List>
                                 <ListItem noBorder>
                                     <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/464b8db2133e3dac0b7dda9e93ee08c7/5B50E566/t51.2885-19/s150x150/12797989_244314302584259_967488229_a.jpg' }} />
-                                    <Body>
-                                        <Text>Cloe Ferrando</Text>
-                                        <Text note>East Shinjuku shootout</Text>
-                                    </Body>
+                                    <Text style={styles.attenders} >Cloe Ferrando</Text>
                                 </ListItem>
                             </List>
 
                             <List>
                                 <ListItem noBorder>
                                     <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/0ce050da9da06c9918816616e4ae1a83/5B5EBC9D/t51.2885-19/s150x150/28764392_175336276604502_8864108506559545344_n.jpg' }} />
-                                    <Body>
-                                        <Text>Virgina Nigro</Text>
-                                        <Text note>Lion's Rock Shootout</Text>
-                                    </Body>
+                                    <Text style={styles.attenders} >Virgina Nigro</Text>
                                 </ListItem>
                             </List>
 
                             <List>
                                 <ListItem noBorder>
                                     <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/a3e2f173acc623c0d281761abf692174/5B523277/t51.2885-19/s150x150/14031651_316214658727036_306004320_a.jpg' }} />
-                                    <Body>
-                                        <Text>Alistair Lam</Text>
-                                        <Text note>Mong Kok Shooutout</Text>
-                                    </Body>
-
+                                    <Text style={styles.attenders} >Alistair Lam</Text>
                                 </ListItem>
                             </List>
+                        </View>
 
+                        <View style={{ flexDirection: "row", alignSelf: "center", paddingTop: 30, paddingBottom: 30, marginTop: 50 }}>
 
+                            <Button block info style={{ width: 150 }}>
+                                <Text>Join</Text>
+                            </Button>
 
-
-
-                    </View>
-
-                    <View style={{flexDirection: "row", alignSelf: "center", paddingTop: 30, paddingBottom: 30}}>
-
-                        <Button block danger style={{width: 150}}>
-                        <Text>Yes</Text>
-                        </Button>
-
-                        <Button block info style={{width: 150}}>
-                        <Text>No</Text>
-                        </Button>
-
-                    </View>
-             
-                    <Button style={styles.modalbutton} full info onPress={() => {this.setModalVisible(false)}}>
-                        <Icon name="arrow-back" />
-                        <Text>Events</Text>
-                    </Button>
-      
-                        
+                            <Button block danger onPress={() => { this.setModalVisible(false) }} style={{ width: 150 }}>
+                                <Text>Decline</Text>
+                            </Button>
+                        </View>
                     </Modal>
 
                     <DeckSwiper
@@ -168,14 +149,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#ff8396',
         marginBottom: 0
     },
-   
+
     logo: {
-      textAlign: 'center',
-      fontFamily: 'Pacifico',
-      fontSize: 60,
-      color: '#ff8396',
-      paddingTop: 30,
-      paddingBottom: 30,
-     
+        textAlign: 'center',
+        fontFamily: 'Pacifico',
+        fontSize: 60,
+        color: '#ff8396',
+        paddingTop: 30,
+        paddingBottom: 30,
+
     },
+
+    attenders: {
+        marginLeft: 10,
+        width: 100
+    }
 });
