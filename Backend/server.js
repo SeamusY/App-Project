@@ -17,12 +17,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const user = new User(knex);
 const jwtAuth = JwtStrategy(user);
-const AuthPath = new router(jwtAuth,user);
+const AuthPath = new router(jwtAuth, user);
 
 // app.use('/auth', router.getRouter());
-const { PhotoRouter } = require('./routers');
+const {
+    PhotoRouter,
+    EventRouter } = require('./routers');
 
-app.use('/upload', new PhotoRouter().router());
+app.use('/photos', new PhotoRouter().router());
+app.use('/events', new EventRouter().router());
 app.use('/auth', AuthPath.getRouter());
 
 //app.use('/upload', photoRouter);
