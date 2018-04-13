@@ -54,9 +54,6 @@ const AppStackNavigator = StackNavigator({
     },
     Search: {
         screen: SearchScreen
-    },
-    Login: {
-        screen: LoginScreen
     }
 },
     { initialRouteName: 'Main' });

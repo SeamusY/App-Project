@@ -1,7 +1,6 @@
 const login = require('./google');
 const express = require('express');
 const app = express();
-const loginUser = require('./JwtStrategy');
 const userService = require('../services/UserService');
 const UserRouter = require('./userRouter');
 

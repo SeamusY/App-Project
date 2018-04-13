@@ -12,13 +12,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import axios from 'axios';
 import qs from 'qs';
 import { StackNavigator } from 'react-navigation';
-import MainScreen from './MainScreen';
+import { TabNavigator, TabView, TabBarTop } from 'react-navigation';
+import  MainScreen  from './MainScreen';
 import ProfileScreen from './ProfileScreen';
 import SearchScreen from './SearchScreen';
 export default class LoginScreen extends Component {
   state = {
     jwtToken: undefined,
-    msg: "",
     checkLoggedIn: false
   }
   componentDidMount() {
@@ -38,7 +38,7 @@ export default class LoginScreen extends Component {
     try {
       var [, query] = event.match(/\#(.*)/)
       const jsonQuery = qs.parse(query);
-      const response = await axios.post('http://10.0.2.2:8080/auth/verify/google ', { accessToken: jsonQuery.access_token});
+      const response = await axios.post('http://10.0.2.2:3000/auth/verify/google', { accessToken: jsonQuery.access_token });
       const jwtAcessToken = response.data.token;
       this.setState({ jwtToken: jwtAcessToken });
     } catch (err) {
@@ -72,7 +72,7 @@ export default class LoginScreen extends Component {
           onPress={this.loginGoogle}
         >
           Google
-                                              </Icon.Button>
+         </Icon.Button>
       </View>
     </ImageBackground >
     const homeScreen = <View><Text>Hello</Text></View>

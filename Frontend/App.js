@@ -12,7 +12,6 @@ import MainScreen from './src/components/MainScreen';
 import ProfileScreen from './src/components/ProfileScreen';
 import SearchScreen from './src/components/SearchScreen';
 import LoginScreen from './src/components/LoginScreen';
-// import LoginScreen from './src/components/LoginScreen';
 import { connect } from 'react-redux';
 
 // * * * * Uncomment line below to activate the main page navigation * * * *
@@ -24,11 +23,6 @@ import { connect } from 'react-redux';
 
 // import { addNum, minNum } from './src/store/actions/number'
 // import LoginScreen from './src/components/LoginScreen';
-
-
-
-
-
 
 
 class App extends Component {
@@ -68,7 +62,7 @@ const AppStackNavigator = StackNavigator({
   }
 },
   {
-    initialRouteName: 'Main'
+    initialRouteName: 'Login'
   }
 );
 

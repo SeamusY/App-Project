@@ -5,11 +5,11 @@ const router = require("./routers/router");
 const { PORT, NODE_ENV } = require('./config/server-config');
 const cors = require('cors');
 const app = express();
-// const photoRouter = require('./routers/photoRouter');
 const knexFile = require('./knexfile')[NODE_ENV]
 const knex = require('knex')(knexFile);
 const User = require('./services/UserService');
-const jwt = JwtStrategy()
+const jwt = JwtStrategy();
+
 app.use(cors());
 app.use(bodyParser.json());
 

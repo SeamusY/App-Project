@@ -1,7 +1,7 @@
 const express =require('express');
 const axios =require('axios');
-const jwtSimple =('jwt-simple');
-const config = require('../config/server-config');
+const jwtSimple =require('jwt-simple');
+const config = require('../config/secretconfigs');
 const app = express();
 const router = express.Router();
 
@@ -15,8 +15,7 @@ class AuthRouter{
     }
     async loginWithGoogle(req, res) {
         const accessToken = req.body.accessToken;
-        console.log(accessToken);
-        if (!accessToken) {
+        if (!accessToken) { 
             res.sendStatus(401);
         }
         try {
@@ -26,7 +25,9 @@ class AuthRouter{
             }
             const token = jwtSimple.encode({ id: accessToken }, config.jwtSecret);
             res.json({ token: token });
+            console.log("Token Success");
         } catch(err) {
+            console.log("ERROR " + err)
             res.sendStatus(401);
         }
     }
