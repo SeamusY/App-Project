@@ -7,7 +7,8 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  ActivityIndicator
+  ActivityIndicator,
+
 } from 'react-native';
 import { Icon, Button, Container } from 'native-base';
 import ImagePicker from 'react-native-image-picker';
@@ -89,8 +90,10 @@ class UploadTab extends Component {
   }
   render() {
     return (
+      <ScrollView>
       <Container>
         <View style={styles.container}>
+
           <Text style={styles.logo}>Go Photer</Text>
           <TouchableOpacity onPress={() => this.selectPhoto()}>
             <Image style={styles.image}
@@ -99,9 +102,11 @@ class UploadTab extends Component {
           </TouchableOpacity>
 
           {this.renderUpload()}
-
+         
         </View>
       </Container>
+      </ScrollView>
+  
     );
   }
 }
