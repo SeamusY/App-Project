@@ -70,7 +70,7 @@ export default class Events extends Component {
                 <Icon name="ios-paper" style={{ color: '#ff8396' }} />
               </Left>
               <Body style={{ borderBottomWidth: 0 }}>
-                <Text style={{ alignSelf: 'center', fontSize: 20 }}>Add Desciption</Text>
+                <Text style={{ alignSelf: 'center', fontSize: 20 }}>Add Event's Title</Text>
                 <Text note style={{ alignSelf: 'center' }}>10th May, Thursday</Text>
               </Body>
               <Right style={{ borderBottomWidth: 0 }}>

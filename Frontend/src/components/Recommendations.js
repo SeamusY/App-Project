@@ -34,7 +34,7 @@ const RecommendArray = [
     },
     {
         Photo: require('../../assets/Images/hopewell.jpg'),
-        Location: 'Hopewell Center Elavator',
+        Location: 'Hopewell Center',
         Photographer: 'By Gordan Chung',
         Distance: '7.6K',
         Description: 'The elvator will take you from the 17th floor to the 64th floor, you will be able to get some awesome footage of the Hong Kong Island, best to bring a wide angle lens'
@@ -234,7 +234,8 @@ const styles = StyleSheet.create({
     },
     modalbutton: {
         backgroundColor: '#ff8396',
-        marginBottom: 16
+        marginBottom: 30
+        
     }
 
 });
