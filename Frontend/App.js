@@ -26,7 +26,10 @@ import { connect } from 'react-redux';
 
 
 class App extends Component {
-
+  
+//   static navigationOptions = {
+//     header: null
+// }
 
   render() {
     return (
@@ -40,7 +43,7 @@ class App extends Component {
       // <View>
       // <Text>{this.props.displaynumber}</Text>
       // <Button title="Add" onPress={this.props.OnAdd} />
-      // <Button title="Min" onPress={this.props.OnMin} />
+      // <Button title="Min" onPress={this.props.OnMin} /
       // </View>
     );
   }
@@ -58,11 +61,21 @@ const AppStackNavigator = StackNavigator({
     screen: SearchScreen
   },
   Login: {
-    screen: LoginScreen
+    screen: LoginScreen, 
+    headerMode: 'none',
+    navigationOptions: {header: null}
   }
+    
+
+  
 },
   {
-    initialRouteName: 'Login'
+    initialRouteName: 'Login',
+    // headerMode: 'screen',
+    // navigationOptions: {
+    //     headerVisible: false,
+    // }
+    
   }
 );
 

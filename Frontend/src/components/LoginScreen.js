@@ -17,6 +17,7 @@ import  MainScreen  from './MainScreen';
 import ProfileScreen from './ProfileScreen';
 import SearchScreen from './SearchScreen';
 export default class LoginScreen extends Component {
+
   state = {
     jwtToken: undefined,
     checkLoggedIn: false
@@ -41,6 +42,7 @@ export default class LoginScreen extends Component {
       const response = await axios.post('http://10.0.2.2:3000/auth/verify/google', { accessToken: jsonQuery.access_token });
       const jwtAcessToken = response.data.token;
       this.setState({ jwtToken: jwtAcessToken });
+      this.props.navigation.navigate('Main')
     } catch (err) {
       alert("Error ", err);
     }
@@ -60,7 +62,7 @@ export default class LoginScreen extends Component {
     Linking.openURL(GOOGLE_AUTH_URL);
   }
   render() {
-    const loginScreen = <ImageBackground source={require('../../DSC06107.jpg')} style={styles.backgroundImage}>
+    return(<ImageBackground source={require('../../DSC06107.jpg')} style={styles.backgroundImage}>
       <View style={styles.top}>
         <Text style={styles.header}>GO Photer</Text>
       </View>
@@ -75,10 +77,11 @@ export default class LoginScreen extends Component {
          </Icon.Button>
       </View>
     </ImageBackground >
-    const homeScreen = <View><Text>Hello</Text></View>
-    return (
-      (this.state.jwtToken) ? homeScreen : loginScreen
-    );
+    )
+    // const homeScreen = <View><Text>Hello</Text></View>
+    // return (
+    //   (this.state.jwtToken) ? () => this.props.navigation.navigate('Main') : loginScreen
+    // );
   }
 }
 
