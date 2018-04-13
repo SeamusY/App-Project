@@ -62,6 +62,7 @@ export default class DeckSwiperExample extends Component {
                         transparent={false}
                         visible={this.state.modalVisible}
                     >
+                        <ScrollView>
 
                         <Text style={styles.logo}>Go Photer</Text>
                         <Icon name="ios-navigate" style={{ alignSelf: 'center', color: '#ff8396' }} />
@@ -112,6 +113,7 @@ export default class DeckSwiperExample extends Component {
                                 <Text>Decline</Text>
                             </Button>
                         </View>
+                        </ScrollView>
                     </Modal>
 
                     
