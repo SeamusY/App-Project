@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Modal } from 'react-native';
+import { Image, StyleSheet, Modal, ScrollView} from 'react-native';
 import { View, DeckSwiper, Container, Card, CardItem, Thumbnail, Text, Left, Right, Body, Button, List, ListItem, Icon } from 'native-base';
 const cards = [
     {

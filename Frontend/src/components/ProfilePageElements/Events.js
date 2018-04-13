@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Container, Content, List, ListItem, Thumbnail, Text, Body, Right, Button } from 'native-base';
-import { Image, StyleSheet, Modal } from 'react-native';
+import { Image, StyleSheet, Modal, ScrollView } from 'react-native';
 import { View, DeckSwiper, Container, Content, Card, CardItem, Thumbnail, Text, Left, Right, Body, Button, List, ListItem, Icon } from 'native-base';
 
 export default class Events extends Component {
@@ -18,13 +18,13 @@ export default class Events extends Component {
       <Container>
         <Content>
           <View>
-
+            
             <Modal
               animationType="slide"
               transparent={false}
               visible={this.state.modalVisible}
             >
-
+              <ScrollView>
               <Text style={styles.logo}>Go Photer</Text>
               <Icon name="ios-navigate" style={{ alignSelf: 'center', color: '#ff8396' }} />
               <Text style={{ alignSelf: 'center', fontSize: 20 }}>
@@ -74,7 +74,9 @@ export default class Events extends Component {
                 <Icon name="arrow-back" />
                 <Text>My Profile</Text>
               </Button>
+              </ScrollView>
             </Modal>
+            
 
             <List>
               <ListItem>
