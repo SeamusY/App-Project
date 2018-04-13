@@ -1,6 +1,6 @@
 const passport = require('passport')
 const PassportJWT = require('passport-jwt');
-const users = require('../services/User');
+const users = require('../services/UserService');
 const config = require('../config/secretconfigs');
 
 module.exports = function(userService){
