@@ -30,16 +30,23 @@ module.exports = class EventService {
     }
 
     update(id, event) {
-        return this.knex(USERS)
-            .update(user)
+        return this.knex(EVENTS)
+            .update(event)
             .where("id", id);
     }
 
     search(searchCriteria, limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(USERS)
+            .from(EVENTS)
             .where(searchCriteria)
+            .limit(limit).offset(offset);
+    }
+
+    list(limit = 20, offset = 0) {
+        return this.knex
+            .select("*")
+            .from(EVENTS)
             .limit(limit).offset(offset);
     }
 }

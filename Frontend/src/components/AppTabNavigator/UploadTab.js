@@ -61,7 +61,7 @@ class UploadTab extends Component {
   uploadPhoto() {
     if (this.state.data != null) {
       this.setState({ loading: true });
-      RNFetchBlob.fetch('POST', `http://10.0.2.2:3000/upload/${1}`, {
+      RNFetchBlob.fetch('POST', `http://10.0.2.2:3000/photos/${1}`, {
         Authorization: "Bearer access-token",
         otherHeader: "foo",
         'Content-Type': 'multipart/form-data',
