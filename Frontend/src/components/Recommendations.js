@@ -151,6 +151,7 @@ export default class Recommendations extends Component {
                     transparent={false}
                     visible={this.state.modalVisible}
                 >
+                  <ScrollView>
                     <Card>
                         <CardItem cardBody>
                             <Image style={styles.modalimage} source={RecommendArray[this.state.Objnumber].Photo} />
@@ -167,10 +168,13 @@ export default class Recommendations extends Component {
                                 <Text note>{RecommendArray[this.state.Objnumber].Distance}</Text>
                             </Right>
                         </CardItem>
+                      
                         <CardItem>
                             <Text style={{ textAlign: 'center' }}>{RecommendArray[this.state.Objnumber].Description}</Text>
                         </CardItem>
+                   
                     </Card>
+                    </ScrollView>
                     <Button style={styles.modalbutton} full info onPress={() => {
                         this.setModalVisible(false, 0);
                     }}>

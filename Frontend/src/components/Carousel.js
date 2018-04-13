@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Modal } from 'react-native';
+import { Image, StyleSheet, Modal, ScrollView } from 'react-native';
 import { View, DeckSwiper, Container, Card, CardItem, Thumbnail, Text, Left, Right, Body, Button, List, ListItem, Icon} from 'native-base';
 const cards = [
     {
@@ -53,9 +53,11 @@ export default class DeckSwiperExample extends Component {
 
     render() {
         return (
+            <ScrollView>
             <Container>
-
+        
                 <View>
+                
                     
                     <Modal
                         animationType="slide"
@@ -133,10 +135,16 @@ export default class DeckSwiperExample extends Component {
                         
                     </Modal>
 
+                    
                     <DeckSwiper
                         dataSource={cards}
+                        
                         renderItem={item =>
+                       
+                            
                             <Card style={{ elevation: 6 }}>
+                                
+                                
                                 <CardItem cardBody>
                                     <Image style={{ height: 500, flex: 1 }} source={item.image} />
                                 </CardItem>
@@ -152,11 +160,21 @@ export default class DeckSwiperExample extends Component {
                                 <Button full info style={{ backgroundColor: '#ff8396', marginTop: 5 }} onPress={() => this.setModalVisible(true)}>
                                     <Text>Info</Text>
                                 </Button>
+                              
                             </Card>
+                           
+           
+                            
+                           
                         }
                     />
+                  
+              
+                    
                 </View>
+             
             </Container>
+            </ScrollView>
         );
     }
 }

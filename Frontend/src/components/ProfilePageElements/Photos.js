@@ -9,7 +9,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 import { Content, Card, CardItem, Text, Icon, Button, Thumbnail, Body, Left } from 'native-base';
-
+import AutoHeightImage from 'react-native-auto-height-image'
 
 let images = [
   require('../../../assets/Images/image1.jpg'),
@@ -97,7 +97,7 @@ class Photos extends Component {
           visible={this.state.modalVisible}
         >
           <Card>
-            <CardItem style={{marginTop: 60}}>
+            <CardItem>
               <Left>
                 <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/04697c22c18a6b9911e1789414581bf4/5B63C1A3/t51.2885-19/s150x150/20479307_259226047906088_8664596465227661312_a.jpg' }} />
                 <Body>
@@ -106,11 +106,8 @@ class Photos extends Component {
               </Left>
             </CardItem>
 
-            <CardItem cardBody>
-              <Image style={styles.modalimage} source={images[this.state.Objnumber]} />
-            </CardItem>
-
           </Card>
+          <AutoHeightImage width={width} source={images[this.state.Objnumber]} />
           <Button style={styles.modalbutton} full info onPress={() => {
             this.setModalVisible(false, 0);
           }}>
@@ -169,6 +166,6 @@ const styles = StyleSheet.create({
   },
   modalbutton: {
     backgroundColor: '#ff8396',
-    marginBottom: 150
+    marginBottom: 0
   }
 });

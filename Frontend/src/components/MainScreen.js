@@ -54,6 +54,9 @@ const AppStackNavigator = StackNavigator({
     },
     Search: {
         screen: SearchScreen
+    },
+    Login: {
+        screen: LoginScreen
     }
 },
     { initialRouteName: 'Main' });
@@ -89,7 +92,7 @@ const AppTabNavigator = TabNavigator({
     }
 }, {
         animationEnabled: true,
-        swipeEnabled: true,
+        swipeEnabled: false,
         tabBarPosition: "bottom",
         tabBarOptions: {
             style: {
