@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Right, Switch, Button } from 'native-base';
 import { TouchableOpacity, View } from "react-native";
 import DateTimePicker from "react-native-modal-datetime-picker";
+import axios from 'axios';
 export default class Events extends Component {
   state = {
     timeStart: 0,
@@ -16,7 +17,17 @@ export default class Events extends Component {
   _handleDatePicked = (datetime) => {
     // Set State;
     alert('A date has been picked: ' + datetime);
-    this._hideDateTimePicker();
+    axios.post('http://10.0.2.2:3000/events', {
+      hostId: 1,
+      datetime: datetime
+    })
+      .then( (response) => {
+        console.log(response)
+       this._hideDateTimePicker();
+      })
+      .catch( (error) => {
+        console.log(error);
+      });
   };
   render() {
     return (
@@ -70,7 +81,7 @@ export default class Events extends Component {
                 <Icon name="ios-paper" style={{ color: '#ff8396' }} />
               </Left>
               <Body style={{ borderBottomWidth: 0 }}>
-                <Text style={{ alignSelf: 'center', fontSize: 20 }}>Add Desciption</Text>
+                <Text style={{ alignSelf: 'center', fontSize: 20 }}>Add Event's Title</Text>
                 <Text note style={{ alignSelf: 'center' }}>10th May, Thursday</Text>
               </Body>
               <Right style={{ borderBottomWidth: 0 }}>
