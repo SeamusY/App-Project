@@ -19,13 +19,14 @@ class AuthRouter{
             res.sendStatus(401);
         }
         try {
-            const authResult  = await axios.get(`https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`)
+            const authResult  = await axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${accessToken}`);
+            console.log(authResult);
             if (authResult.data.error) {
                 res.sendStatus(401);
             }
-            const token = jwtSimple.encode({ id: accessToken }, config.jwtSecret);
+            const token = jwtSimple.encode({ id: accessToken, info: authResult.data}, config.jwtSecret);
+            console.log(token);
             res.json({ token: token });
-            console.log("Token Success");
         } catch(err) {
             console.log("ERROR " + err)
             res.sendStatus(401);
