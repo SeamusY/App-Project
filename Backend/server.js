@@ -23,7 +23,8 @@ const AuthPath = new router(jwtAuth, user);
 const {
     PhotoRouter,
     EventRouter } = require('./routers');
-
+    
+app.use(express.static('uploads'));
 app.use('/photos', new PhotoRouter().router());
 app.use('/events', new EventRouter().router());
 app.use('/auth', AuthPath.getRouter());
