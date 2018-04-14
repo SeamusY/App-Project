@@ -47,8 +47,8 @@ export default class LoginScreen extends Component {
       var [, query] = event.match(/\#(.*)/)
       const jsonQuery = qs.parse(query);
       const response = await axios.post('http://10.0.2.2:3000/auth/verify/google', { accessToken: jsonQuery.access_token });
-      const jwtAcessToken = response.data.token;
-      this.setState({ jwtToken: jwtAcessToken });
+      const serverReturn = response.data;
+      this.setState({ jwtToken: serverReturn.token });
       this.props.navigation.navigate('Main')
     } catch (err) {
       alert("Error ", err);
