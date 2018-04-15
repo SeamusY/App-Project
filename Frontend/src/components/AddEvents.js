@@ -5,6 +5,10 @@ import DateTimePicker from "react-native-modal-datetime-picker";
 import axios from 'axios';
 import moment from 'moment'
 export default class Events extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   state = {
     timeStart: 0,
     timeEnd: 0,
@@ -72,9 +76,8 @@ export default class Events extends Component {
               </Left>
               <Body style={styles.body}>
                 <Text style={styles.text}>Add A Location</Text>
-                {/* <Text note style={{ alignSelf: 'center' }}>Deep Water Bay</Text> */}
-                <TextInput
-                  placeholder="Type here to translate!"
+                <TextInput style={styles.textinput}
+                  placeholder="type your location here!"
                   onChangeText={(text) => this.setState({ text })}
                 />
               </Body>
@@ -93,9 +96,9 @@ export default class Events extends Component {
               </Left>
               <Body style={styles.body}>
                 <Text style={styles.text}>Add Event's Title</Text>
-                {/* <Text note style={{ alignSelf: 'center' }}>10th May, Thursday</Text> */}
-                <TextInput
-                  placeholder="Type here to translate!"
+
+                <TextInput style={styles.textinput}
+                  placeholder="Type your event's title here!"
                   onChangeText={(text) => this.setState({ text })}
                 />
               </Body>
@@ -117,7 +120,7 @@ export default class Events extends Component {
 const styles = StyleSheet.create({
   text: {
     alignSelf: 'center',
-    fontSize: 20
+    fontSize: 20,
   },
   body: {
     borderBottomWidth: 0
@@ -128,6 +131,11 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#ff8396",
     marginBottom: 40
+  },
+  textinput: {
+    alignSelf: 'center',
+    color: "#ff8396",
+    fontSize: 20
   }
 
 
