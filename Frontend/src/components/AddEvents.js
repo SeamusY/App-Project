@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Right, Switch, Button } from 'native-base';
-import { TouchableOpacity, View, StyleSheet } from "react-native";
+import { TouchableOpacity, View, StyleSheet, TextInput } from "react-native";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import axios from 'axios';
 import moment from 'moment'
 export default class Events extends Component {
+constructor(props) {
+  super(props);
+}
+
   state = {
     timeStart: 0,
     timeEnd: 0,
@@ -71,7 +75,7 @@ export default class Events extends Component {
               </Left>
               <Body style={styles.body}>
                 <Text style={styles.text}>Add A Location</Text>
-                <Text note style={{ alignSelf: 'center' }}>Deep Water Bay</Text>
+                <Text note style={{ alignSelf: 'center' }}></Text>
               </Body>
               <Right style={{ borderBottomWidth: 0 }}>
                 <Icon name="arrow-forward" />
