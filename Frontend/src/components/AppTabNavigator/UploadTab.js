@@ -91,22 +91,22 @@ class UploadTab extends Component {
   render() {
     return (
       <ScrollView>
-      <Container>
-        <View style={styles.container}>
 
-          <Text style={styles.logo}>Go Photer</Text>
-          <TouchableOpacity onPress={() => this.selectPhoto()}>
-            <Image style={styles.image}
-              source={this.state.imageSource == null ? require('../../../assets/Images/upload.png') : this.state.imageSource}
-            />
-          </TouchableOpacity>
+        <Text style={styles.logo}>Go Photer</Text>
+        <Container>
+          <View style={styles.container}>
+            <TouchableOpacity onPress={() => this.selectPhoto()}>
+              <Image style={styles.image}
+                source={this.state.imageSource == null ? require('../../../assets/Images/upload.png') : this.state.imageSource}
+              />
+            </TouchableOpacity>
 
-          {this.renderUpload()}
-         
-        </View>
-      </Container>
+            {this.renderUpload()}
+
+          </View>
+        </Container>
       </ScrollView>
-  
+
     );
   }
 }
@@ -123,7 +123,8 @@ const styles = StyleSheet.create({
 
   button: {
     backgroundColor: "#ff8396",
-    marginTop: 176
+    marginBottom: 165
+    
   },
 
   logo: {
@@ -131,7 +132,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Pacifico',
     fontSize: 60,
     color: '#ff8396',
-    paddingTop: 30,
+    backgroundColor: '#FFF'
+   
+
   },
 
   text: {
@@ -141,9 +144,13 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 200,
-    height: 200,
-    marginTop: 80
+    width: 170,
+    height: 170,
+    marginBottom: 170,
+    alignSelf: 'center'
+ 
+    
+    
   }
 });
 

@@ -75,7 +75,7 @@ state = {
         <Text style={styles.header}>GO Photer</Text>
       </View>
       <View style={styles.middle}>
-        <Text style={styles.context}>New way to learn photography</Text>
+        <Text style={styles.context}> Explore and Create Contents</Text>
         <Icon.Button
           name="google"
           backgroundColor="#DD4B39"
@@ -120,9 +120,10 @@ const styles = StyleSheet.create({
   context: {
     fontFamily: 'ShadowsIntoLight',
     color: '#fff',
-    fontSize: 25,
+    fontSize: 20,
     textAlign: 'center',
-    padding: 80
+    padding: 80,
+    
   },
   loginButton: {
     width: '40%',

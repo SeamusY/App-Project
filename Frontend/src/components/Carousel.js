@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Modal, ScrollView} from 'react-native';
+import { Image, StyleSheet, Modal, ScrollView } from 'react-native';
 import { View, DeckSwiper, Container, Card, CardItem, Thumbnail, Text, Left, Right, Body, Button, List, ListItem, Icon } from 'native-base';
 const cards = [
     {
@@ -53,9 +53,9 @@ export default class DeckSwiperExample extends Component {
 
     render() {
         return (
-            <ScrollView>
+
             <Container>
-        
+
                 <View>
                     <Modal
                         animationType="slide"
@@ -64,70 +64,70 @@ export default class DeckSwiperExample extends Component {
                     >
                         <ScrollView>
 
-                        <Text style={styles.logo}>Go Photer</Text>
-                        <Icon name="ios-navigate" style={{ alignSelf: 'center', color: '#ff8396' }} />
-                        <Text style={{ alignSelf: 'center', fontSize: 20 }}>
-                            Central-Shootout
+                            <Text style={styles.logo}>Go Photer</Text>
+                            <Icon name="ios-navigate" style={{ alignSelf: 'center', color: '#ff8396' }} />
+                            <Text style={{ alignSelf: 'center', fontSize: 20 }}>
+                                Central-Shootout
                              </Text>
 
-                        <Text style={{alignSelf: 'center', fontSize: 20}}>Attenders</Text>
-                      
+                            <Text style={{ alignSelf: 'center', fontSize: 20 }}>Attenders</Text>
 
-                        <View style={{ marginTop: 40, alignSelf: 'center', }}>
-                            <List>
-                                <ListItem noBorder>
-                                    <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/78e1ab9d6d35eebdd2cde891e3a03cef/5B4FBC70/t51.2885-19/s150x150/26865485_161280891185375_4097005467279032320_n.jpg' }} />
-                                    <Text style={styles.attenders} >Erik Hendenfalk</Text>
-                                </ListItem>
-                            </List>
 
-                            <List>
-                                <ListItem noBorder>
-                                    <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/464b8db2133e3dac0b7dda9e93ee08c7/5B50E566/t51.2885-19/s150x150/12797989_244314302584259_967488229_a.jpg' }} />
-                                    <Text style={styles.attenders} >Cloe Ferrando</Text>
-                                </ListItem>
-                            </List>
+                            <View style={{ marginTop: 40, alignSelf: 'center', }}>
+                                <List>
+                                    <ListItem noBorder>
+                                        <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/78e1ab9d6d35eebdd2cde891e3a03cef/5B4FBC70/t51.2885-19/s150x150/26865485_161280891185375_4097005467279032320_n.jpg' }} />
+                                        <Text style={styles.attenders} >Erik Hendenfalk</Text>
+                                    </ListItem>
+                                </List>
 
-                            <List>
-                                <ListItem noBorder>
-                                    <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/0ce050da9da06c9918816616e4ae1a83/5B5EBC9D/t51.2885-19/s150x150/28764392_175336276604502_8864108506559545344_n.jpg' }} />
-                                    <Text style={styles.attenders} >Virgina Nigro</Text>
-                                </ListItem>
-                            </List>
+                                <List>
+                                    <ListItem noBorder>
+                                        <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/464b8db2133e3dac0b7dda9e93ee08c7/5B50E566/t51.2885-19/s150x150/12797989_244314302584259_967488229_a.jpg' }} />
+                                        <Text style={styles.attenders} >Cloe Ferrando</Text>
+                                    </ListItem>
+                                </List>
 
-                            <List>
-                                <ListItem noBorder>
-                                    <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/a3e2f173acc623c0d281761abf692174/5B523277/t51.2885-19/s150x150/14031651_316214658727036_306004320_a.jpg' }} />
-                                    <Text style={styles.attenders} >Alistair Lam</Text>
-                                </ListItem>
-                            </List>
-                        </View>
+                                <List>
+                                    <ListItem noBorder>
+                                        <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/0ce050da9da06c9918816616e4ae1a83/5B5EBC9D/t51.2885-19/s150x150/28764392_175336276604502_8864108506559545344_n.jpg' }} />
+                                        <Text style={styles.attenders} >Virgina Nigro</Text>
+                                    </ListItem>
+                                </List>
 
-                        <View style={{ flexDirection: "row", alignSelf: "center", paddingTop: 30, paddingBottom: 30, marginTop: 50 }}>
+                                <List>
+                                    <ListItem noBorder>
+                                        <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/a3e2f173acc623c0d281761abf692174/5B523277/t51.2885-19/s150x150/14031651_316214658727036_306004320_a.jpg' }} />
+                                        <Text style={styles.attenders} >Alistair Lam</Text>
+                                    </ListItem>
+                                </List>
+                            </View>
 
-                            <Button block info style={{ width: 150 }}>
-                                <Text>Join</Text>
-                            </Button>
+                            <View style={{ flexDirection: "row", alignSelf: "center", paddingTop: 30, paddingBottom: 30, marginTop: 50 }}>
 
-                            <Button block danger onPress={() => { this.setModalVisible(false) }} style={{ width: 150 }}>
-                                <Text>Decline</Text>
-                            </Button>
-                        </View>
+                                <Button block info style={{ width: 150 }}>
+                                    <Text>Join</Text>
+                                </Button>
+
+                                <Button block danger onPress={() => { this.setModalVisible(false) }} style={{ width: 150 }}>
+                                    <Text>Go Back</Text>
+                                </Button>
+                            </View>
                         </ScrollView>
                     </Modal>
 
-                    
+
                     <DeckSwiper
                         dataSource={cards}
-                        
+
                         renderItem={item =>
-                       
-                            
+
+
                             <Card style={{ elevation: 6 }}>
-                                
-                                
+
+
                                 <CardItem cardBody>
-                                    <Image style={{ height: 500, flex: 1 }} source={item.image} />
+                                    <Image style={{ height: 450, flex: 1 }} source={item.image} />
                                 </CardItem>
                                 <CardItem>
                                     <Left>
@@ -137,25 +137,20 @@ export default class DeckSwiperExample extends Component {
                                             <Text note>{item.description}</Text>
                                         </Body>
                                     </Left>
+                                    <Right>
+                                        <Icon style={styles.icon} name="ios-navigate" />
+                                    </Right>
                                 </CardItem>
                                 <Button full info style={{ backgroundColor: '#ff8396', marginTop: 5 }} onPress={() => this.setModalVisible(true)}>
                                     <Text>Info</Text>
                                 </Button>
-                              
+
                             </Card>
-                           
-           
-                            
-                           
+
                         }
                     />
-                  
-              
-                    
                 </View>
-             
             </Container>
-            </ScrollView>
         );
     }
 }
@@ -181,5 +176,10 @@ const styles = StyleSheet.create({
     attenders: {
         marginLeft: 10,
         width: 100
+    },
+    icon: {
+        color: '#DC143C',
+        fontSize: 35,
+        marginRight: 10
     }
 });
