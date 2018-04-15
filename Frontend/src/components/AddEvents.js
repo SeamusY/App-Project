@@ -13,7 +13,8 @@ export default class Events extends Component {
     timeStart: 0,
     timeEnd: 0,
     isDateTimePickerVisible: false,
-    text: ''
+    text1: '',
+    text2: ''
   };
 
 
@@ -78,7 +79,7 @@ export default class Events extends Component {
                 <Text style={styles.text}>Add A Location</Text>
                 <TextInput style={styles.textinput}
                   placeholder="type your location here!"
-                  onChangeText={(text) => this.setState({ text })}
+                  onChangeText={(text) => this.setState({ text1: text })}
                 />
               </Body>
               <Right style={{ borderBottomWidth: 0 }}>
@@ -99,7 +100,7 @@ export default class Events extends Component {
 
                 <TextInput style={styles.textinput}
                   placeholder="Type your event's title here!"
-                  onChangeText={(text) => this.setState({ text })}
+                  onChangeText={(text) => this.setState({ text2: text })}
                 />
               </Body>
               <Right style={styles.body}>
