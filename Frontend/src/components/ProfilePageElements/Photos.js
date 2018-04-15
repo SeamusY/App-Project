@@ -96,17 +96,6 @@ class Photos extends Component {
           transparent={false}
           visible={this.state.modalVisible}
         >
-          <Card>
-            <CardItem>
-              <Left>
-                <Thumbnail source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/04697c22c18a6b9911e1789414581bf4/5B63C1A3/t51.2885-19/s150x150/20479307_259226047906088_8664596465227661312_a.jpg' }} />
-                <Body>
-                  <Text>Elenibr</Text>
-                </Body>
-              </Left>
-            </CardItem>
-
-          </Card>
           <AutoHeightImage width={width} source={images[this.state.Objnumber]} />
           <Button style={styles.modalbutton} full info onPress={() => {
             this.setModalVisible(false, 0);
@@ -114,6 +103,7 @@ class Photos extends Component {
             <Icon name="arrow-back" />
             <Text>Profile</Text>
           </Button>
+
 
         </Modal>
         <ScrollView style={{ flexGrow: 1 }}>
@@ -152,8 +142,6 @@ const styles = StyleSheet.create({
   modalimage: {
     height: 450,
     flex: 1,
-    
-
   },
   modaltext: {
     paddingTop: 20,
@@ -166,6 +154,7 @@ const styles = StyleSheet.create({
   },
   modalbutton: {
     backgroundColor: '#ff8396',
-    marginBottom: 0
+
+
   }
 });

@@ -53,7 +53,7 @@ export default class DeckSwiperExample extends Component {
 
     render() {
         return (
-            <ScrollView>
+           
             <Container>
         
                 <View>
@@ -110,7 +110,7 @@ export default class DeckSwiperExample extends Component {
                             </Button>
 
                             <Button block danger onPress={() => { this.setModalVisible(false) }} style={{ width: 150 }}>
-                                <Text>Decline</Text>
+                                <Text>Go Back</Text>
                             </Button>
                         </View>
                         </ScrollView>
@@ -127,7 +127,7 @@ export default class DeckSwiperExample extends Component {
                                 
                                 
                                 <CardItem cardBody>
-                                    <Image style={{ height: 500, flex: 1 }} source={item.image} />
+                                    <Image style={{ height: 450, flex: 1 }} source={item.image} />
                                 </CardItem>
                                 <CardItem>
                                     <Left>
@@ -144,18 +144,10 @@ export default class DeckSwiperExample extends Component {
                               
                             </Card>
                            
-           
-                            
-                           
                         }
-                    />
-                  
-              
-                    
-                </View>
-             
+                    />        
+                </View>   
             </Container>
-            </ScrollView>
         );
     }
 }

@@ -70,7 +70,7 @@ const AppStackNavigator = StackNavigator({
   
 },
   {
-    initialRouteName: 'Login',
+    initialRouteName: 'Main',
     // headerMode: 'screen',
     // navigationOptions: {
     //     headerVisible: false,
