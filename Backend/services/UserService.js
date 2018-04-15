@@ -1,17 +1,20 @@
-const USERS = require('./tables').USERS;
+const users = require('./tables').USERS;
+const { NODE_ENV } = require('../config/server-config');
+const knexFile = require('../knexfile')[NODE_ENV];
+const knex = require('knex')(knexFile);
 
-module.exports = class UserService {
-    constructor(knex) {
+module.exports = class userservice {
+    constructor() {
         this.knex = knex;
     }
 
     create(user) {
-        let query = this.knex.table(USERS).first('gmail').where('gmail', user.gmail)
+        let query = this.knex.table(users).first('gmail').where('gmail', user.email);
         return query.then((u) => {
             if (!u) {
                 return this.knex
-                .insert(user)
-                .into(USERS)
+                .insert({gmail: user.email, profile_image: user.picture, first_name: user.given_name, last_name: user.family_name})
+                .into(users)
                 .returning("id");
             } else {
                 return null;
@@ -20,7 +23,7 @@ module.exports = class UserService {
     }
 
     delete(userId) {
-        return this.knex(USERS)
+        return this.knex(users)
             .where("id", userId)
             .del();
     }
@@ -28,12 +31,12 @@ module.exports = class UserService {
     list(limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(USERS)
+            .from(users)
             .limit(limit).offset(offset);
     }
 
     update(id, user) {
-        return this.knex(USERS)
+        return this.knex(users)
             .update(user)
             .where("id", id);
     }
@@ -41,14 +44,14 @@ module.exports = class UserService {
     search(searchCriteria, limit = 100, offset = 0) {
         return this.knex
             .select("*")
-            .from(USERS)
+            .from(users)
             .where(searchCriteria)
             .limit(limit).offset(offset);
     }
     findid(email){
         return this.knex
             .select("user.id")
-            .from(USERS)
+            .from(users)
             .where(email, "user.gmail")
     }
 }

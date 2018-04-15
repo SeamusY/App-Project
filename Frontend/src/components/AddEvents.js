@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Right, Switch, Button } from 'native-base';
-import { TouchableOpacity, View, StyleSheet, TextInput } from "react-native";
+import { TouchableOpacity, View, TextInput, StyleSheet } from "react-native";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import axios from 'axios';
 import moment from 'moment'
 export default class Events extends Component {
-constructor(props) {
-  super(props);
-}
+  constructor(props) {
+    super(props);
+  }
 
   state = {
     timeStart: 0,
     timeEnd: 0,
-    isDateTimePickerVisible: false
+    isDateTimePickerVisible: false,
+    text: ''
   };
 
 
@@ -22,7 +23,7 @@ constructor(props) {
 
   _handleDatePicked = (datetime) => {
     this.setState
-   chosenDate: moment(datetime).format('MMM, Do YYYY HH:mm')
+    chosenDate: moment(datetime).format('MMM, Do YYYY HH:mm')
     //alert('A date has been picked: ' + datetime);
     axios.post('http://10.0.2.2:3000/events', {
       hostId: 1,
@@ -75,7 +76,10 @@ constructor(props) {
               </Left>
               <Body style={styles.body}>
                 <Text style={styles.text}>Add A Location</Text>
-                <Text note style={{ alignSelf: 'center' }}></Text>
+                <TextInput style={styles.textinput}
+                  placeholder="type your location here!"
+                  onChangeText={(text) => this.setState({ text })}
+                />
               </Body>
               <Right style={{ borderBottomWidth: 0 }}>
                 <Icon name="arrow-forward" />
@@ -92,7 +96,11 @@ constructor(props) {
               </Left>
               <Body style={styles.body}>
                 <Text style={styles.text}>Add Event's Title</Text>
-                <Text note style={{ alignSelf: 'center' }}>10th May, Thursday</Text>
+
+                <TextInput style={styles.textinput}
+                  placeholder="Type your event's title here!"
+                  onChangeText={(text) => this.setState({ text })}
+                />
               </Body>
               <Right style={styles.body}>
                 <Icon name="arrow-forward" />
@@ -112,7 +120,7 @@ constructor(props) {
 const styles = StyleSheet.create({
   text: {
     alignSelf: 'center',
-    fontSize: 20
+    fontSize: 20,
   },
   body: {
     borderBottomWidth: 0
@@ -123,6 +131,11 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#ff8396",
     marginBottom: 40
+  },
+  textinput: {
+    alignSelf: 'center',
+    color: "#ff8396",
+    fontSize: 20
   }
 
 

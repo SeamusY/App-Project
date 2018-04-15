@@ -12,11 +12,11 @@ module.exports = class UserRouter{
     }
 
     getRouter(){
+        console.log("USERS ROUTER")
         let router = express.Router();
-        router.get("/", this.get.bind(this));
+        router.get("/test", this.get.bind(this));
         return router;
     }
-
     get(req, res) {
         return this.userService.list()
                 .then((data) => {

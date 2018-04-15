@@ -29,10 +29,17 @@ export default class LoginScreen extends Component {
         this._handleURL(url);
       }
     });
+    Linking.addEventListener('url', this.test);
+    Linking.getInitialURL().then((url) => {
+      if (url) {
+        this._handleURL(url);
+      }
+    });
   }
 
   componentWillUnmount() {
     Linking.removeEventListener('url', this._handleURL);
+    Linking.removeEventListener('url', this.test);
   }
 
   async _handleURL(event) {
@@ -40,8 +47,8 @@ export default class LoginScreen extends Component {
       var [, query] = event.match(/\#(.*)/)
       const jsonQuery = qs.parse(query);
       const response = await axios.post('http://10.0.2.2:3000/auth/verify/google', { accessToken: jsonQuery.access_token });
-      const jwtAcessToken = response.data.token;
-      this.setState({ jwtToken: jwtAcessToken });
+      const serverReturn = response.data;
+      this.setState({ jwtToken: serverReturn.token });
       this.props.navigation.navigate('Main')
     } catch (err) {
       alert("Error ", err);
@@ -53,7 +60,7 @@ export default class LoginScreen extends Component {
     const REDIRECT_URL = "http%3A%2F%2Fandroid.googlelinker.com"; //https://lens.auth.com, must be the same as the data tag in AndroidManifest.xml
     const GOOGLE_AUTH_URL = [
       "https://accounts.google.com/o/oauth2/v2/auth?",
-      "scope=email%20profile&",
+      "scope=email%20profile&", //email%20profile&
       "include_granted_scopes=true&state=state_parameter_passthrough_value&",
       "redirect_uri=http%3A%2F%2Fandroid.googlelinker.com&response_type=token&",
       "client_id=", CLIENT_ID
