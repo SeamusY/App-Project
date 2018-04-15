@@ -4,6 +4,8 @@ exports.up = function (knex, Promise) {
         if (!exists) {
             return knex.schema.createTable('events', function (t) {
                 t.increments('id').primary();
+                t.string('event_title')
+                t.string('img_url');
                 t.integer('host_id');
                 t.string('location');
                 t.dateTime('date');

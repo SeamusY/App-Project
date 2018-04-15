@@ -2,3 +2,5 @@ node_modules
 yarn.lock
 yarn-error.log
 debug.keystore.properties
+secretconfigs
+.env

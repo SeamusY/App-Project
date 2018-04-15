@@ -12,7 +12,6 @@ import MainScreen from './src/components/MainScreen';
 import ProfileScreen from './src/components/ProfileScreen';
 import SearchScreen from './src/components/SearchScreen';
 import LoginScreen from './src/components/LoginScreen';
-// import LoginScreen from './src/components/LoginScreen';
 import { connect } from 'react-redux';
 
 // * * * * Uncomment line below to activate the main page navigation * * * *
@@ -26,13 +25,11 @@ import { connect } from 'react-redux';
 // import LoginScreen from './src/components/LoginScreen';
 
 
-
-
-
-
-
 class App extends Component {
-
+  
+//   static navigationOptions = {
+//     header: null
+// }
 
   render() {
     return (
@@ -46,7 +43,7 @@ class App extends Component {
       // <View>
       // <Text>{this.props.displaynumber}</Text>
       // <Button title="Add" onPress={this.props.OnAdd} />
-      // <Button title="Min" onPress={this.props.OnMin} />
+      // <Button title="Min" onPress={this.props.OnMin} /
       // </View>
     );
   }
@@ -64,11 +61,21 @@ const AppStackNavigator = StackNavigator({
     screen: SearchScreen
   },
   Login: {
-    screen: LoginScreen
+    screen: LoginScreen, 
+    headerMode: 'none',
+    navigationOptions: {header: null}
   }
+    
+
+  
 },
   {
-    initialRouteName: 'Main'
+    initialRouteName: 'Main',
+    // headerMode: 'screen',
+    // navigationOptions: {
+    //     headerVisible: false,
+    // }
+    
   }
 );
 

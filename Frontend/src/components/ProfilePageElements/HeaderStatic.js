@@ -14,17 +14,17 @@ class HeaderStatic extends Component {
 
   render() {
     return (
-      <ImageBackground style={styles.headerBackground} source={require('../../../assets/Images/image6.jpg')}>
+      <ImageBackground style={styles.headerBackground} source={require('../../../assets/Images/choihung.jpg')}>
 
         <View style={styles.header}>
 
           <View style={styles.propicContainer}>
-            <Image style={styles.propic} source={{ uri: 'https://instagram.fhkg4-1.fna.fbcdn.net/vp/4440751ad06d1a0aa40ccb9a92ef4dc1/5B39D952/t51.2885-19/s150x150/29087668_858655037626662_1753801491040174080_n.jpg' }} />
+            <Image style={styles.propic} source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/944372c1764fed4a4af10f77f485e5b0/5B5239F8/t51.2885-19/s150x150/29090546_2048000892105923_8489793387929534464_n.jpg' }} />
 
           </View>
 
-          <Text style={styles.myname}>Hugo Chengo</Text>
-          <Text style={styles.mydescribe}>Co-Founder of GoPhoter</Text>
+          <Text style={styles.myname}>Hugo Cheng</Text>
+          <Text style={styles.mydescribe}>21, Co-Founder of Go Photer</Text>
 
         </View>
 
@@ -58,9 +58,8 @@ const styles = StyleSheet.create({
   },
   propic: {
     flex: 1,
-    width: null,
     alignSelf: 'stretch',
-    borderRadius: 100,
+    borderRadius: 50,
     borderColor: '#fff',
     borderWidth: 2
   },

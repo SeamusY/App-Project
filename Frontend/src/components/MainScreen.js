@@ -25,12 +25,12 @@ class MainScreen extends Component {
 
         return {
             headerLeft:
-                <Icon style={{ paddingLeft: 10 }} name="ios-person" onPress={() => navigation.navigate('Profile')} />,
+            <Icon style={{ paddingLeft: 10 }} name="ios-person" onPress={() => navigation.navigate('Profile')} />,
             headerRight:
-
-                <Icon style={{ paddingRight: 10 }} name="search" onPress={() => navigation.navigate('Search')} />
+            <Icon style={{ paddingRight: 10 }} name="search" onPress={() => navigation.navigate('Search')} />,
 
         }
+        
     }
 
     render() {
@@ -45,21 +45,21 @@ class MainScreen extends Component {
 export default MainScreen;
 
 
-const AppStackNavigator = StackNavigator({
-    Main: {
-        screen: MainScreen
-    },
-    Profile: {
-        screen: ProfileScreen
-    },
-    Search: {
-        screen: SearchScreen
-    },
-    Login: {
-        screen: LoginScreen
-    }
-},
-    { initialRouteName: 'Main' });
+// const AppStackNavigator = StackNavigator({
+//     Main: {
+//         screen: MainScreen
+//     },
+//     Profile: {
+//         screen: ProfileScreen
+//     },
+//     Search: {
+//         screen: SearchScreen
+//     },
+//     Login: {
+//         screen: LoginScreen
+//     }
+// },
+//     { initialRouteName: 'Main' });
 
 
 const AppTabNavigator = TabNavigator({
@@ -78,21 +78,21 @@ const AppTabNavigator = TabNavigator({
             tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-paper" />) }
         }
     },
-    RecommendationsTab: {
-        screen: RecommendationsTab,
-        navigationOptions: {
-            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-bulb" />) }
-        }
-    },
     UploadTab: {
         screen: UploadTab,
         navigationOptions: {
             tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-camera" />) }
         }
+    },
+    RecommendationsTab: {
+        screen: RecommendationsTab,
+        navigationOptions: {
+            tabBarIcon: ({ tintColor }) => { return (<Icon name="ios-bulb" />) }
+        }
     }
 }, {
         animationEnabled: true,
-        swipeEnabled: true,
+        swipeEnabled: false,
         tabBarPosition: "bottom",
         tabBarOptions: {
             style: {

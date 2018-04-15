@@ -7,7 +7,8 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  ActivityIndicator
+  ActivityIndicator,
+
 } from 'react-native';
 import { Icon, Button, Container } from 'native-base';
 import ImagePicker from 'react-native-image-picker';
@@ -60,7 +61,7 @@ class UploadTab extends Component {
   uploadPhoto() {
     if (this.state.data != null) {
       this.setState({ loading: true });
-      RNFetchBlob.fetch('POST', `http://10.0.2.2:3000/upload/${1}`, {
+      RNFetchBlob.fetch('POST', `http://10.0.2.2:3000/photos/${1}`, {
         Authorization: "Bearer access-token",
         otherHeader: "foo",
         'Content-Type': 'multipart/form-data',
@@ -89,19 +90,23 @@ class UploadTab extends Component {
   }
   render() {
     return (
-      <Container>
-        <View style={styles.container}>
-          <Text style={styles.logo}>Go Photer</Text>
-          <TouchableOpacity onPress={() => this.selectPhoto()}>
-            <Image style={styles.image}
-              source={this.state.imageSource == null ? require('../../../assets/Images/upload.png') : this.state.imageSource}
-            />
-          </TouchableOpacity>
+      <ScrollView>
 
-          {this.renderUpload()}
+        <Text style={styles.logo}>Go Photer</Text>
+        <Container>
+          <View style={styles.container}>
+            <TouchableOpacity onPress={() => this.selectPhoto()}>
+              <Image style={styles.image}
+                source={this.state.imageSource == null ? require('../../../assets/Images/upload.png') : this.state.imageSource}
+              />
+            </TouchableOpacity>
 
-        </View>
-      </Container>
+            {this.renderUpload()}
+
+          </View>
+        </Container>
+      </ScrollView>
+
     );
   }
 }
@@ -118,7 +123,8 @@ const styles = StyleSheet.create({
 
   button: {
     backgroundColor: "#ff8396",
-    marginTop: 176
+    marginBottom: 165
+    
   },
 
   logo: {
@@ -126,7 +132,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Pacifico',
     fontSize: 60,
     color: '#ff8396',
-    paddingTop: 30,
+    backgroundColor: '#FFF'
+   
+
   },
 
   text: {
@@ -136,9 +144,13 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 200,
-    height: 200,
-    marginTop: 80
+    width: 170,
+    height: 170,
+    marginBottom: 170,
+    alignSelf: 'center'
+ 
+    
+    
   }
 });
 

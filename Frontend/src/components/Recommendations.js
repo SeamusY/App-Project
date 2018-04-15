@@ -4,11 +4,11 @@ import { Content, Card, CardItem, Text, Left, Right, Body, Thumbnail, Icon, Butt
 
 const RecommendArray = [
     {
-        Photo: require('../../assets/Images/test.jpg'),
-        Location: 'Braemar Hill',
-        Photographer: 'By Ammr Eltilib',
-        Distance: '2.6K',
-        Description: 'To photograph the splendid night scene of Hong Kong, Braemar Hill is a nice place where you can take nightscape photos, remember to bring a tripod.'
+        Photo: require('../../assets/Images/lugardroad.jpg'),
+        Location: 'Lugard Road',
+        Photographer: ' By Ammr Eltilib',
+        Distance: '3.1K',
+        Description: ' A breath-taking view of Hong Kong city, try to stay there until it gets dark, you wont regret it!'
     },
     {
         Photo: require('../../assets/Images/instagrampeir.jpg'),
@@ -18,11 +18,12 @@ const RecommendArray = [
         Description: 'If you want to take a break off the busy city, Instagram Pier is a great place to chill out after school or work. You will meet a lot of instagrammers there, best to shoot during golden hour'
     },
     {
-        Photo: require('../../assets/Images/test.jpg'),
-        Location: 'Hopewell Center Elavator',
-        Photographer: 'By Gordan Chung',
-        Distance: '7.6K',
-        Description: 'The elvator will take you from the 17th floor to the 64th floor, you will be able to get some awesome footage of the Hong Kong Island, best to bring a wide angle lens'
+        Photo: require('../../assets/Images/dragonsback.jpg'),
+        Location: 'Dragon\'s Back',
+        Photographer: 'By Erik Hendenfalk',
+        Distance: '8.6K',
+        Description: 'A relatively easy hike, the view is sensational on top of the hill, seriosuly bring a drone!'
+
     },
     {
         Photo: require('../../assets/Images/mansion.jpg'),
@@ -32,12 +33,11 @@ const RecommendArray = [
         Description: 'Also known as the monster buidling, one of the most iconic photography shootout spot in Hong kong, best to shoot during night. '
     },
     {
-        Photo: require('../../assets/Images/test.jpg'),
-        Location: 'Dragon\'s Back',
-        Photographer: 'By Erik Hendenfalk',
-        Distance: '8.6K',
-        Description: 'A relatively easy hike, the view is sensational on top of the hill, seriosuly bring a drone!'
-
+        Photo: require('../../assets/Images/hopewell.jpg'),
+        Location: 'Hopewell Center',
+        Photographer: 'By Gordan Chung',
+        Distance: '7.6K',
+        Description: 'The elvator will take you from the 17th floor to the 64th floor, you will be able to get some awesome footage of the Hong Kong Island, best to bring a wide angle lens'
     },
     {
         Photo: require('../../assets/Images/mongkok.jpg'),
@@ -59,7 +59,7 @@ const RecommendArray = [
         Location: 'Central District',
         Photographer: 'By Hugo Cheng',
         Distance: '2.6K',
-        Description:'There are so many places that you can shoot in Central District, we highly recommend you to go to Tamar Park during sunset and night hour'
+        Description: 'There are so many places that you can shoot in Central District, we highly recommend you to go to Tamar Park during sunset and night hour'
     },
     {
         Photo: require('../../assets/Images/chinacitybuilding.jpg'),
@@ -69,7 +69,7 @@ const RecommendArray = [
         Description: 'If you are into symmetrical photography, this is a place where you can go to point your camera upwards and capture that majestic moment '
     },
     {
-        Photo: require('../../assets/Images/image1.jpg'),
+        Photo: require('../../assets/Images/jockey.jpg'),
         Location: 'Jockey Club Innovation Tower',
         Photographer: 'By Rex Wong',
         Distance: '3.2K',
@@ -105,12 +105,12 @@ const RecommendArray = [
         Description: 'A great place for relexation and portrait photography, best to bring a portriat lens'
     },
     {
-        Photo: require('../../assets/Images/lugardroad.jpg'),
-        Location: 'Lugard Road',
-        Photographer: ' By Erik Hendenfalk',
-        Distance: '3.1K',
-        Description: ' A breath-taking view of Hong Kong city, try to stay there until it gets dark, you wont regret it!'
-    }
+        Photo: require('../../assets/Images/test.jpg'),
+        Location: 'Braemar Hill',
+        Photographer: 'By Ammr Eltilib',
+        Distance: '2.6K',
+        Description: 'To photograph the splendid night scene of Hong Kong, Braemar Hill is a nice place where you can take nightscape photos, remember to bring a tripod.'
+    },
 ]
 
 export default class Recommendations extends Component {
@@ -151,6 +151,7 @@ export default class Recommendations extends Component {
                     transparent={false}
                     visible={this.state.modalVisible}
                 >
+                  <ScrollView>
                     <Card>
                         <CardItem cardBody>
                             <Image style={styles.modalimage} source={RecommendArray[this.state.Objnumber].Photo} />
@@ -167,10 +168,13 @@ export default class Recommendations extends Component {
                                 <Text note>{RecommendArray[this.state.Objnumber].Distance}</Text>
                             </Right>
                         </CardItem>
+                      
                         <CardItem>
-                            <Text style={{textAlign: 'center'}}>{RecommendArray[this.state.Objnumber].Description}</Text>
+                            <Text style={{ textAlign: 'center' }}>{RecommendArray[this.state.Objnumber].Description}</Text>
                         </CardItem>
+                   
                     </Card>
+                    </ScrollView>
                     <Button style={styles.modalbutton} full info onPress={() => {
                         this.setModalVisible(false, 0);
                     }}>
@@ -230,7 +234,8 @@ const styles = StyleSheet.create({
     },
     modalbutton: {
         backgroundColor: '#ff8396',
-        marginBottom: 16
+        marginBottom: 30
+        
     }
 
 });
