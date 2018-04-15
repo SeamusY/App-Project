@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Right, Switch, Button } from 'native-base';
-import { TouchableOpacity, View, StyleSheet } from "react-native";
+import { TouchableOpacity, View, TextInput, StyleSheet } from "react-native";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import axios from 'axios';
 import moment from 'moment'
@@ -8,7 +8,8 @@ export default class Events extends Component {
   state = {
     timeStart: 0,
     timeEnd: 0,
-    isDateTimePickerVisible: false
+    isDateTimePickerVisible: false,
+    text: ''
   };
 
 
@@ -18,7 +19,7 @@ export default class Events extends Component {
 
   _handleDatePicked = (datetime) => {
     this.setState
-   chosenDate: moment(datetime).format('MMM, Do YYYY HH:mm')
+    chosenDate: moment(datetime).format('MMM, Do YYYY HH:mm')
     //alert('A date has been picked: ' + datetime);
     axios.post('http://10.0.2.2:3000/events', {
       hostId: 1,
@@ -71,7 +72,11 @@ export default class Events extends Component {
               </Left>
               <Body style={styles.body}>
                 <Text style={styles.text}>Add A Location</Text>
-                <Text note style={{ alignSelf: 'center' }}>Deep Water Bay</Text>
+                {/* <Text note style={{ alignSelf: 'center' }}>Deep Water Bay</Text> */}
+                <TextInput
+                  placeholder="Type here to translate!"
+                  onChangeText={(text) => this.setState({ text })}
+                />
               </Body>
               <Right style={{ borderBottomWidth: 0 }}>
                 <Icon name="arrow-forward" />
@@ -88,7 +93,11 @@ export default class Events extends Component {
               </Left>
               <Body style={styles.body}>
                 <Text style={styles.text}>Add Event's Title</Text>
-                <Text note style={{ alignSelf: 'center' }}>10th May, Thursday</Text>
+                {/* <Text note style={{ alignSelf: 'center' }}>10th May, Thursday</Text> */}
+                <TextInput
+                  placeholder="Type here to translate!"
+                  onChangeText={(text) => this.setState({ text })}
+                />
               </Body>
               <Right style={styles.body}>
                 <Icon name="arrow-forward" />
