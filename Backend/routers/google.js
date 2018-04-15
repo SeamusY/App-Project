@@ -29,12 +29,10 @@ class AuthRouter{
                 res.sendStatus(401);
             }
             if(Userservice.findid(authResult.data.email) != null || undefined){
-                console.log(authResult.data);
                 let userid = Userservice.create(authResult.data);
                 const token = jwtSimple.encode({ id: accessToken, info: authResult.data }, config.jwtSecret);
                 res.json({ token: token, id:userid, email: authResult.data.email, name: authResult.data.name});
             }
-                
             
         } catch(err) {
             console.log("ERROR " + err)

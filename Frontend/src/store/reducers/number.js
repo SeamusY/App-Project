@@ -1,9 +1,9 @@
 import { setname, setemail, setjwtToken, setid } from '../actions/actionTypes'
 
 const initialState = {
-    name: "",
-    email: "",
-    jwtToken: "",
+    name: null,
+    email: null,
+    jwtToken: null,
     id: 0
 }
 

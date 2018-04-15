@@ -16,9 +16,10 @@ import { TabNavigator, TabView, TabBarTop } from 'react-navigation';
 import  MainScreen  from './MainScreen';
 import ProfileScreen from './ProfileScreen';
 import SearchScreen from './SearchScreen';
+import { setjwtToken } from '../store/actions/actionTypes'
 export default class LoginScreen extends Component {
 
-  state = {
+state = {
     jwtToken: undefined,
     checkLoggedIn: false
   }
@@ -49,7 +50,7 @@ export default class LoginScreen extends Component {
       const response = await axios.post('http://10.0.2.2:3000/auth/verify/google', { accessToken: jsonQuery.access_token });
       const serverReturn = response.data;
       this.setState({ jwtToken: serverReturn.token });
-      this.props.navigation.navigate('Main')
+      this.props.navigation.navigate('Main');
     } catch (err) {
       alert("Error ", err);
     }
@@ -134,3 +135,8 @@ const styles = StyleSheet.create({
     color: '#fff'
   }
 });
+
+
+// * * * * Uncomment all lines below to activate the Redux Trial * * * *
+
+export default connect(mapStateToProps)(App)
