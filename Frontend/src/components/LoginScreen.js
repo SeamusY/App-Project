@@ -7,21 +7,21 @@ import {
   Alert,
   Linking
 } from 'react-native';
+import { connect } from 'react-redux';
 import { Button } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import axios from 'axios';
 import qs from 'qs';
 import { StackNavigator } from 'react-navigation';
 import { TabNavigator, TabView, TabBarTop } from 'react-navigation';
-import  MainScreen  from './MainScreen';
+import MainScreen from './MainScreen';
 import ProfileScreen from './ProfileScreen';
 import SearchScreen from './SearchScreen';
 import { setjwtToken } from '../store/actions/actionTypes'
-export default class LoginScreen extends Component {
-
-state = {
-    jwtToken: undefined,
-    checkLoggedIn: false
+import configStore from '../store/configstore'
+class LoginScreen extends Component {
+  state = {
+    jwtToken: undefined
   }
   componentDidMount() {
     Linking.addEventListener('url', this._handleURL);
@@ -42,23 +42,20 @@ state = {
     Linking.removeEventListener('url', this._handleURL);
     Linking.removeEventListener('url', this.test);
   }
-
   async _handleURL(event) {
     try {
       var [, query] = event.match(/\#(.*)/)
       const jsonQuery = qs.parse(query);
       const response = await axios.post('http://10.0.2.2:3000/auth/verify/google', { accessToken: jsonQuery.access_token });
       const serverReturn = response.data;
-      const mapDispatchToProps = dispatch => ({
-        toggleTodo: id => dispatch(toggleTodo(id)) // Given to redux
-      })
-      this.setState({ jwtToken: serverReturn.token });  // thow to localstorage
-
+      // this.dispatch(this.ReduxDispatch(respond.data.email));
       this.props.navigation.navigate('Main');
-    } catch (err) {
+    }
+    catch (err) {
       alert("Error ", err);
     }
   }
+  
   loginGoogle = () => {
     //change it and save it somewhere else.
     const CLIENT_ID = "606784332815-el05u272910hau6jlvnmnn4nul21enus.apps.googleusercontent.com";
@@ -73,8 +70,12 @@ state = {
 
     Linking.openURL(GOOGLE_AUTH_URL);
   }
+  ReduxDispatch = (email) => {
+    type: 'setemail',
+    email
+  }
   render() {
-    return(<ImageBackground source={require('../../DSC06107.jpg')} style={styles.backgroundImage}>
+    return (<ImageBackground source={require('../../DSC06107.jpg')} style={styles.backgroundImage}>
       <View style={styles.top}>
         <Text style={styles.header}>GO Photer</Text>
       </View>
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     padding: 80,
-    
+
   },
   loginButton: {
     width: '40%',
@@ -140,3 +141,8 @@ const styles = StyleSheet.create({
     color: '#fff'
   }
 });
+export default connect(
+  state=>({
+  email: state.email
+  })
+)(LoginScreen);

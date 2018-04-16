@@ -8,9 +8,9 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
+import { connect } from 'react-redux';
 
-
-class HeaderStatic extends Component {
+export class HeaderStatic extends Component {
 
   render() {
     return (
@@ -20,10 +20,9 @@ class HeaderStatic extends Component {
 
           <View style={styles.propicContainer}>
             <Image style={styles.propic} source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/944372c1764fed4a4af10f77f485e5b0/5B5239F8/t51.2885-19/s150x150/29090546_2048000892105923_8489793387929534464_n.jpg' }} />
-
           </View>
 
-          <Text style={styles.myname}>Hugo Cheng</Text>
+          <Text style={styles.myname}>{this.props.email}</Text>
           <Text style={styles.mydescribe}>21, Co-Founder of Go Photer</Text>
 
         </View>
@@ -33,8 +32,6 @@ class HeaderStatic extends Component {
     );
   }
 }
-
-export default HeaderStatic;
 
 const styles = StyleSheet.create({
   headerBackground: {
@@ -75,3 +72,7 @@ const styles = StyleSheet.create({
     fontWeight: '300'
   }
 });
+const mapStateToProps = state => ({
+  email: numbers.email
+});
+export default connect(mapStateToProps)(HeaderStatic)

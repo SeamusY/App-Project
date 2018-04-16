@@ -19,11 +19,6 @@ const reducer = (state = initialState, action) => {
                     ...state,
                     email: state.email
                 }
-        case setjwtToken:
-            return {
-                ...state,
-                jwtToken: state.jwtToken
-        }
         case setid:
             return {
                 ...state,
