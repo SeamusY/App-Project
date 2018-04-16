@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Modal, ScrollView } from 'react-native';
 import { View, DeckSwiper, Container, Card, CardItem, Thumbnail, Text, Left, Right, Body, Button, List, ListItem, Icon } from 'native-base';
+import getDirections from 'react-native-google-maps-directions';
+
 const cards = [
     {
         text: 'Steve Divish',
@@ -50,7 +52,16 @@ export default class DeckSwiperExample extends Component {
     setModalVisible(visible) {
         this.setState({ modalVisible: visible });
     }
-
+    handleGetDirections = () => {
+        const data = {
+          destination: {
+            latitude: -33.8600024,
+            longitude: 18.697459
+          }
+        }
+     
+        getDirections(data)
+      }
     render() {
         return (
 
@@ -94,7 +105,6 @@ export default class DeckSwiperExample extends Component {
                                         <Text style={styles.attenders} >Virgina Nigro</Text>
                                     </ListItem>
                                 </List>
-
                                 <List>
                                     <ListItem noBorder>
                                         <Thumbnail source={{ uri: 'https://instagram.fhkg3-1.fna.fbcdn.net/vp/a3e2f173acc623c0d281761abf692174/5B523277/t51.2885-19/s150x150/14031651_316214658727036_306004320_a.jpg' }} />
@@ -138,7 +148,7 @@ export default class DeckSwiperExample extends Component {
                                         </Body>
                                     </Left>
                                     <Right>
-                                        <Icon style={styles.icon} name="ios-navigate" />
+                                        <Icon onPress={this.handleGetDirections} style={styles.icon} name="ios-navigate" />
                                     </Right>
                                 </CardItem>
                                 <Button full info style={{ backgroundColor: '#ff8396', marginTop: 5 }} onPress={() => this.setModalVisible(true)}>

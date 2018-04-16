@@ -49,7 +49,11 @@ state = {
       const jsonQuery = qs.parse(query);
       const response = await axios.post('http://10.0.2.2:3000/auth/verify/google', { accessToken: jsonQuery.access_token });
       const serverReturn = response.data;
-      this.setState({ jwtToken: serverReturn.token });
+      const mapDispatchToProps = dispatch => ({
+        toggleTodo: id => dispatch(toggleTodo(id)) // Given to redux
+      })
+      this.setState({ jwtToken: serverReturn.token });  // thow to localstorage
+
       this.props.navigation.navigate('Main');
     } catch (err) {
       alert("Error ", err);
@@ -136,8 +140,3 @@ const styles = StyleSheet.create({
     color: '#fff'
   }
 });
-
-
-// * * * * Uncomment all lines below to activate the Redux Trial * * * *
-
-export default connect(mapStateToProps)(App)

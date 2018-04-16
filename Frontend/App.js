@@ -13,7 +13,7 @@ import ProfileScreen from './src/components/ProfileScreen';
 import SearchScreen from './src/components/SearchScreen';
 import LoginScreen from './src/components/LoginScreen';
 import { connect } from 'react-redux';
-
+import ReduxThunk from 'redux-thunk'
 // * * * * Uncomment line below to activate the main page navigation * * * *
 // import MainScreen from './src/components/MainScreen';
 
@@ -35,7 +35,6 @@ class App extends Component {
     return (
       // * * * * Uncomment line below to activate the main page navigation * * * *
       <AppStackNavigator />
-
       // * * * *Uncomment line below to activate the Login Page Screen * * * *
       // <LoginScreen/>
 
@@ -70,7 +69,7 @@ const AppStackNavigator = StackNavigator({
   
 },
   {
-    initialRouteName: 'Main',
+    initialRouteName: 'Login',
     // headerMode: 'screen',
     // navigationOptions: {
     //     headerVisible: false,
